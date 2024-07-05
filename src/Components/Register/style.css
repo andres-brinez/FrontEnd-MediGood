@@ -113,33 +113,7 @@ li p {
   ;
 }
 
-button[type="button"] {
-  padding: 14px 20px;
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin: 20px 0 40px;
 
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  color: #00A3FF;
-  border: solid 1px #00A3FF;
-  border-radius: 5px;
-
-}
-
-button {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-button[type="button"]:hover {
-  background-color: #00A3FF;
-  color: #fff;
-  border-color: #fff;
-}
 
 /* FOOTER */
 footer {

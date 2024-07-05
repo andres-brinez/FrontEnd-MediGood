@@ -1,5 +1,15 @@
+import InputPassword from "../Fields/Password";
+import Input from "../Fields/Input/input";
 import "./style.css"
+import CheckBox from "../Fields/CheckBox";
+import Button from "../button";
+import { useState } from "react";
 function FormRegister() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   function changeVisibilityPassword() {
     var passwordInput = document.getElementById('password');
     var togglePassword = document.getElementById('togglePassword');
@@ -13,35 +23,51 @@ function FormRegister() {
     }
   }
 
-  return <form id="createAccountForm">
-    <div class="input-field">
-      <label for="name">Nombre y apellidos <span class="required">*</span></label>
-      <input type="text" id="name" name="name" placeholder="Nombre completo" required />
-    </div>
-    <div class="input-field">
-      <label for="email">Correo electrónico <span class="required">*</span></label>
-      <input type="email" id="email" name="email" required placeholder="Correo electrónico" />
-    </div>
-    <div class="input-field">
-      <label for="password">Contraseña <span class="required">*</span></label>
-      <div class="password-container">
-        <input type="password" id="password" name="password" required placeholder="Contraseña" />
-        <span id="togglePassword" onClick={changeVisibilityPassword} >Mostrar</span>
-      </div>
-    </div>
-    <div class="input-field-checkbox">
-      <input type="checkbox" id="acceptPrivacyPolicy" name="acceptPrivacyPolicy" required />
-      <label for="acceptPrivacyPolicy">He leído y acepto política de privacidad</label>
-    </div>
-    <div class="input-field-checkbox">
-      <input type="checkbox" id="receiveOffers" name="receiveOffers" />
-      <label for="receiveOffers">Me gustaría recibir descuentos exclusivos  </label>
-    </div>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let datosEnviar ={
+      name,
+      email,
+      password
+    }
 
-    <button type="submit">Registrarse</button>
-  </form>
- 
 
+  };
+
+  return (
+    <form  onSubmit={handleSubmit} id="createAccountForm">
+      <Input 
+         className="input-field"
+         label="Nombre y apellidos"
+         id="name" 
+         name="name" 
+         placeholder="Nombre completo" 
+         required 
+         value={name}  updateValue={setName} />
+      <Input 
+         className="input-field" 
+         type="email" 
+         label="Correo electrónico" 
+         id="email" 
+         name="email" 
+         placeholder="Correo electrónico" 
+         required 
+         value={email} updateValue={setEmail} />
+      <InputPassword 
+         className="input-field" 
+         type="password" 
+         label="Contraseña" 
+         id="password" 
+         name="password" 
+         placeholder="Contraseña"  
+         onClick={changeVisibilityPassword} 
+         required
+         value={password} updateValue={setPassword}/>
+      <CheckBox className="input-field-checkbox" type="checkbox" label="He leído y acepto política de privacidad" id="acceptPrivacyPolicy" name="acceptPrivacyPolicy" />
+      <CheckBox className="input-field-checkbox" type="checkbox" label="Me gustaría recibir descuentos exclusivos" id="receiveOffers" name="receiveOffers" />
+      <Button type="submit" text="Registrarse" />
+    </form>
+  )
 }
 
 export default FormRegister;

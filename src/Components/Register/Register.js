@@ -1,8 +1,8 @@
 import FormRegister from "../Forms/Register/Form";
+import Button from "../Forms/button";
 import HeaderAuth from "../Header/Auth/Header";
 import "./style.css"
-function Register() {
-
+function Register(datod) {
 
   return (
     <div>
@@ -43,7 +43,7 @@ function Register() {
             <p>Ya tienes cuenta</p>
             <div class="line"></div>
           </div>
-          <button type="button">Iniciar sesión</button>
+          <Button type="button" text="Iniciar sesión "/>
         </article>
       </section>
       <footer>
