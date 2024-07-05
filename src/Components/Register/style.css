@@ -1,0 +1,164 @@
+
+/* MAIN */
+section {
+  margin: 0 12%;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+
+}
+
+h3 {
+  color: #00A3FF;
+  text-align: center;
+  font-weight: normal;
+  font-weight: 700;
+
+}
+
+
+.benefits__container {
+  width: 45%;
+  margin-bottom: 80px;
+}
+
+.benefits__container h3 {
+  font-size: 20px;
+  font-style: normal;
+  line-height: 150%;
+  font-weight: 700;
+
+}
+
+.benefits__container ul {
+  list-style-type: none;
+}
+
+.benefits__container ul li {
+  margin-bottom: 10px;
+
+}
+
+.bold{
+  font-weight: bold;
+}
+
+li p {
+  color: var(--neutrals-neutral-06, #8B8B8B);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.benefits__container ul li img {
+  margin-right: 10px;
+}
+
+.back-to-shop {
+  margin-top: 80px;
+}
+
+.back-to-shop a {
+  text-decoration: none;
+  color: var(--neutrals-neutral-06, #8B8B8B);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
+.back-to-shop a:hover {
+  text-decoration: underline;
+}
+
+.back-to-shop a span {
+  margin-right: 5px;
+}
+
+.back-to-shop a p {
+  margin: 0;
+}
+
+/* CREAR CUENTA */
+
+.account__container {
+  width: 40%;
+
+}
+
+.account__container h3 {
+  font-size: 26px;
+  font-style: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+
+.existing__account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.existing__account .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #C5C5C5;
+  ;
+}
+
+button[type="button"] {
+  padding: 14px 20px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 20px 0 40px;
+
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #00A3FF;
+  border: solid 1px #00A3FF;
+  border-radius: 5px;
+
+}
+
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+  background-color: #00A3FF;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #ccc;
+  margin-top: 80px;
+  height: 80px;
+  background:#F5F5F5;
+  padding: 0 100px;
+
+
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 10px 80px;
+}
+
+
+

@@ -1,0 +1,49 @@
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-top: 0px;
+  height: 80px;
+  padding: 0 100px;
+  
+
+  
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  color: #00A3FF;
+
+}
+
+
+.header__logo {
+  width: 45px;
+  height: 50px;
+  margin-right: 5px;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  font-size: 25px;
+
+}
+
+
+.header__secure-logo {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.header__container p {
+  font-size: 16px;
+  font-weight: 700;
+
+  font-style: normal;
+  text-transform: uppercase;
+}
