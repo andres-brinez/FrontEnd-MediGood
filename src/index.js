@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Register from './Pages/Register/Register';
+import RoutesHandler from './Router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <Register/>
+  <RoutesHandler/>
   </React.StrictMode>
 );
 
