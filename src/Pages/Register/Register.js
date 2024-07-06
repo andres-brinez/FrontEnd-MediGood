@@ -1,6 +1,6 @@
-import FormRegister from "../Forms/Register/Form";
-import Button from "../Forms/button";
-import HeaderAuth from "../Header/Auth/Header";
+import FormRegister from "../../Components/Forms/Register/Form";
+import Button from "../../Components/Forms/button";
+import HeaderAuth from "../../Components/Header/Auth/Header";
 import "./style.css"
 function Register(datod) {
 
