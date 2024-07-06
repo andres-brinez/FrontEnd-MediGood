@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import './style.css';
-const Button = ({ type, text, onClick }) => {
+const Button = ({ ruta,type, text, onClick }) => {
   return (
-    <button type={type} onClick={onClick}>
-      {text}
-    </button>
+    <Link to={"/"+ruta}>
+      <button  type={type} onClick={onClick}>
+        {text}
+      </button>
+    </Link>
   );
 };
 
