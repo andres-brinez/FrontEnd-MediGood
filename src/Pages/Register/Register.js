@@ -1,4 +1,5 @@
 import Footer from "../../Components/Footer";
+import { NavLink } from "react-router-dom";
 import FormRegister from "../../Components/Forms/Register/Form";
 import Button from "../../Components/Forms/button";
 import HeaderAuth from "../../Components/Header/Auth/Header";
@@ -7,7 +8,7 @@ function Register(datod) {
 
   return (
     <>
-      <HeaderAuth text="Registro seguro"/>
+      <HeaderAuth text="Registro seguro" />
       <section className="register">
         <article className="benefits__container">
           <h3>Registrarse en Farmacia Medigood es muy facil y está lleno de beneficios</h3>
@@ -29,11 +30,12 @@ function Register(datod) {
             </li>
           </ul>
           <div class="back-to-shop">
-            <a href="ruta/a/la/tienda">
+            <NavLink to="/">
               <span>&lt;</span>
               <p>Volver a la tienda</p>
-            </a>
+            </NavLink>
           </div>
+
         </article>
         <article className="account__container">
           <h3>Crea una cuenta</h3>
@@ -44,10 +46,10 @@ function Register(datod) {
             <p>Ya tienes cuenta</p>
             <div class="line"></div>
           </div>
-          <Button ruta={"login"}  type="button" text="Iniciar sesión "/>
+          <Button ruta={"login"} type="button" text="Iniciar sesión " />
         </article>
       </section>
-      <Footer/>  
+      <Footer />
     </>
   );
 
