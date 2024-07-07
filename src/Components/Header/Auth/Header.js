@@ -1,7 +1,7 @@
 import "./style.css";
 function HeaderAuth(props) {
   return (
-    <header>
+    <header className="headerAuth">
       <div className="header__container">
         <img className="header__logo" src="/img/header/logo.svg" alt="Logo de MediGooda" />
         <h1>MediGood</h1>
