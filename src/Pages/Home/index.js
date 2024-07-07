@@ -5,7 +5,7 @@ function Home() {
   return <>
     <HeaderHome/>
     <div class="banner">
-      {/* <img src="img/header/home/banner.png" alt="Banner/" /> */}
+      <img src="img/home/banner.png" alt="Banner/" />
     </div>
   </>
 }
