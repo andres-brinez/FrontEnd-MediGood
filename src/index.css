@@ -18,6 +18,17 @@ code {
     monospace;
 }
 
+.bold{
+  font-weight: bold;
+}
+
+h3 {
+  color: #00A3FF;
+  text-align: center;
+  font-weight: normal;
+  font-weight: 700;
+
+}
 
 
 
