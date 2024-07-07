@@ -43,7 +43,7 @@ function Register(datod) {
             <p>Ya tienes cuenta</p>
             <div class="line"></div>
           </div>
-          <Button type="button" text="Iniciar sesión "/>
+          <Button ruta={"login"}  type="button" text="Iniciar sesión "/>
         </article>
       </section>
       <footer>
