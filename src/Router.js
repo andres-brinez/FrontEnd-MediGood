@@ -7,8 +7,10 @@ const RoutesHandler = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact element={<Register />} />
+        {/* <Route path="/" exact element={<Register />} /> */}
+        <Route path="/register" exact element={<Register />} />
         <Route path="/login" element={<Login />} />
+        {/* <Route path="/product:id" element={<Product />} /> */}
         <Route path="*" element={<Page404/>}/> {/* Si no exista la ruta  */}
         {/* <Route component={NotFound} /> */}
       </Routes>
