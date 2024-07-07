@@ -1,0 +1,11 @@
+/* Representa el olvido de la contraseña */
+form a {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration-line: underline;
+  color: #00A3FF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
