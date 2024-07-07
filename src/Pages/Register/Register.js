@@ -1,3 +1,4 @@
+import Footer from "../../Components/Footer";
 import FormRegister from "../../Components/Forms/Register/Form";
 import Button from "../../Components/Forms/button";
 import HeaderAuth from "../../Components/Header/Auth/Header";
@@ -5,8 +6,8 @@ import "./style.css"
 function Register(datod) {
 
   return (
-    <div>
-      <HeaderAuth />
+    <>
+      <HeaderAuth text="Registro seguro"/>
       <section className="register">
         <article className="benefits__container">
           <h3>Registrarse en Farmacia Medigood es muy facil y está lleno de beneficios</h3>
@@ -46,11 +47,8 @@ function Register(datod) {
           <Button ruta={"login"}  type="button" text="Iniciar sesión "/>
         </article>
       </section>
-      <footer>
-        <p>©2024 Farmacia Medigood S.L.</p>
-        <p>Andres Felipe Briñez Lopez</p>
-      </footer>
-    </div>
+      <Footer/>  
+    </>
   );
 
 }

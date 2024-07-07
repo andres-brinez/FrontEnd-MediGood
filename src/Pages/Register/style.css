@@ -9,13 +9,7 @@ section {
 
 }
 
-h3 {
-  color: #00A3FF;
-  text-align: center;
-  font-weight: normal;
-  font-weight: 700;
 
-}
 
 
 .benefits__container {
@@ -40,9 +34,7 @@ h3 {
 
 }
 
-.bold{
-  font-weight: bold;
-}
+
 
 li p {
   color: var(--neutrals-neutral-06, #8B8B8B);
@@ -113,26 +105,6 @@ li p {
   ;
 }
 
-
-
-/* FOOTER */
-footer {
-  border-top: 1px solid #ccc;
-  margin-top: 80px;
-  height: 80px;
-  background:#F5F5F5;
-  padding: 0 100px;
-
-
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 10px 80px;
-}
 
 
 
