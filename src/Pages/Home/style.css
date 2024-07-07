@@ -1,0 +1,346 @@
+
+/* main {
+  padding: 60px 100px 0px;
+}
+
+main h2 {
+  color: #00A3FF;
+  font-size: 26px;
+  font-weight: 600;
+} */
+
+.banner {
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+.products-container {
+  margin-top: 20px;
+}
+
+.product {
+  flex: 1;
+  display: flex;
+  margin: 0 10px;
+  width: 250px;
+
+
+}
+
+.products-container-discounts .product {
+  border-left: 1px solid #E0E0E0;
+  border-right: 1px solid #E0E0E0;
+}
+
+.product a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 40px;
+  min-height: 400px;
+
+
+
+}
+
+
+.products-container-discounts a img {
+  width: 80% !important;
+  height: 100px !important;
+  object-fit: contain;
+}
+
+/* a img {
+  width: 100%;
+  height: 150px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  object-fit: contain;
+
+} */
+
+.product a p {
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+/* a h3 {
+  margin: 15px 0;
+  text-align: center;
+  color: #00A3FF;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px;
+
+} */
+
+.products-container-discounts .product a h3 {
+  margin: 15px 0;
+  text-align: center;
+  color: var(--dark, #1C1C1C);
+
+}
+
+.discount {
+  background: #FFE3E3;
+  border-radius: 20px;
+  padding: 10px 18%;
+  font-size: 17px !important;
+  width: 100px;
+  color: #f00;
+  /* Este color es rojo */
+  font-weight: bold;
+}
+
+/* Controler del corrousel */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  /* Cambia esto al color que prefieras para las flechas */
+  border-radius: 5px;
+  background: rgba(196, 196, 196, 0.80);
+  width: 40px;
+  /* par que esté centrado el <> */
+  padding-top: 2px;
+  padding-bottom: 6px;
+  font-size: 2em;
+  /* Cambia esto al tamaño que prefieras para las flechas */
+  z-index: 1;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: -1em;
+  /* Cambia esto para mover la flecha izquierda más cerca o más lejos del carrusel */
+}
+
+.slick-next {
+  right: -1em;
+  /* Cambia esto para mover la flecha derecha más cerca o más lejos del carrusel */
+}
+
+/* Tamano del <> */
+.slick-prev i,
+.slick-next i {
+  font-size: 0.65em;
+  /* Ajusta este valor según tus necesidades */
+}
+
+/* Categotias */
+/*  */
+
+/* Categotias */
+
+.categories h2 {
+  margin-bottom: 20px;
+}
+
+.category {
+  flex: 1;
+  display: flex;
+  margin: 0px 12px;
+  border: 1px solid #00A3FF;
+  border-radius: 37px;
+
+}
+
+.category :hover {
+  background: #00A3FF;
+  color: white;
+  border-radius: 37px;
+
+}
+
+.category a {
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
+  color: #00A3FF;
+
+}
+
+.category a p {
+  padding: 10px;
+}
+
+/* Recomendados,novedades */
+
+.cart-button {
+  /* Estilos para el botón del carrito de cada producto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 ;
+  width: 80%;
+  background: #00A3FF;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.cart-button img {
+  /* Estilos para la imagen del carrito en el botón del carrito */
+  margin-right: 5px;
+}
+
+/* Information */
+#important-info {
+  margin-top: 50px;
+}
+
+.info-container {
+  /* Estilos para el contenedor de puntos */
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-point {
+  /* Estilos para cada punto */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:0px  20px;
+  background: #F3F3F3;
+  padding: 20px ;
+  border-radius: 10px;
+}
+
+.info-point img {
+  /* Estilos para la imagen de cada punto */
+  width: 50px;
+  height: 100px;
+}
+
+.bold-text {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.info-point p:last-child {
+  /* Estilos para el texto normal de cada punto */
+  color: var(--neutrals-neutral-09, #7e7e7e);
+  font-style: normal;
+  font-weight: 200;
+
+
+}
+
+/* Marcas */
+
+
+.brands-container {
+  /* Estilos para el contenedor de marcas */
+  margin: 20px 0 ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.brand {
+  /* Estilos para cada marca */
+  flex: 1 0 calc(100% / 8 - 10px);
+  /* Esto hace que en una línea caben 8 marcas, asumiendo que el margen entre marcas es de 10px */
+  margin: 5px;
+  /* Ajusta este valor según tus necesidades */
+}
+
+.brand img {
+  /* Estilos para la imagen de cada marca */
+  width: 100%;
+  height: auto;
+}
+
+/* Equipo */
+#team {
+  /* Estilos para la sección del equipo */
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.team-description {
+  /* Estilos para la descripción del equipo */
+  width: 30%;
+}
+
+.team-description h2 {
+  /* Estilos para el título de la descripción del equipo */
+  color: #00A3FF;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.team-description p {
+  /* Estilos para el texto de la descripción del equipo */
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+.team-members {
+  /* Estilos para el contenedor de miembros del equipo */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.team-member {
+  /* Estilos para cada miembro del equipo */
+  flex: 1 0 calc(100% / 4 - 10px);
+  /* Esto hace que en una línea caben 4 miembros del equipo, asumiendo que el margen entre miembros es de 10px */
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.team-member img {
+  /* Estilos para la imagen de cada miembro del equipo */
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.team-member h3 {
+  /* Estilos para el nombre de cada miembro del equipo */
+  text-align: center;
+  color: #00A3FF;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.team-member p {
+  /* Estilos para el cargo de cada miembro del equipo */
+  text-align: center;
+  margin-top: 10px;
+  color: #7e7e7e;
+}
+
+/* Footer */
