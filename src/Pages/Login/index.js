@@ -8,7 +8,7 @@ import Button from "../../Components/Forms/button";
 const Login = () => {
     return <>
         <HeaderAuth text="Inicio seguro" />
-        <main>
+        <main className="login-main">
             {/* <!-- Primer contenedor con el saludo de bienvenida --> */}
             <div className="container">
                 <h3>¿Ya tienes cuenta?</h3>
@@ -46,8 +46,7 @@ const Login = () => {
                     <p>¿Eres un nuevo cliente?</p>
                     <div class="line"></div>
                 </div>
-                <Button ruta={"register"} type="button" text="Crear cuenta" />
-
+                <NavLink className="buttonAuth" to="/register">Crear cuenta</NavLink>
             </div>
         </main>
         <Footer />

@@ -46,7 +46,7 @@ function Register(datod) {
             <p>Ya tienes cuenta</p>
             <div class="line"></div>
           </div>
-          <Button ruta={"login"} type="button" text="Iniciar sesión " />
+          <NavLink className="buttonAuth" to="/login">Iniciar sesión</NavLink>
         </article>
       </section>
       <Footer />
