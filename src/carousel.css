@@ -1,0 +1,45 @@
+/* Controler del corrousel */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: -10%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  /* Cambia esto al color que prefieras para las flechas */
+  border-radius: 5px;
+  background: rgba(196, 196, 196, 0.80);
+  width: 40px;
+  /* par que esté centrado el <> */
+  padding-top: 2px;
+  padding-bottom: 6px;
+  font-size: 2em;
+  /* Cambia esto al tamaño que prefieras para las flechas */
+  z-index: 1;
+  cursor: pointer;
+}
+
+
+
+.slick-prev {
+  left: -1em;
+  /* Cambia esto para mover la flecha izquierda más cerca o más lejos del carrusel */
+}
+
+.slick-next {
+  right: -1em;
+  /* Cambia esto para mover la flecha derecha más cerca o más lejos del carrusel */
+}
+
+/* Tamano del <> */
+.slick-prev i,
+.slick-next i {
+  font-size: 0.65em;
+  /* Ajusta este valor según tus necesidades */
+}
+
+
+
+
