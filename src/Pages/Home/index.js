@@ -3,6 +3,7 @@ import HeaderHome from "../../Components/Header/Home";
 import "./style.css"
 import products from "../../services/Products.json";
 import SliderProducts from "../../Components/SliderProducts";
+import FooterHome from "../../Components/Footer/Home";
 
 
 function Home() {
@@ -112,8 +113,9 @@ function Home() {
                 
             </div>
             </section>
-
     </main>
+    <FooterHome />
+
   </>
 }
 
