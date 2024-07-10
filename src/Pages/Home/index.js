@@ -2,23 +2,11 @@ import Categories from "../../Components/Categories";
 import HeaderHome from "../../Components/Header/Home";
 import "./style.css"
 import products from "../../services/Products.json";
-import ProductsPreview from "../../Components/ProductPreview";
-import Slider from 'react-slick';
-import PrevArrow from "../../Components/Carrousel/prevArrow";
-import NextArrow from "../../Components/Carrousel/nextArrow";
+import SliderProducts from "../../Components/SliderProducts";
+
 
 function Home() {
-  const settings = {
-    dots: false, // posiciónes el en carrousel
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-  };
+  
   return <>
     <HeaderHome />
     <div class="banner">
@@ -29,11 +17,14 @@ function Home() {
       <section id="recommended">
         <h2>Recomendados para ti</h2>
         <div class="products-container">
-          <Slider {...settings}>
-            {products.map((product) => (
-              ProductsPreview(product.id, product.imageUrl, product.name, product.price)
-            ))}
-          </Slider>
+         <SliderProducts products={products}></SliderProducts>
+        </div>
+
+      </section>
+      <section id="novedad">
+        <h2>Novedades</h2>
+        <div class="products-container">
+        <SliderProducts products={products}></SliderProducts>
         </div>
 
       </section>
