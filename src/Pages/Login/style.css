@@ -1,23 +1,20 @@
 
-
-
 /* MAIN */
 .login-main {
-  margin: 0 12%;
   display: flex;
-  align-items: center;
+  width: 73vw;
   padding-top: 20px;
   justify-content: space-between;
-
+  margin: auto;
 
 }
 
 .container {
-  padding: 20px;
   text-align: center;
-  margin-bottom: 300px;
   display: flex;
   flex-direction: column;
+  margin-top: 130px;
+
 }
 
 .container h3 {
@@ -51,7 +48,6 @@
   margin: 0;
 }
 
-/* Iniciar sesión */
 
 .login-container h3 {
   font-size: 30px;
@@ -67,7 +63,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height:min-content;
 
 }
 
@@ -78,6 +73,8 @@
   border: solid 1px #00A3FF;
   font-size: 18px;
   width: 150px;
+  margin-bottom: 10px;
+
 }
 
 .social-login button a {
@@ -181,8 +178,6 @@ form {
   border: none;
   cursor: pointer;
   width: 100%;
-  /* margin: 20px 0 40px; */
-
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
