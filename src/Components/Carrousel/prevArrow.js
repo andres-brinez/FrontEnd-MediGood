@@ -1,5 +1,4 @@
-import React from 'react';
-
+import "./style.css"; 
 const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (

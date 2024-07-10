@@ -21,6 +21,14 @@
   cursor: pointer;
 }
 
+.products-container .slick-slider 
+.slick-prev,
+.products-container .slick-slider 
+.slick-next{
+  top: 35%;
+
+}
+
 
 
 .slick-prev {
