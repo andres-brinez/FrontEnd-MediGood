@@ -82,6 +82,37 @@ function Home() {
           <SliderProducts products={products}></SliderProducts>
         </div>
       </section>
+      <section id="team">
+            <div class="team-description">
+                <h2>Conoce al equipo de Medigood</h2>
+                <p>En farmacia MediGood L.T.D somos un equipo joven, la seña de identidad de nuestra farmacia siempre fue el trato personal, directo, amable y profesional.</p>
+            </div>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="/img/home/equipo/pedro.png" alt="Miembro"/>
+                    <h3>Pedro Bergillos</h3>
+                    <p>Ecommerce Manager</p>
+                </div>
+                <div class="team-member">
+                    <img src="/img/home/equipo/rafa.png" alt="Miembro"/>
+                    <h3>Rafa Bergillos</h3>
+                    <p>Director de compras</p>
+                </div>
+                <div class="team-member">
+                    <img src="/img/home/equipo/azahara.png" alt="Miembro"/>
+                    <h3>Azahara Varó</h3>
+                    <p>Gestión de stock </p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="/img/home/equipo/adelaida.png" alt="Miembro"/>
+                    <h3>Adelaida Laguna</h3>
+                    <p>Atención al cliente</p>
+                </div>
+                
+            </div>
+            </section>
+
     </main>
   </>
 }
