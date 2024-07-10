@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Forte",
+    "price": 15500
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Multivitamínicas",
+    "price": 22800
+  },
+  {
+    "id": 3,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Hidratante Facial",
+    "price": 18200
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe para la Tos",
+    "price": 11700
+  }
+]
