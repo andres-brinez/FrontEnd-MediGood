@@ -27,54 +27,10 @@ section {
 
 
 
-/* Information */
-#important-info {
-  margin-top: 50px;
-}
-
-.info-container {
-  /* Estilos para el contenedor de puntos */
-  display: flex;
-  justify-content: space-between;
-}
-
-.info-point {
-  /* Estilos para cada punto */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin:0px  20px;
-  background: #F3F3F3;
-  padding: 20px ;
-  border-radius: 10px;
-}
-
-.info-point img {
-  /* Estilos para la imagen de cada punto */
-  width: 50px;
-  height: 100px;
-}
-
-.bold-text {
-  font-weight: 600;
-  font-size: 17px;
-}
-
-.info-point p:last-child {
-  /* Estilos para el texto normal de cada punto */
-  color: var(--neutrals-neutral-09, #7e7e7e);
-  font-style: normal;
-  font-weight: 200;
-
-
-}
-
 /* Marcas */
 
-
-.brands-container {
   /* Estilos para el contenedor de marcas */
+.brands-container {
   margin: 20px 0 ;
   display: flex;
   flex-wrap: wrap;
@@ -84,16 +40,16 @@ section {
 .brand {
   /* Estilos para cada marca */
   flex: 1 0 calc(100% / 8 - 10px);
-  /* Esto hace que en una línea caben 8 marcas, asumiendo que el margen entre marcas es de 10px */
   margin: 5px;
-  /* Ajusta este valor según tus necesidades */
 }
 
-.brand img {
   /* Estilos para la imagen de cada marca */
+.brand img {
   width: 100%;
   height: auto;
 }
+
+
 
 /* Equipo */
 #team {
@@ -104,7 +60,6 @@ section {
 }
 
 .team-description {
-  /* Estilos para la descripción del equipo */
   width: 30%;
 }
 
