@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
-import Footer from "../../Components/Footer";
+import Footer from "../../Components/Footer/Auth";
 import FormLogin from "../../Components/Forms/Login";
 import HeaderAuth from "../../Components/Header/Auth/Header";
 import "./style.css"
-import Button from "../../Components/Forms/button";
 
 const Login = () => {
     return <>
@@ -49,7 +48,7 @@ const Login = () => {
                 <NavLink className="buttonAuth" to="/register">Crear cuenta</NavLink>
             </div>
         </main>
-        <Footer />
+        <Footer/>
     </>
 }
 

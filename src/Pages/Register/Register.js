@@ -1,9 +1,9 @@
-import Footer from "../../Components/Footer";
 import { NavLink } from "react-router-dom";
 import FormRegister from "../../Components/Forms/Register/Form";
-import Button from "../../Components/Forms/button";
+import Footer from "../../Components/Footer/Auth";
 import HeaderAuth from "../../Components/Header/Auth/Header";
 import "./style.css"
+
 function Register(datod) {
 
   return (
