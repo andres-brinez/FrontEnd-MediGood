@@ -3,7 +3,7 @@
 .slick-prev,
 .slick-next {
   position: absolute;
-  top: -10%;
+  top: 40%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
