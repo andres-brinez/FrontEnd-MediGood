@@ -1,13 +1,13 @@
 import "./style.css"
 
-const ProductsPreview = (id,urlImg,name,price) => {
+const ProductPreview = (id, urlImg, name, price) => {
 
   // Para formatear el numero
   price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return (
     <div className="product" key={id}>
-      <a href={"ruta/a/la/pagina/del/detalle/del/producto"+id}>
-        <img src={urlImg} alt={"Producto "+name} className="img-product" />
+      <a href={"ruta/a/la/pagina/del/detalle/del/producto" + id}>
+        <img src={urlImg} alt={"Producto " + name} className="img-product" />
         <h3 className="name-product">{name}</h3>
         <p> $<span className="precio">{price}</span></p>
       </a>
@@ -20,4 +20,4 @@ const ProductsPreview = (id,urlImg,name,price) => {
 };
 
 
-export default ProductsPreview;
+export default ProductPreview;
