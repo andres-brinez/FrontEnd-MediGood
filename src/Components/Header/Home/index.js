@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import "./style.css"
 
-function HeaderHome() {
+function HeaderHome( {searchValue, setSearchValue,onClick }) {
   return <header className="header">
     <div className="header-top">
       <div className="logo-container">
@@ -30,9 +30,9 @@ function HeaderHome() {
         <img src="img/home/brand-brand-logo-symbol-2-x.svg" alt="Logo Página" />
         <h1>MediGood</h1>
       </div>
-      <div className="search-container">
-        <input type="text" placeholder="¡Busca entre más de 12.000 productos!" />
-        <img src="img/home/loupe-1.svg" alt="Buscar" />
+      <div className="search-container" >
+        <input value={searchValue} onChange={(e)=>setSearchValue(e.target.value) }  type="text" placeholder="¡Busca entre más de 12.000 productos!" />
+        <img src="img/home/loupe-1.svg" alt="Buscar" onClick={onClick}  />
       </div>
         <nav className="nav-container">
           <div className="nav-item">
