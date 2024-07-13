@@ -13,18 +13,18 @@ const Login = () => {
                 <h3>¿Ya tienes cuenta?</h3>
                 <p><strong>¡Bienvenido de nuevo!</strong> Estamos emocionados de verte otra vez.<br />Por favor, inicia sesión
                     para continuar.</p>
-                <div class="back-to-shop">
-                        <NavLink to="/">
-                            <span>&lt;</span>
-                            <p>Volver a la tienda</p>
-                        </NavLink>
+                <div ClassName="back-to-shop">
+                    <NavLink to="/">
+                        <span>&lt;</span>
+                        <p>Volver a la tienda</p>
+                    </NavLink>
                 </div>
             </div>
 
             {/* <!-- Segundo contenedor con el formulario de inicio de sesión --> */}
-            <div class="login-container">
+            <div ClassName="login-container">
                 <h3>Iniciar sesión</h3>
-                <div class="social-login">
+                <div ClassName="social-login">
                     <button id="button-facebook" type="button">
                         <a href=""> <img src="img/socialMedia/facebook.svg" alt="Facebook" />
                             Facebook</a>
@@ -34,21 +34,21 @@ const Login = () => {
                             Google</a>
                     </button>
                 </div>
-                <div class="separator">
-                    <div class="line"></div>
+                <div ClassName="separator">
+                    <div ClassName="line"></div>
                     <p>O</p>
-                    <div class="line"></div>
+                    <div ClassName="line"></div>
                 </div>
                 <FormLogin />
-                <div class="separator">
-                    <div class="line"></div>
+                <div ClassName="separator">
+                    <div ClassName="line"></div>
                     <p>¿Eres un nuevo cliente?</p>
-                    <div class="line"></div>
+                    <div ClassName="line"></div>
                 </div>
                 <NavLink className="buttonAuth" to="/register">Crear cuenta</NavLink>
             </div>
         </main>
-        <Footer/>
+        <Footer />
     </>
 }
 

@@ -29,7 +29,7 @@ function Register(datod) {
               <p>* Pedidos con importe superior a 10.000 usando el cupón <strong>"BIENVENIDA"</strong>.</p>
             </li>
           </ul>
-          <div class="back-to-shop">
+          <div ClassName="back-to-shop">
             <NavLink to="/">
               <span>&lt;</span>
               <p>Volver a la tienda</p>
@@ -40,11 +40,11 @@ function Register(datod) {
         <article className="account__container">
           <h3>Crea una cuenta</h3>
           <FormRegister />
-          <p class=""><span class="required">*</span>Campos obligatorios</p>
-          <div class="existing__account">
-            <div class="line"></div>
+          <p ClassName=""><span ClassName="required">*</span>Campos obligatorios</p>
+          <div ClassName="existing__account">
+            <div ClassName="line"></div>
             <p>Ya tienes cuenta</p>
-            <div class="line"></div>
+            <div ClassName="line"></div>
           </div>
           <NavLink className="buttonAuth" to="/login">Iniciar sesión</NavLink>
         </article>
