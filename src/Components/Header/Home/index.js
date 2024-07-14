@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import "./style.css"
 
-function HeaderHome( {searchValue, setSearchValue,onClick }) {
+function HeaderHome({ searchValue, setSearchValue, onClick }) {
   return <header className="header">
     <div className="header-top">
       <div className="logo-container">
@@ -31,26 +31,26 @@ function HeaderHome( {searchValue, setSearchValue,onClick }) {
         <h1>MediGood</h1>
       </div>
       <div className="search-container" >
-        <input value={searchValue} onChange={(e)=>setSearchValue(e.target.value) }  type="text" placeholder="¡Busca entre más de 12.000 productos!" />
-        <img src="img/home/loupe-1.svg" alt="Buscar" onClick={onClick}  />
+        <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="¡Busca entre más de 12.000 productos!" />
+        <img src="img/home/loupe-1.svg" alt="Buscar" onClick={onClick} />
       </div>
-        <nav className="nav-container">
-          <div className="nav-item">
-            <div className="basket-container">
-              <img src="img/home/cart-1.svg" alt="Cesta" />
-              <span>2</span> {/* <!-- Actualiza este número según los items en la cesta --> */}
-            </div>
-            <Link to={"/"}>
+      <nav className="nav-container">
+        <div className="nav-item">
+          <div className="basket-container">
+            <img src="img/home/cart-1.svg" alt="Cesta" />
+            <span>2</span> {/* <!-- Actualiza este número según los items en la cesta --> */}
+          </div>
+          <Link to={"/"}>
             Mi cesta
-            </Link>
-          </div>
-          <div className="nav-item">
-            <img src="img/home/usuario-1.svg" alt="Sesión" />
-            <NavLink to={"/login"}>
-              Iniciar sesión
-            </NavLink>
-          </div>
-        </nav>
+          </Link>
+        </div>
+        <div className="nav-item">
+          <img src="img/home/usuario-1.svg" alt="Sesión" />
+          <NavLink to={"/login"}>
+            Iniciar sesión
+          </NavLink>
+        </div>
+      </nav>
     </div>
   </header>
 }
