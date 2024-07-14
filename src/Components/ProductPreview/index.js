@@ -1,9 +1,11 @@
 import "./style.css"
 
-const ProductPreview = (id, urlImg, name, price) => {
+const ProductPreview = ({id, urlImg, name, price}) => {
 
   // Para formatear el numero
-  price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  if(price!==undefined){
+    price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
   return (
     <div className="product" key={id}>
       <a href={"ruta/a/la/pagina/del/detalle/del/producto" + id}>
