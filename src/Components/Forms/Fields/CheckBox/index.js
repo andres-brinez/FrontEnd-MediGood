@@ -7,7 +7,7 @@ const CheckBox = (props) => {
       <label htmlFor={props.htmlFor}>{props.label}</label>
     </div>
   );
-  
+
 }
 
 export default CheckBox;

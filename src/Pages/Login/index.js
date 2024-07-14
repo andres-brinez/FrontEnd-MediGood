@@ -13,7 +13,7 @@ const Login = () => {
                 <h3>¿Ya tienes cuenta?</h3>
                 <p><strong>¡Bienvenido de nuevo!</strong> Estamos emocionados de verte otra vez.<br />Por favor, inicia sesión
                     para continuar.</p>
-                <div ClassName="back-to-shop">
+                <div className="back-to-shop">
                     <NavLink to="/">
                         <span>&lt;</span>
                         <p>Volver a la tienda</p>
@@ -22,9 +22,9 @@ const Login = () => {
             </div>
 
             {/* <!-- Segundo contenedor con el formulario de inicio de sesión --> */}
-            <div ClassName="login-container">
+            <div className="login-container">
                 <h3>Iniciar sesión</h3>
-                <div ClassName="social-login">
+                <div className="social-login">
                     <button id="button-facebook" type="button">
                         <a href=""> <img src="img/socialMedia/facebook.svg" alt="Facebook" />
                             Facebook</a>
@@ -34,16 +34,16 @@ const Login = () => {
                             Google</a>
                     </button>
                 </div>
-                <div ClassName="separator">
-                    <div ClassName="line"></div>
+                <div className="separator">
+                    <div className="line"></div>
                     <p>O</p>
-                    <div ClassName="line"></div>
+                    <div className="line"></div>
                 </div>
                 <FormLogin />
-                <div ClassName="separator">
-                    <div ClassName="line"></div>
+                <div className="separator">
+                    <div className="line"></div>
                     <p>¿Eres un nuevo cliente?</p>
-                    <div ClassName="line"></div>
+                    <div className="line"></div>
                 </div>
                 <NavLink className="buttonAuth" to="/register">Crear cuenta</NavLink>
             </div>

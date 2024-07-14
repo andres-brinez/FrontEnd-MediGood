@@ -1,4 +1,4 @@
-import "./style.css"; 
+import "./style.css";
 const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (

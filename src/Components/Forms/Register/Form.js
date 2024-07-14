@@ -25,7 +25,7 @@ function FormRegister() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let datosEnviar ={
+    let datosEnviar = {
       name,
       email,
       password
@@ -35,34 +35,34 @@ function FormRegister() {
   };
 
   return (
-    <form  onSubmit={handleSubmit} id="createAccountForm">
-      <Input 
-         className="input-field"
-         label="Nombre y apellidos"
-         id="name" 
-         name="name" 
-         placeholder="Nombre completo" 
-         required 
-         value={name}  updateValue={setName} />
-      <Input 
-         className="input-field" 
-         type="email" 
-         label="Correo electrónico" 
-         id="email" 
-         name="email" 
-         placeholder="Correo electrónico" 
-         required 
-         value={email} updateValue={setEmail} />
-      <InputPassword 
-         className="input-field" 
-         type="password" 
-         label="Contraseña" 
-         id="password" 
-         name="password" 
-         placeholder="Contraseña"  
-         onClick={changeVisibilityPassword} 
-         required
-         value={password} updateValue={setPassword}/>
+    <form onSubmit={handleSubmit} id="createAccountForm">
+      <Input
+        className="input-field"
+        label="Nombre y apellidos"
+        id="name"
+        name="name"
+        placeholder="Nombre completo"
+        required
+        value={name} updateValue={setName} />
+      <Input
+        className="input-field"
+        type="email"
+        label="Correo electrónico"
+        id="email"
+        name="email"
+        placeholder="Correo electrónico"
+        required
+        value={email} updateValue={setEmail} />
+      <InputPassword
+        className="input-field"
+        type="password"
+        label="Contraseña"
+        id="password"
+        name="password"
+        placeholder="Contraseña"
+        onClick={changeVisibilityPassword}
+        required
+        value={password} updateValue={setPassword} />
       <CheckBox className="input-field-checkbox" type="checkbox" label="He leído y acepto política de privacidad" id="acceptPrivacyPolicy" name="acceptPrivacyPolicy" />
       <CheckBox className="input-field-checkbox" type="checkbox" label="Me gustaría recibir descuentos exclusivos" id="receiveOffers" name="receiveOffers" />
       {/* <Button type="submit" text="Registrarse" /> */}

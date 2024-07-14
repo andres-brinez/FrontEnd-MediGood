@@ -1,4 +1,4 @@
- import './style.css'; // Importa el archivo CSS del carrusel
+import './style.css'; // Importa el archivo CSS del carrusel
 import Slider from 'react-slick';
 import PrevArrow from '../Carrousel/prevArrow';
 import NextArrow from '../Carrousel/nextArrow';
@@ -23,17 +23,17 @@ const Categories = () => {
     <section className="categories"  >
       <h2>Categorias</h2>
       <div className="categories-container">
-      <Slider {...settings}>
-      {categoriesData.map((category)=>(
-        <div className="category" key={category.id}>
+        <Slider {...settings}>
+          {categoriesData.map((category) => (
+            <div className="category" key={category.id}>
               <a href={`category/${category.id}`}>
-                  <p>{category.name}</p>
+                <p>{category.name}</p>
               </a>
-          </div>
-      ))}
-         
-          
-      </Slider>
+            </div>
+          ))}
+
+
+        </Slider>
       </div>
     </section>
   );
