@@ -1,7 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 import "./style.css"
 
-function HeaderHome({ searchValue, setSearchValue, onClick }) {
+function HeaderHome() {
+
+  const [searchValue, setSearchValue] = useState("")
+
+  // para redireccionar hook 
+  const navigator = useNavigate();
+
   return <header className="header">
     <div className="header-top">
       <div className="logo-container">
@@ -26,13 +34,16 @@ function HeaderHome({ searchValue, setSearchValue, onClick }) {
     {/* <!-- Aquí irá la segunda parte del encabezado --> */}
 
     <div className="header-bottom">
-      <div className="logo-container">
-        <img src="img/home/brand-brand-logo-symbol-2-x.svg" alt="Logo Página" />
-        <h1>MediGood</h1>
-      </div>
+      <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+        <div className="logo-container">
+          <img src="img/home/brand-brand-logo-symbol-2-x.svg" alt="Logo Página" />
+          <h1>MediGood</h1>
+        </div>
+      </Link>
       <div className="search-container" >
         <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="¡Busca entre más de 12.000 productos!" />
-        <img src="img/home/loupe-1.svg" alt="Buscar" onClick={onClick} />
+        <img src="img/home/loupe-1.svg" alt="Buscar" onClick={() => navigator(`/search/${searchValue}`)}
+        />
       </div>
       <nav className="nav-container">
         <div className="nav-item">
