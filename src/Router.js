@@ -2,16 +2,21 @@ import { BrowserRouter as Router, Switch, Route,Routes } from 'react-router-dom'
 import Register from "./Pages/Register/Register"
 import Login from "./Pages/Login";
 import Page404 from './Pages/404';
-import Home from './Pages/Home';
+import LayoutLanding from './Layouts/Landing';
+import ProductsDetails from './Components/ProductsDetails';
+import ProductsSearched from './Components/ProductsSearched';
 
 const RoutesHandler = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact element={<Home />} />
+      {/* Rutas anidadas */}
+        <Route path="/" exact element={<LayoutLanding/>} >
+        <Route path="/search/:searchTerm" element={<ProductsSearched />} />
+        <Route path="/product/:id" element={<ProductsDetails />} />
+        </Route>
         <Route path="/register" exact element={<Register />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/product:id" element={<Product />} /> */}
         <Route path="*" element={<Page404/>}/> {/* Si no exista la ruta  */}
         {/* <Route component={NotFound} /> */}
       </Routes>
