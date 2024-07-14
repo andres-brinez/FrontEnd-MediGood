@@ -19,7 +19,7 @@ const SliderProducts = ({ products }) => {
   return <Slider
     {...settings}>
     {products.map((product) => (
-      ProductPreview(product.id, product.imageUrl, product.name, product.price)
+      <ProductPreview  key={product.id} id={product.id} urlImg={product.imageUrl} name={product.name} price={product.price} />
     ))}
   </Slider>
 }
