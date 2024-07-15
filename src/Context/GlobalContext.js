@@ -7,7 +7,7 @@ export const GlobalContext=createContext();
 // 2) Definición del componente para proveer 
 const GlobalContextProvider=({children})=>{
   const [showShoppingCart, setShowShoppingCart] = useState(false)
-  const [quantityItemShoppingCart, setQuantityIntemShoppingCart] = useState(10)
+  const [quantityItemShoppingCart, setQuantityIntemShoppingCart] = useState(0)
 
 
     return(
