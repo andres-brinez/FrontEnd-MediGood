@@ -23,6 +23,7 @@ const ProductPreview = ({id, urlImg, name, price}) => {
       quantity: 1
   };
   saveItemCart(product);
+  alert("El producto "+ product.name + " fue agregado al carrito")
   setShowShoppingCart(true);
 
   }
