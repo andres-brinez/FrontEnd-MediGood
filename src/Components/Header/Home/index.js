@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext,useState,useEffect } from "react";
 
 import "./style.css"
 import { GlobalContext } from "../../../Context/GlobalContext";
@@ -12,7 +12,10 @@ function HeaderHome() {
   
   const {getCartData}=useShoppingCart();
 
-  setQuantityIntemShoppingCart(getCartData().length);
+
+  useEffect(() => {
+    setQuantityIntemShoppingCart(getCartData().length);
+  }, []);
 
   const [searchValue, setSearchValue] = useState("")
 
