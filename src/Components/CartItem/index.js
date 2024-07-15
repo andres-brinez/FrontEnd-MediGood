@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const CartItem = ({ id, imgUrl, name, price, quantity }) => {
 
   function formatPrice(price) {
