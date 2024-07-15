@@ -11,16 +11,14 @@ const ShoppingCart = () => {
   const { showShoppingCart, setShowShoppingCart } = useContext(GlobalContext)
   const { getCartData } = useShoppingCart()
 
-  // Se crea una estado que almacena una función
-  // Esto es para evitar que el efecto se ejecute en cada renderizado y resolverá el problema de la profundidad máxima de actualizaciones excedida. Además, mantendrá la funcionalidad deseada de obtener los datos del carrito cuando sea necesario.
-  const [getCartDataFunc] = useState(() => getCartData);
+ 
 
 
   useEffect(() => {
     // Obtener los datos del carrito y actualizar el estado
-    const data = getCartDataFunc();
+    const data = getCartData();
     setCartItems(data);
-  }, [getCartDataFunc]);
+  }, [showShoppingCart]);
 
   function formatPrice(price) {
     if (price === undefined || price === null) {
