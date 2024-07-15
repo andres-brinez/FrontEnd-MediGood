@@ -6,11 +6,12 @@ import FooterHome from "../../Components/Footer/Home";
 import { useState } from "react";
 import { Outlet } from 'react-router-dom';
 import "./style.css";
+import ShoppingCart from "../../Components/ShoppingCart";
 
 const LayoutLanding = () => {
   const [searchValue, setSearchValue] = useState("")
-
   return <>
+    <ShoppingCart  />
     <HeaderHome searchValue={searchValue} setSearchValue={setSearchValue}  />
     <div className="banner">
       <img src="img/home/banner.png" alt="Banner/" />
