@@ -1,12 +1,18 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import "./style.css"
 import { GlobalContext } from "../../../Context/GlobalContext";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 
 function HeaderHome() {
 
-  const {showShoppingCart,setShowShoppingCart}=useContext(GlobalContext) 
+  const {setShowShoppingCart}=useContext(GlobalContext) 
+  const {quantityItemShoppingCart,setQuantityIntemShoppingCart}=useContext(GlobalContext) 
+  
+  const {getCartData}=useShoppingCart();
+
+  setQuantityIntemShoppingCart(getCartData().length);
 
   const [searchValue, setSearchValue] = useState("")
 
@@ -52,7 +58,7 @@ function HeaderHome() {
         <div className="nav-item">
           <div className="basket-container">
             <img src="img/home/cart-1.svg" alt="Cesta" />
-            <span>2</span> {/* <!-- Actualiza este número según los items en la cesta --> */}
+            <span>{quantityItemShoppingCart}</span> {/* <!-- Actualiza este número según los items en la cesta --> */}
           </div>
           <Link to={"/"} onClick={() => setShowShoppingCart(true)}>
             Mi cesta
