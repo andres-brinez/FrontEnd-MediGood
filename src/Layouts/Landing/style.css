@@ -1,0 +1,124 @@
+
+.containerMain {
+  padding: 60px 100px 0px;
+} 
+
+main h2 {
+  color: #00A3FF;
+  font-size: 26px;
+  font-weight: 600;
+} */
+
+.banner {
+  width: 100%;
+  height: 65vh;
+}
+
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+
+
+/* Marcas */
+
+  /* Estilos para el contenedor de marcas */
+.brands-container {
+  margin: 20px 0 ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.brand {
+  /* Estilos para cada marca */
+  flex: 1 0 calc(100% / 8 - 10px);
+  margin: 5px;
+}
+
+  /* Estilos para la imagen de cada marca */
+.brand img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* Equipo */
+#team {
+  /* Estilos para la sección del equipo */
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.team-description {
+  width: 30%;
+}
+
+.team-description h2 {
+  /* Estilos para el título de la descripción del equipo */
+  color: #00A3FF;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.team-description p {
+  /* Estilos para el texto de la descripción del equipo */
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+.team-members {
+  /* Estilos para el contenedor de miembros del equipo */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.team-member {
+  /* Estilos para cada miembro del equipo */
+  flex: 1 0 calc(100% / 4 - 10px);
+  /* Esto hace que en una línea caben 4 miembros del equipo, asumiendo que el margen entre miembros es de 10px */
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.team-member img {
+  /* Estilos para la imagen de cada miembro del equipo */
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.team-member h3 {
+  /* Estilos para el nombre de cada miembro del equipo */
+  text-align: center;
+  color: #00A3FF;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.team-member p {
+  /* Estilos para el cargo de cada miembro del equipo */
+  text-align: center;
+  margin-top: 10px;
+  color: #7e7e7e;
+}
+
+/* Footer */

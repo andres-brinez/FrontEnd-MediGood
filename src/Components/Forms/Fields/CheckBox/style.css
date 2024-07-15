@@ -1,0 +1,12 @@
+.input-field input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.input-field-checkbox {
+  margin-bottom: 20px;
+}
+
+.input-field-checkbox label {
+  text-align: center;
+  color: var(--neutrals-neutral-06, #8B8B8B);
+}

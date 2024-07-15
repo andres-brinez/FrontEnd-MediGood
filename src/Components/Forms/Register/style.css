@@ -1,0 +1,45 @@
+form{
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.required {
+  color: #FF0000;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-field input[type="text"],
+.input-field input[type="email"],
+.input-field input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+
+  color: #969090;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+input::placeholder {
+  font-size: 15px;
+
+}
+
+
+

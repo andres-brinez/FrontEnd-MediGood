@@ -1,0 +1,32 @@
+.category {
+  display: flex;
+  flex: 1;
+  border: 1px solid #00A3FF;
+  border-radius: 37px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 95%;
+}
+
+.category a {
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
+  color: #00A3FF;
+
+
+}
+.category:hover {
+  background: #00A3FF;
+  border-radius: 37px;
+  transition: 0.5s;
+}
+
+.category:hover > a {
+  color: white !important;
+}
+
+.category a p  {
+  margin:0;
+  padding:10px
+}

@@ -1,0 +1,200 @@
+
+
+.search-term-intro {
+  font-size: 16px;
+  color: #4D4D4D;
+
+}
+
+.search-term {
+  font-size: 24px;
+  color: #00A3FF;
+  margin-bottom: 10px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+
+/* Information */
+.info-container {
+  /* Estilos para el contenedor de puntos */
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-point {
+  /* Estilos para cada punto */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:0px  20px;
+  background: #F3F3F3;
+  padding: 20px ;
+  border-radius: 10px;
+}
+
+.info-point img {
+  /* Estilos para la imagen de cada punto */
+  width: 50px;
+  height: 100px;
+}
+
+.bold-text {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.info-point p:last-child {
+  /* Estilos para el texto normal de cada punto */
+  color: var(--neutrals-neutral-09, #7e7e7e);
+  font-style: normal;
+  font-weight: 200;
+
+
+}
+
+/*Productos de la categoria  */
+.product-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.sort-by select {
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: #fff;
+  color: rgba(112, 112, 112, 1);
+  border: 1px solid #E0E0E0;
+  outline: none;
+  cursor: pointer;
+}
+
+.product-searched-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-searched-list .product {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 30px 20px;
+  padding: 30px 0;
+  min-width: 250px;
+  max-width: 20%;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+
+}
+
+
+
+.product a img {
+  width: 100%;
+  height: 150px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  object-fit: contain;
+
+}
+
+.product a p {
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+a h3{
+  margin: 15px 0;
+  text-align: center;
+  color: #00A3FF;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px;
+
+}
+
+
+.cart-button {
+  /* Estilos para el botón del carrito de cada producto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background: #00A3FF;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px auto 0;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.cart-button img {
+  /* Estilos para la imagen del carrito en el botón del carrito */
+  margin-right: 5px;
+}
+
+/* Paginacion de los productos */
+.paginacionMenu {
+  display: flex;
+  justify-content: center;
+}
+
+.paginacion {
+  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.15);
+  /* Ajusta estos valores según tus necesidades */
+
+}
+
+.paginacion a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  border: 1px solid #ECEEEF;
+  text-decoration: none;
+  color: #00A3FF;
+
+}
+
+.paginacion a.activo {
+  color: white;
+  border: 1px solid #00A3FF;
+  background: #00A3FF;
+}
+
+.paginacion a:hover:not(.activo) {
+  background-color: #ddd;
+}
+
+.paginacion a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.paginacion a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.paginacionMenu button {
+  color: #545454;
+  padding: 0px 16px;
+  border: 1px solid #CCC;
+  background: #FFF;
+  cursor: pointer;
+  margin-left: 50px;
+  font-size: 14px;
+  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.15);
+  /* Ajusta estos valores según tus necesidades */
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Forte",
+    "price": 12500
+  },
+  {
+    "id": 2,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Extra Fuerte",
+    "price": 15000
+  },
+  {
+    "id": 3,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Rápido Alivio",
+    "price": 18000
+  },
+  {
+    "id": 4,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Antiinflamatorio",
+    "price": 20000
+  },
+  {
+    "id": 5,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Muscular",
+    "price": 14000
+  },
+  {
+    "id": 6,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Articular",
+    "price": 17000
+  },
+  {
+    "id": 7,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Migraña",
+    "price": 19000
+  },
+  {
+    "id": 8,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Tensión",
+    "price": 16000
+  },
+  {
+    "id": 9,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Menstrual",
+    "price": 21000
+  },
+  {
+    "id": 10,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Analgésico Dental",
+    "price": 18500
+  },
+  {
+    "id": 11,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Multivitamínicas",
+    "price": 25000
+  },
+  {
+    "id": 12,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Energizantes",
+    "price": 28000
+  },
+  {
+    "id": 13,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Antioxidantes",
+    "price": 30000
+  },
+  {
+    "id": 14,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Prenatal",
+    "price": 22000
+  },
+  {
+    "id": 15,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Crecimiento",
+    "price": 27000
+  },
+  {
+    "id": 16,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Inmunidad",
+    "price": 32000
+  },
+  {
+    "id": 17,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Memoria",
+    "price": 24000
+  },
+  {
+    "id": 18,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Visión",
+    "price": 29000
+  },
+  {
+    "id": 19,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Cabello y Uñas",
+    "price": 26000
+  },
+  {
+    "id": 20,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Vitaminas Digestivas",
+    "price": 31000
+  },
+  {
+    "id": 21,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Hidratante Facial",
+    "price": 18000
+  },
+  {
+    "id": 22,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Antiarrugas",
+    "price": 20000
+  },
+  {
+    "id": 23,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Reafirmante",
+    "price": 22000
+  },
+  {
+    "id": 24,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Despigmentante",
+    "price": 24000
+  },
+  {
+    "id": 25,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Contorno de Ojos",
+    "price": 19000
+  },
+  {
+    "id": 26,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Corporal Reafirmante",
+    "price": 21000
+  },
+  {
+    "id": 27,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Antiedad",
+    "price": 23000
+  },
+  {
+    "id": 28,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Regeneradora",
+    "price": 25000
+  },
+  {
+    "id": 29,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Nutritiva",
+    "price": 20000
+  },
+  {
+    "id": 30,
+    "imageUrl": "img/home/image-tech-image-23.png",
+    "name": "Crema Protectora Solar",
+    "price": 22000
+  },
+  {
+    "id": 31,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe para la Tos",
+    "price": 15000
+  },
+  {
+    "id": 32,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Antigripal",
+    "price": 18000
+  },
+  {
+    "id": 33,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Expectorante",
+    "price": 20000
+  },
+  {
+    "id": 34,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Descongestionante",
+    "price": 17000
+  },
+  {
+    "id": 35,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Antitusivo",
+    "price": 19000
+  },
+  {
+    "id": 36,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe para la Alergia",
+    "price": 21000
+  },
+  {
+    "id": 37,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Antiinflamatorio",
+    "price": 16000
+  },
+  {
+    "id": 38,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Multivitamínico",
+    "price": 18000
+  },
+  {
+    "id": 39,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Reconstituyente",
+    "price": 20000
+  },
+  {
+    "id": 40,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg",
+    "name": "Jarabe Energizante",
+    "price": 22000
+  }
+]

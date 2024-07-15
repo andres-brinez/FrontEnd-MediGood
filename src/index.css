@@ -1,0 +1,41 @@
+* {
+  font-family: "Montserrat", sans-serif;
+
+
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
+  color: #4C4C4C;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+h3 {
+  color: #00A3FF;
+  text-align: center;
+  font-weight: normal;
+  font-weight: 700;
+}
+
+h2{
+  color: #00A3FF;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+
+
+

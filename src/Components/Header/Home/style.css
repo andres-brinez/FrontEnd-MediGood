@@ -1,0 +1,144 @@
+.header {
+  background-color: #fff;
+  color: #00A3FF;
+
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 40px;
+  border: 1px solid var(--neutrals-neutral-04, #E3E3E3);
+  background: var(--neutrals-neutral-00, #FFF);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.logo-container,
+.info-container {
+  display: flex;
+  align-items: center;
+}
+
+
+.logo-container p {
+  font-size: 15px;
+
+}
+
+.info-item p {
+  font-size: 15px;
+
+}
+
+
+.info-item img,
+.logo-container img
+{
+  width: 22px;
+  margin-right: 4px;
+
+}
+
+
+.info-item {
+
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+
+/* Segunda parte  */
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+
+}
+
+/* el selector .logo-container se repite mas arriba en el header-top */
+.logo-container, .search-container, .nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom .logo-container img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+
+.search-container {
+  position: relative;
+  width: 45%;
+
+}
+
+.search-container input {
+  padding-left: 30px; 
+  width: 100%;
+  height: 40px;
+  padding: 1px 15px;
+  border-radius: 6px;
+  border: 1px solid var(--neutrals-neutral-05, #C5C5C5);
+  color: var(--neutrals-neutral-07, #a19a9a);
+  font-size: 15px;
+}
+
+.search-container img {
+  position: absolute;
+  right: 15px; 
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.nav-container {
+  width: 23%;
+  justify-content: space-between;
+}
+
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  /* border: solid 1px red; */
+
+}
+.basket-container img,
+.nav-item img {
+  height: 40px;
+  width:28px;
+  margin-right: 4px;
+  border: solid 1px red;
+}
+
+
+
+.basket-container span {
+  background-color: var(--extra-orange-vitamin, #F5A404);;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px 7px;
+  margin-left: 10px;
+  position: absolute;
+  right: 22%;
+  font-size: 12px;
+  
+}
+
+
+.nav-item a {
+  color: #00A3FF;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-item a:hover {
+  color: #00A3FF;
+  text-decoration: underline;
+}

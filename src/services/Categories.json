@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Medicamentos"
+  },
+  {
+    "id": 2,
+    "name": "Cuidado Personal"
+  },
+  {
+    "id": 3,
+    "name": "Vitaminas y Suplementos"
+  },
+  {
+    "id": 4,
+    "name": "Cuidado del Bebé"
+  },
+  {
+    "id": 5,
+    "name": "Dispositivos Médicos"
+  },
+  {
+    "id": 6,
+    "name": "Salud Sexual"
+  },
+  {
+    "id": 7,
+    "name": "Cuidado de la Piel"
+  },
+  {
+    "id": 8,
+    "name": "Cuidado del Cabello"
+  },
+  {
+    "id": 9,
+    "name": "Primeros Auxilios"
+  },
+  {
+    "id": 10,
+    "name": "Nutrición Deportiva"
+  }
+]

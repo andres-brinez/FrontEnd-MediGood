@@ -1,0 +1,40 @@
+form button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 5px;
+
+}
+
+
+form button[type="button"] {
+  background-color: #fff;  
+  color: #00A3FF;
+  border: solid 1px #00A3FF;
+
+}
+
+form button[type="button"]:hover {
+  background-color: #00A3FF;
+  color: #fff;
+  border-color:solid 1px  #fff;
+}
+
+form button[type="submit"] { 
+  background-color:#00A3FF ;
+  color: white;
+  border: none;
+
+}
+
+form button[type="submit"]:hover {
+  background-color: #fff;
+  color: #00A3FF;
+  border: solid 1px #00A3FF;
+}

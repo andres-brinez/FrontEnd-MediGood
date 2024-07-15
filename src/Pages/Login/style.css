@@ -1,0 +1,200 @@
+
+/* MAIN */
+.login-main {
+  display: flex;
+  width: 73vw;
+  padding-top: 20px;
+  justify-content: space-between;
+  margin: auto;
+
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+
+}
+
+.container h3 {
+  font-size: 25px;
+}
+
+
+.back-to-shop {
+  margin-top: 40px;
+}
+
+.back-to-shop a {
+  text-decoration: none;
+  color: var(--neutrals-neutral-06, #8B8B8B);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
+.back-to-shop a:hover {
+  text-decoration: underline;
+}
+
+.back-to-shop a span {
+  margin-right: 5px;
+}
+
+.back-to-shop a p {
+  margin: 0;
+}
+
+
+.login-container h3 {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.social-login button  {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: solid 1px #00A3FF;
+  font-size: 18px;
+  width: 150px;
+  margin-bottom: 10px;
+
+}
+
+.social-login button a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #515050;
+
+}
+
+.social-login button:hover {
+  background-color: #fff !important;
+  padding: 12px 20px;
+transform: scale(1.05);
+
+  }
+
+
+button img {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+form {
+  width: 400px;
+  margin: 20px 0 ;
+}
+
+
+.required {
+  color: #FF0000;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-field input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+
+  font-family: Arial, sans-serif;
+  color: #969090;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+
+}
+
+/* Mostrar u ocultar contraseña */
+.password-container {
+  position: relative;
+}
+
+
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: var(--neutrals-neutral-06, #8B8B8B);
+  font-size: 15px;
+}
+
+
+
+
+
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.separator .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #C5C5C5;
+  ;
+  /* Cambia este color según tus necesidades */
+}
+
+#button-create-cuenta {
+  padding: 14px 20px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #00A3FF;
+  border: solid 1px #00A3FF;
+  border-radius: 5px;
+
+}
+
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#button-create-cuenta:hover {
+  background-color: #00A3FF;
+  color: #fff;
+  border-color: #fff;
+}
+

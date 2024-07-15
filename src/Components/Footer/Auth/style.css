@@ -1,0 +1,17 @@
+/* FOOTER */
+.footer_auth {
+  border-top: 1px solid #ccc;
+  margin-top: 80px;
+  height: 80px;
+  padding: 0 100px;
+
+
+}
+
+.footer_auth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 10px 80px;
+}
