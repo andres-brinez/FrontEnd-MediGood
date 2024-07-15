@@ -7,16 +7,19 @@ export const GlobalContext=createContext();
 // 2) Definición del componente para proveer 
 const GlobalContextProvider=({children})=>{
   const [showShoppingCart, setShowShoppingCart] = useState(false)
+  const [quantityItemShoppingCart, setQuantityIntemShoppingCart] = useState(10)
+
 
     return(
         <GlobalContext.Provider value={{
             // Aquí va el valor que se va a compartir
             // 3) Se crea el contexto
-            showShoppingCart,setShowShoppingCart
+            showShoppingCart,setShowShoppingCart, 
+            quantityItemShoppingCart,setQuantityIntemShoppingCart
         }}>
             {children}
         </GlobalContext.Provider>
     )
 }
 
-export{GlobalContextProvider}
+export default GlobalContextProvider;
