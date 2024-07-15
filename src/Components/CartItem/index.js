@@ -1,23 +1,16 @@
 import { useState, useEffect } from "react";
 
 const CartItem = ({ id, imgUrl, name, price, quantity }) => {
-  const [quantitySelect, setQuantitySelect] = useState(1);
 
-  useEffect(() => {
-    setQuantitySelect(quantity);
-  }, [quantity]);
-
-  function incrementQuantity() {
-    setQuantitySelect(quantitySelect + 1);
-    // TODO: Implementar que no se pueda incrementar mas de la cantidad disponibke
-  }
-
-  function decrementQuantity() {
-    if (quantitySelect > 1) {
-      setQuantitySelect(quantitySelect - 1);
+  function formatPrice(price) {
+    if (price === undefined || price === null) {
+      return '0';
     }
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
+  
 
+  
   return (
     <div className="cart-item" key={id}>
       <button className="cart-item-remove">
@@ -31,16 +24,19 @@ const CartItem = ({ id, imgUrl, name, price, quantity }) => {
       </div>
       <div className="cart-item-info">
         <p className="cart-item-title">{name}</p>
-        <p className="cart-item-price">${price}</p>
-        <div className="cart-item-quantity">
+        <p className="cart-item-price">Precio  unitario: $ {formatPrice(price)}</p>
+        <p className>Cantidad seleccionada: {quantity}</p>
+
+        {/*Esto es por si se quiere agregar la funcionalidad de cmaibar la cantidad seleccionada  */}
+        {/* <div className="cart-item-quantity">
           <button className="quantity-decrease" onClick={decrementQuantity}>
             -
           </button>
-          <input defaultValue={quantitySelect} className="quantity-input" />
+          <input defaultValue={quantity} className="quantity-input" />
           <button className="quantity-increase" onClick={incrementQuantity}>
             +
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
