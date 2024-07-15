@@ -3,42 +3,65 @@ import { useState, useEffect,useRef } from 'react';
 import getProductById from '../../services/getProductById';
 import "./style.css"
 
+import { useContext } from "react";
+// import GlobalContextProvider, { GlobalContext } from '../context/GlobalContext';
+import { useShoppingCart } from "../../hooks/useShoppingCart";
+
+import { GlobalContext } from '../../Context/GlobalContext';
+import "./style.css"
+
 const ProductsDetails = () => {
 
   const { id } = useParams();
   const [product, setProduct] = useState([]);
 
+  const {setShowShoppingCart } = useContext(GlobalContext)
+  const { saveItemCart } = useShoppingCart();
+  const productsDetailRef = useRef(null);  
   const [quantitySelect, setQuantitySelect] = useState(1);
 
   function incrementQuantity() {
     setQuantitySelect(quantitySelect + 1);
-
     // TODO: Implementar que no se pueda incrementar mas de la cantidad disponibke
   }
-
   function decrementQuantity() {
     if (quantitySelect > 1) {
       setQuantitySelect(quantitySelect - 1);
     }
   }
 
-
-  const productsDetailRef = useRef(null);
-
-
   useEffect(() => {
     if (id != null) {
 
       setProduct(getProductById(id));
-      console.log(product);
-      if (product.price!==undefined){
-        product.price = product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-
-      }
+        
+      // Hace scroll
       productsDetailRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
   }, [id]);
+
+  function formatPrice(price) {
+    if (price === undefined || price === null) {
+      return '0';
+    }
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+  
+
+  function addCart(){
+    let productInformation = {
+      id: product.id,
+      image: product.imageUrl,
+      name: product.name,
+      price: product.price,
+      quantity: quantitySelect
+  };
+  saveItemCart(productInformation);
+  alert("Producto agregado al carrito");
+  setShowShoppingCart(true);
+
+  }
 
 
   return <>
@@ -57,7 +80,7 @@ const ProductsDetails = () => {
         <p className="product-description">Crema cicratizante y antibiotica que posee una gran cantidad de usos
           terapéuticos debida a su doble composición.
         </p>
-        <p className="product-price">${product.price}</p>
+        <p className="product-price">${product.price ? formatPrice(product.price) : '0'}</p>
         <p className="product-availability available">Disponible</p>
         {/* <!-- <p className="product-availability unavailable">No disponible</p> --> */}
         <div className="product-action">
@@ -66,7 +89,7 @@ const ProductsDetails = () => {
             <input  className="quantity-input" value={quantitySelect}/>
             <button className="quantity-increase" onClick={incrementQuantity}>+</button>
           </div>
-          <button className="add-to-cart-button" style={{ backgroundColor: 'rgba(0, 163, 255, 1)' }}>
+          <button className="add-to-cart-button" onClick={addCart} style={{ backgroundColor: 'rgba(0, 163, 255, 1)' }}>
             Añadir al carrito
           </button>
 
