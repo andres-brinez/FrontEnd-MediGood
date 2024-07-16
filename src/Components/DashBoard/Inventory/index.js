@@ -1,5 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 const Inventory = () => {
+
+  const navigate = useNavigate();
+
+  function goToAddProduct(){
+    navigate("/dashboard/addProduct");
+  }
+
+  function goToEditProduct(){
+    navigate("/dashboard/editProduct");
+  }
+
+  function goToDetailProduct(){
+    navigate("/dashboard/detailProduct");
+  }
+
+
+
   return <>
     <div class="inventory-container">
       <h2 class="title">Inventario</h2>
@@ -12,12 +30,10 @@ const Inventory = () => {
       </div>
     </div>
 
-    {/* <!-- Botón para ver detalles --> */}
-    {/* <!-- <button class="detail-button">Ver Detalle</button> --> */}
-
+    
     {/* <!-- Botones de Agregar y Eliminar --> */}
     <div class="inventory-buttons">
-      <button class="add-button">Agregar</button>
+      <button class="add-button" onClick={goToAddProduct}>Agregar</button>
       <button class="detalle-button">Ver detalle</button>
       <button class="edit-button">Editar</button>
 
