@@ -2,13 +2,14 @@ import InputPassword from "../Fields/Password";
 import Input from "../Fields/Input/input";
 import "./style.css"
 import CheckBox from "../Fields/CheckBox";
-import Button from "../button";
-import { useState } from "react";
+import { useState, } from "react";
+import { useNavigate } from "react-router-dom";
 function FormRegister() {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigator=useNavigate()
 
   function changeVisibilityPassword() {
     var passwordInput = document.getElementById('password');
@@ -25,14 +26,18 @@ function FormRegister() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    alert('Formulario enviado');
+    navigator('/login');
     let datosEnviar = {
       name,
       email,
       password
     }
 
-
   };
+
+
+ 
 
   return (
     <form onSubmit={handleSubmit} id="createAccountForm">

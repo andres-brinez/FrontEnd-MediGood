@@ -3,10 +3,13 @@ import Input from "../Fields/Input/input";
 import { useState } from "react";
 import Button from "../button";
 import "./style.css"
+import { useNavigate } from "react-router-dom";
 function FormLogin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  const navigate=useNavigate();
 
   function changeVisibilityPassword() {
     var passwordInput = document.getElementById('password');
@@ -24,6 +27,8 @@ function FormLogin() {
   const handleSubmit = (event) => {
     event.preventDefault();
     alert('Formulario enviado');
+    navigate('/');
+
 
     let datosEnviar = {
       email,
