@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import HeaderDashboard from "../../Components/Header/DashBoard";
 import NavDashBoard from "../../Components/Nav/DashBoard";
 import "./style.css"
@@ -12,6 +13,9 @@ function LayoutDashboard() {
       <NavDashBoard/>
 
       {/* <!-- Contenido principal --> */}
+      <main className="main-content">
+      <Outlet />
+      </main>
     
     </div>
 
