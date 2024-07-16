@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect,useRef } from 'react';
-import getProductById from '../../services/getProductById';
+import getProductById from '../../../services/getProductById';
 import "./style.css"
 
 import { useContext } from "react";
 // import GlobalContextProvider, { GlobalContext } from '../context/GlobalContext';
-import { useShoppingCart } from "../../hooks/useShoppingCart";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 
-import { GlobalContext } from '../../Context/GlobalContext';
+import { GlobalContext } from '../../../Context/GlobalContext';
 import "./style.css"
 
 const ProductsDetails = () => {

@@ -1,12 +1,12 @@
 import HeaderHome from "../../Components/Header/Home";
 import productsJson from "../../services/Products.json";
-import SliderProducts from "../../Components/SliderProducts";
-import Categories from "../../Components/Categories";
+import SliderProducts from "../../Components/Home/SliderProducts";
+import Categories from "../../Components/Home/Categories";
 import FooterHome from "../../Components/Footer/Home";
 import { useState } from "react";
 import { Outlet } from 'react-router-dom';
 import "./style.css";
-import ShoppingCart from "../../Components/ShoppingCart";
+import ShoppingCart from "../../Components/Home/ShoppingCart";
 
 const LayoutLanding = () => {
   const [searchValue, setSearchValue] = useState("")

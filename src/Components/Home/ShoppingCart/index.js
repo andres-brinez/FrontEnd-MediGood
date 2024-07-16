@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import "./style.css"
-import { GlobalContext } from "../../Context/GlobalContext";
-import { useShoppingCart } from "../../hooks/useShoppingCart";
+import { GlobalContext } from "../../../Context/GlobalContext";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import CartItem from "../CartItem";
 
 const ShoppingCart = () => {

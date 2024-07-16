@@ -1,7 +1,7 @@
-import ProductPreview from "../Home/ProductPreview";
+import ProductPreview from "../ProductPreview";
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import searchProductByName from "../../services/searchProduct";
+import searchProductByName from "../../../services/searchProduct";
 
 
 import "./style.css"

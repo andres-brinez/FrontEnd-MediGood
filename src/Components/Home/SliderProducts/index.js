@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
-import PrevArrow from "../../Components/Carrousel/prevArrow";
-import NextArrow from "../../Components/Carrousel/nextArrow";
-import ProductPreview from "../Home/ProductPreview";
+import PrevArrow from "../../Carrousel/prevArrow";
+import NextArrow from "../../Carrousel/nextArrow";
+import ProductPreview from "../ProductPreview";
 
 const SliderProducts = ({ products }) => {
   const settings = {

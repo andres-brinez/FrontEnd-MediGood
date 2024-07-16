@@ -1,8 +1,8 @@
 import './style.css'; // Importa el archivo CSS del carrusel
 import Slider from 'react-slick';
-import PrevArrow from '../Carrousel/prevArrow';
-import NextArrow from '../Carrousel/nextArrow';
-import categoriesData from '../../services/Categories.json';
+import PrevArrow from '../../Carrousel/prevArrow';
+import NextArrow from '../../Carrousel/nextArrow';
+import categoriesData from '../../../services/Categories.json';
 
 const Categories = () => {
 
