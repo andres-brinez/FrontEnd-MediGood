@@ -46,8 +46,6 @@
   font-size: 18px;
   margin-left: 20px;
   cursor: pointer;
-  /* Genera una transicion de un tiempo cuando se hace hover en el underline */
-  transition: all 0.3s ease;
 }
 
 
@@ -55,5 +53,4 @@
 .top-nav .dashboard-icon img {
   width: 40px;
   height: 40px;
-  margin-right: 10px; /* Ajusta el espacio entre la imagen y el texto de la marca */
 }
