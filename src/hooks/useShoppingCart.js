@@ -27,6 +27,8 @@ export function useShoppingCart() {
   // Eliminar todo el carrito de compras
   function deleteInformationCart() {
     localStorage.removeItem('cart');
+    setQuantityIntemShoppingCart(0);
+
   }
 
   // Eliminar un item por id
