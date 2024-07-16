@@ -29,6 +29,14 @@ export function useShoppingCart() {
     localStorage.removeItem('cart');
   }
 
+  // Eliminar un item por id
+  function deleteItemCartById(id) {
+    const cart = getCartData();
+    const newCart = cart.filter(item => item.id!== id);
+    localStorage.setItem('cart', JSON.stringify(newCart));
+    setQuantityIntemShoppingCart(newCart.length);
+  }
 
-  return { saveItemCart, getCartData,deleteInformationCart };
+
+  return { saveItemCart, getCartData,deleteInformationCart,deleteItemCartById };
 }
