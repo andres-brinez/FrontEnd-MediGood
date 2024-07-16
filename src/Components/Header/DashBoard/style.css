@@ -1,7 +1,12 @@
 /* Barra de Navegación Superior */
+.headerDashBoard {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .top-nav {
   background-color: #00A3FF;
-  padding: 15px 4vh;
+  padding: 10px 4vh;
   color: #fff;
   display: flex;
   justify-content: space-between;

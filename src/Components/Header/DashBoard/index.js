@@ -1,7 +1,7 @@
 import "./style.css"
 
 function HeaderDashboard() {
-  return <header className="top-nav">
+  return <header className="top-nav headerDashBoard">
   <div className="left-section">
       <div className="dashboard-icon" onclick="toggleSideNav()">
           <img src="img/dashboard/hospital.png" alt=""dashboard Icon/>
