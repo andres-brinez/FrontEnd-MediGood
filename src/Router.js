@@ -6,7 +6,7 @@ import LayoutLanding from './Layouts/Landing';
 import ProductsDetails from './Components/ProductsDetails';
 import ProductsSearched from './Components/ProductsSearched';
 import LayoutDashboard from './Layouts/Dashboard';
-import Inventory from './Components/Inventory';
+import Inventory from './Components/DashBoard/Inventory';
 
 const RoutesHandler = () => {
   return (

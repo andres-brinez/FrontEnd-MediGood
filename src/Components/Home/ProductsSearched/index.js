@@ -1,5 +1,5 @@
-import ProductPreview from "../ProductPreview";
-import React, { useEffect, useRef,useState } from 'react';
+import ProductPreview from "../Home/ProductPreview";
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import searchProductByName from "../../services/searchProduct";
 
@@ -39,7 +39,7 @@ function ProductsSearched() {
     <section id="products-searched" ref={productsSearchedRef}>
       <div className="search-results-section">
         {products.length === 0 ?
-          <p className="no-results">No hay resultados que coincidan con:</p>:
+          <p className="no-results">No hay resultados que coincidan con:</p> :
           <p className="search-term-intro">Productos que coinciden con:</p>
         }
         <h2 className="search-term">{searchTerm.toString()}</h2>

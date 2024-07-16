@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import PrevArrow from "../../Components/Carrousel/prevArrow";
 import NextArrow from "../../Components/Carrousel/nextArrow";
-import ProductPreview from "../../Components/ProductPreview";
+import ProductPreview from "../Home/ProductPreview";
 
 const SliderProducts = ({ products }) => {
   const settings = {
@@ -19,7 +19,7 @@ const SliderProducts = ({ products }) => {
   return <Slider
     {...settings}>
     {products.map((product) => (
-      <ProductPreview  key={product.id} id={product.id} urlImg={product.imageUrl} name={product.name} price={product.price} />
+      <ProductPreview key={product.id} id={product.id} urlImg={product.imageUrl} name={product.name} price={product.price} />
     ))}
   </Slider>
 }
