@@ -31,12 +31,12 @@ form.dashboard  textarea {
 }
 form.dashboard  select{
   width: 85%;
-  margin-bottom: 5px !important;
   
 }
 
 .add-category-link {
   display: block;
+  margin-top:0;
   margin-bottom: 25px;
   color: #007BFF;
   text-decoration: none;
