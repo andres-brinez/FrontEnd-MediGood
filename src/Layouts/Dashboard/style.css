@@ -1,0 +1,166 @@
+/* Contenido del Dashboard */
+.dashboard-container {
+  display: flex;
+}
+
+/* Contenido Principal del Dashboard */
+.main-content {
+  flex: 1;
+  padding:120px 50px 50px;
+  margin-left: 200px; /* Ancho de la barra lateral */
+  flex-grow: 1;
+  min-height: 95vh;
+  background-color: #f0f0f0; 
+
+}
+
+.inventory-container{
+  border-bottom: solid 1px rgb(205, 201, 201) ;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.inventory-container .title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0; /* Elimina el margen predeterminado del h2 */
+  color: #4C4C4C;
+}
+
+/* Estilos del buscador */
+.inventory-container .search-bar {
+  display: flex;
+  align-items: center;
+  min-width: 290px;
+  height: 34px;
+}
+
+.inventory-container .search-bar .search-button{
+  height: 100%;
+}
+.inventory-container .search-bar input {
+  width: 80%;
+  /* height: 100%; */
+  padding: 8px 10px ;
+  margin-right: 0px;
+  border: solid 1px #ddd;
+  border-radius: 5
+}
+
+.inventory-container .search-bar button {
+  background-color: #00A3FF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 15%;
+  /* border: solid 1px red ; */
+}
+.search-button-img{
+  border: solid 1px red ;
+  margin: auto;
+  
+}
+
+
+/* Tabla de los productos*/
+
+table caption {
+  font-size: 25px; /* Cambia el tamaño de la fuente */
+  color: #333; /* Cambia el color del texto */
+  font-weight: bold; /* Hace que el texto sea negrita */
+  text-align:left;
+  padding: 10px; /* Agrega un relleno alrededor del texto */
+  background-color: #f2f2f2; /* Cambia el color de fondo */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la tabla */
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+table tfoot{
+  background: #E8EBFD;
+  font-weight: bold;
+  
+}
+
+table tfoot td:first-child {
+  font-size: 18px;
+}
+
+/* Estilos para filas impares */
+table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Color de fondo para filas impares */
+}
+
+/* Paginacion */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.pagination-options {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-options button, .pagination-options span {
+  padding: 8px 15px;
+  background-color: #fff;
+  color: #00A3FF;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.pagination-options button:hover {
+  background-color: #0056b3;
+}
+
+.show-all-button {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.show-all-button:hover {
+  background-color: #218838;
+}
+
+
+
+
+
+/* Footer */
+.footerDashBoard {
+  padding: 20px 0;
+  background-color: #00A3FF;
+  color: #fff;
+  text-align: center;
+  margin-top: auto; /* Coloca el footer al final del contenedor principal */
+  width: 90%;
+  margin-left: auto;
+}
