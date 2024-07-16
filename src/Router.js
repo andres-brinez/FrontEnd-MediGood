@@ -5,7 +5,7 @@ import Page404 from './Pages/404';
 import LayoutLanding from './Layouts/Landing';
 import ProductsDetails from './Components/ProductsDetails';
 import ProductsSearched from './Components/ProductsSearched';
-import LayoutDshboard from './Layouts/Dashboard';
+import LayoutDashboard from './Layouts/Dashboard';
 
 const RoutesHandler = () => {
   return (
@@ -16,7 +16,7 @@ const RoutesHandler = () => {
           <Route path="/search/:searchTerm" element={<ProductsSearched />} />
           <Route path="/product/:id" element={<ProductsDetails />} />
         </Route>
-        <Route path="/dashboard" exact element={<LayoutDshboard />} >
+        <Route path="/dashboard" exact element={<LayoutDashboard />} >
         </Route>
         <Route path="/register" exact element={<Register />} />
         <Route path="/login" element={<Login />} />
