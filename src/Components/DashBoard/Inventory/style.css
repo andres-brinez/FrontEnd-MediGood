@@ -14,20 +14,23 @@
 }
 
 .add-button {
-  background-color: #4CAF50; /* Color de fondo verde */
-  
+  background-color: #38b33c; 
 }
 
 .edit-button {
-  background-color: #008CBA; /* Color de fondo azul */
+  background-color: #2f7890; 
   
 }
 
 .detalle-button {
-  background-color: #c0ce21; /* Color de fondo rojo */
+  background-color: #c1d014; 
   
 }
 
 .detail-button:hover {
-  background-color: #005f23; 
+  background-color: #429862; 
+}
+
+.edit-button:hover {
+  background-color: #218838;
 }
