@@ -74,6 +74,7 @@
   position: relative;
   width: 45%;
 
+
 }
 
 .search-container input {
@@ -98,23 +99,21 @@
 }
 
 .nav-container {
-  width: 23%;
+  width: 30%;
   justify-content: space-between;
+
 }
 
 
 .nav-item {
   display: flex;
   align-items: center;
-  /* border: solid 1px red; */
 
 }
 .basket-container img,
 .nav-item img {
   height: 40px;
   width:28px;
-  margin-right: 4px;
-  border: solid 1px red;
 }
 
 
@@ -126,7 +125,7 @@
   padding: 3px 7px;
   margin-left: 10px;
   position: absolute;
-  right: 22%;
+  right: 29%;
   font-size: 12px;
   
 }

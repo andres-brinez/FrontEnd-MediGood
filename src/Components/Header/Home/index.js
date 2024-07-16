@@ -68,6 +68,12 @@ function HeaderHome() {
           </Link>
         </div>
         <div className="nav-item">
+          
+          <Link to={"/dashboard"}>
+            Dashboard
+          </Link>
+        </div>
+        <div className="nav-item">
           <img src="img/home/usuario-1.svg" alt="Sesión" />
           <NavLink to={"/login"}>
             Iniciar sesión
