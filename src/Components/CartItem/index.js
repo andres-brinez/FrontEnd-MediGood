@@ -1,4 +1,4 @@
-const CartItem = ({ id, imgUrl, name, price, quantity }) => {
+const CartItem = ({ id, imgUrl, name, price, quantity,onDelete }) => {
 
   function formatPrice(price) {
     if (price === undefined || price === null) {
@@ -7,11 +7,9 @@ const CartItem = ({ id, imgUrl, name, price, quantity }) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
   
-
-  
   return (
     <div className="cart-item" key={id}>
-      <button className="cart-item-remove">
+      <button className="cart-item-remove" onClick={()=>{onDelete(id)}}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#484848" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="3 6 5 6 21 6"></polyline>
           <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m6 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
