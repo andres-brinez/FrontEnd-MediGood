@@ -8,8 +8,8 @@ const Inventory = () => {
     navigate("/dashboard/addProduct");
   }
 
-  function goToEditProduct(){
-    navigate("/dashboard/editProduct");
+  function goToEditProduct(id){
+    navigate("/dashboard/editProduct/"+id);
   }
 
   function goToDetailProduct(id){
@@ -36,7 +36,7 @@ const Inventory = () => {
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAddProduct}>Agregar</button>
       <button class="detalle-button" onClick={()=>{goToDetailProduct(1)}}>Ver detalle</button>
-      <button class="edit-button">Editar</button>
+      <button class="edit-button" onClick={()=>{goToEditProduct(2)}}>Editar</button>
 
     </div>
     {/* <!-- Tabla de resumen de pedidos --> */}
