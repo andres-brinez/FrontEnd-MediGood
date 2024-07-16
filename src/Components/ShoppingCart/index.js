@@ -9,7 +9,7 @@ const ShoppingCart = () => {
 
   // se obtiene el contexto global
   const { showShoppingCart, setShowShoppingCart,setQuantityIntemShoppingCart } = useContext(GlobalContext)
-  const { getCartData,deleteInformationCart } = useShoppingCart()
+  const { getCartData,deleteInformationCart,deleteItemCartById } = useShoppingCart()
 
   useEffect(() => {
     // Obtener los datos del carrito y actualizar el estado
@@ -44,7 +44,17 @@ const ShoppingCart = () => {
         setCartItems(data);
         setQuantityIntemShoppingCart(data.length);
     }
-    
+  }
+
+  // Eliminar item carrito por id
+  function deleteItemCart(id) {
+    const confirmDelete = window.confirm("¿Estás seguro de que quieres eliminar este elemento?");
+    if(confirmDelete){
+      deleteItemCartById(id);
+      // Obtener los datos del carrito y actualizar el estado
+      const data = getCartData();
+      setCartItems(data);
+    }
   }
 
   return <>
@@ -61,7 +71,8 @@ const ShoppingCart = () => {
         imgUrl={product.image}
         name={product.name}
         price={product.price}
-        quantity={product.quantity} />
+        quantity={product.quantity}
+        onDelete={deleteItemCart} />
       ))}
 
       <div className="cart-summary" style={cartItems.length>0? {display:"block"} : {display:"none"}}>
