@@ -1,25 +1,37 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./style.css"
 const AddProduct = () => {
 
-  const popUpRef= useRef();
+  const [getCategories, setCategories] = useState([])
+
+  const popUpRef = useRef();
   let popUp;
   useEffect(() => {
-    popUp= popUpRef.current
+    popUp = popUpRef.current
   }, []);
 
 
-  function openPopup(){
-    popUp.className="popup-open";
+  function openPopup() {
+    popUp.className = "popup-open";
   }
 
-  function closePopup(){
-    popUp.className="popup-close";
+  function closePopup() {
+    popUp.className = "popup-close";
   }
 
+  // Lógica para agregar la nueva categoría
+  function addCategory() {
+    var newCategoryName = document.getElementById('newCategory').value;
+    if (newCategoryName.trim() !== '') {
+      // Puedes realizar aquí la lógica para agregar la nueva categoría a tu sistema
+      alert('Nueva categoría agregada: ' + newCategoryName);
+      closePopup();
+    } else {
+      alert('Por favor, ingresa un nombre válido para la categoría.');
+    }
+  }
 
-
-  return<>
+  return <>
     <div class="inventory-container">
       <h2 class="title">Agregar Producto</h2>
     </div>
@@ -65,11 +77,11 @@ const AddProduct = () => {
         <h3>Agregar Nueva Categoría</h3>
         <label for="newCategory">Nombre de la categoría</label>
         <input type="text" id="newCategory" name="newCategory" required />
-        <button id="addCategoryButton">Agregar</button>
+        <button  onClick={addCategory}id="addCategoryButton">Agregar</button>
       </div>
     </div>
 
-    </>
+  </>
 }
 
-    export default AddProduct;
+export default AddProduct;
