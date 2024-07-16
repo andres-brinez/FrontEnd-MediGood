@@ -1,0 +1,50 @@
+/* Barra de Navegación Superior */
+.top-nav {
+  background-color: #00A3FF;
+  padding: 15px 4vh;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Hacer que la barra ocupe todo el ancho */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegurar que esté sobre otros elementos */
+}
+
+.top-nav .left-section {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav .brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff; /* Cambiado el color del texto a blanco */
+}
+
+.top-nav .user {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logout{
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 20px;
+  cursor: pointer;
+  /* Genera una transicion de un tiempo cuando se hace hover en el underline */
+  transition: all 0.3s ease;
+}
+
+
+
+.top-nav .dashboard-icon img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px; /* Ajusta el espacio entre la imagen y el texto de la marca */
+}
