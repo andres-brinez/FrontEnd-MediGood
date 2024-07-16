@@ -1,0 +1,33 @@
+
+/* Sección de Pedidos */
+
+.inventory-buttons button{
+  color: white; /* Color de texto blanco */
+  padding: 10px 20px; /* Relleno alrededor del texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa por encima */
+  text-decoration: none; /* Sin subrayado */
+  margin: 0 2px 30px; /* Margen entre los botones */
+  border-radius: 5px; /* Bordes redondeados */
+  
+
+}
+
+.add-button {
+  background-color: #4CAF50; /* Color de fondo verde */
+  
+}
+
+.edit-button {
+  background-color: #008CBA; /* Color de fondo azul */
+  
+}
+
+.detalle-button {
+  background-color: #c0ce21; /* Color de fondo rojo */
+  
+}
+
+.detail-button:hover {
+  background-color: #005f23; 
+}
