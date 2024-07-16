@@ -19,9 +19,9 @@ function LayoutDashboard() {
     
     </div>
 
-    {/* <footer>
-      <p>&copy; 2024 Medigood - Todos los derechos reservados</p>
-    </footer> */}
+    <footer className="footerDashBoard">
+      <p>&copy; 2024 Medigood - Andres Felipe Briñez Lopez</p>
+    </footer>
 
 
   </>
