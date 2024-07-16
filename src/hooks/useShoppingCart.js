@@ -24,5 +24,11 @@ export function useShoppingCart() {
     return cart;
   }
 
-  return { saveItemCart, getCartData };
+  // Eliminar todo el carrito de compras
+  function deleteInformationCart() {
+    localStorage.removeItem('cart');
+  }
+
+
+  return { saveItemCart, getCartData,deleteInformationCart };
 }
