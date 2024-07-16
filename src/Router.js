@@ -7,8 +7,8 @@ import ProductsDetails from './Components/Home/ProductsDetails';
 import ProductsSearched from './Components/Home/ProductsSearched';
 import LayoutDashboard from './Layouts/Dashboard';
 import Inventory from './Components/DashBoard/Inventory';
-import AddProduct from './Components/DashBoard/AddProduct';
-import ProductDetails from './Components/DashBoard/ProductDetails';
+import AddProduct from './Components/DashBoard/Inventory/AddProduct';
+import ProductDetails from './Components/DashBoard/Inventory/ProductDetails';
 
 const RoutesHandler = () => {
   return (
