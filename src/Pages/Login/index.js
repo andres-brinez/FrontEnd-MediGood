@@ -25,11 +25,11 @@ const Login = () => {
             <div className="login-container">
                 <h3>Iniciar sesión</h3>
                 <div className="social-login">
-                    <button id="button-facebook" type="button">
+                    <button id="button-facebook"className="login-button" type="button">
                         <a href=""> <img src="img/socialMedia/facebook.svg" alt="Facebook" />
                             Facebook</a>
                     </button>
-                    <button id="button-google" type="button">
+                    <button id="button-google" className="login-button" type="button">
                         <a href=""><img src="img/socialMedia/google.svg" alt="Google" />
                             Google</a>
                     </button>
