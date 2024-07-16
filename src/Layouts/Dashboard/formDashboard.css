@@ -1,0 +1,144 @@
+form.dashboard  {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+form.dashboard  label {
+  display: block;
+  width:86%;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+  text-align: left !important;
+}
+
+form.dashboard  input,
+form.dashboard  select,
+form.dashboard  textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form.dashboard  select{
+  width: 85%;
+  margin-bottom: 5px !important;
+  
+}
+
+.add-category-link {
+  display: block;
+  margin-bottom: 25px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.add-category-link:hover {
+  text-decoration: underline;
+}
+
+
+
+form.dashboard button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 10px auto;
+  width: 90%;
+}
+
+form.form.dashboard button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el popup */
+.popup-open{
+  display:block ;
+}
+
+.popup-close{
+  display: none;
+}
+.popup-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  touch-action: none; /* Deshabilita el scroll de la pantalla */
+}
+
+.popup-content {
+  position: absolute;
+  top: 53%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin: 0px 0 30px ;
+
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.popup-content input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.popup-content button:hover {
+  background-color: #0056b3;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
