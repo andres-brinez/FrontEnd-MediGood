@@ -1,0 +1,72 @@
+/* Barra de Navegación Lateral */
+.side-nav {
+  width: 200px;
+  height: 100vh;
+  background-color: #1A2226; /* Color de la barra lateral */
+  color: #fff;
+  padding: 5px 12px ;
+  position: fixed;
+  left: 0px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav li {
+  margin-bottom:25px;
+}
+
+.side-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #2A343A;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+
+.side-nav a i {
+  margin-right: 10px;
+}
+
+.side-nav a:hover {
+  background-color: #1A2227; /* Color de fondo cuando el ítem está seleccionado */
+
+}
+
+.side-nav a::before {
+  content: '';
+  width: 6px;
+  height: 100%;
+  background-color: #2174C9; /* Color del borde izquierdo */
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transform: scaleX(0); /* Inicia con ancho cero */
+  transition: transform 0.3s ease; /* Transición suave del ancho */
+}
+
+/* Transición al cerrar la barra de navegación */
+.side-nav:not(.open) {
+  transition: left 0.3s ease; /* Agrega la transición al cerrar */
+}
+
+.side-nav a:hover::before {
+  transform: scaleX(1); /* Aumenta el ancho a 1 durante la transición */
+}
