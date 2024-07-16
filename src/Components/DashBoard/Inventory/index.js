@@ -12,8 +12,9 @@ const Inventory = () => {
     navigate("/dashboard/editProduct");
   }
 
-  function goToDetailProduct(){
-    navigate("/dashboard/detailProduct");
+  function goToDetailProduct(id){
+    
+    navigate("/dashboard/detailProduct/"+id);
   }
 
 
@@ -34,7 +35,7 @@ const Inventory = () => {
     {/* <!-- Botones de Agregar y Eliminar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAddProduct}>Agregar</button>
-      <button class="detalle-button">Ver detalle</button>
+      <button class="detalle-button" onClick={()=>{goToDetailProduct(1)}}>Ver detalle</button>
       <button class="edit-button">Editar</button>
 
     </div>
