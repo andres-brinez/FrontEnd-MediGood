@@ -6,6 +6,7 @@ import LayoutLanding from './Layouts/Landing';
 import ProductsDetails from './Components/ProductsDetails';
 import ProductsSearched from './Components/ProductsSearched';
 import LayoutDashboard from './Layouts/Dashboard';
+import Inventory from './Components/Inventory';
 
 const RoutesHandler = () => {
   return (
@@ -17,6 +18,7 @@ const RoutesHandler = () => {
           <Route path="/product/:id" element={<ProductsDetails />} />
         </Route>
         <Route path="/dashboard" exact element={<LayoutDashboard />} >
+        <Route path="/dashboard" element={<Inventory />} />
         </Route>
         <Route path="/register" exact element={<Register />} />
         <Route path="/login" element={<Login />} />
