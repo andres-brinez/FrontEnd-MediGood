@@ -1,0 +1,73 @@
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; Permite que los elementos se muevan a la siguiente línea si no hay espacio */
+  margin: 40px 0 ;
+}
+
+.detail-box {
+border: 1px solid #ccc; 
+  padding: 0 0px 20px;
+  width: 32%;
+  background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: auto !important;;
+}
+
+.detail-box h3 {
+  color: #007BFF;
+  /* color: #484848; */
+
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 10px;
+  background: linear-gradient(0deg, #F7F7F7 0%, #F7F7F7 100%), linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #D8D8D8;
+
+}
+
+.boxInfo{
+  margin:  20px 15px 0 ;
+
+}
+
+.detail-box p {
+  margin-bottom: 25px   ;
+}
+
+.detail-box strong {
+  margin-right: 5px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.detail-box select {
+  width: 70%;
+  padding: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.change-status-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.change-status-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
