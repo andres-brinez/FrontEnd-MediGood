@@ -14,6 +14,7 @@ import Order from './Components/DashBoard/Order';
 import OrderDetail from './Components/DashBoard/Order/OrderDetail';
 import Buys from './Components/DashBoard/Buys';
 import BuysDetail from './Components/DashBoard/Buys/BuysDetail';
+import Profile from './Components/DashBoard/Profile';
 
 const RoutesHandler = () => {
   return (
@@ -37,6 +38,8 @@ const RoutesHandler = () => {
 
         <Route path="/dashboard/buys" element={<Buys />} />
         <Route path="/dashboard/buys/detail/:id" element={<BuysDetail />} />
+
+        <Route path="/dashboard/profile" element={<Profile />} />
 
       
         </Route>

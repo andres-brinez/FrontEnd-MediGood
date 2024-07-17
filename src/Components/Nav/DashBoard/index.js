@@ -19,8 +19,12 @@ function NavDashBoard() {
             <i class="fas fa-shopping-bag"></i> Compras
           </Link>
         </li>
+        <li>
+          <Link to="/dashboard/profile">
+          <i class="fas fa-user"></i> Perfil
+          </Link>
+        </li>
 
-        <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
         <li><a href="#"><i class="fas fa-users"></i> Usuarios</a></li>
         <li><a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
       </ul>
