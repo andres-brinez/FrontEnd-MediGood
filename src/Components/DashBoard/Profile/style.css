@@ -1,0 +1,89 @@
+
+.profile-options {
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+  margin-left: 50px;
+
+}
+
+.profile-options p {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tab:hover {
+  background-color: #f0f0f0;
+}
+
+/* .tab-content {
+  display: none;
+} */
+
+
+/* Estilo para el contenido visible */
+.tab-content.active {
+  display: block;
+}
+
+/* Estilo para resaltar la pestaña activa */
+.profile-options .active-tab,
+.profile-options p.active-tab:hover {
+  color: #ffffff; /* Texto blanco */
+  background-color: #3793f6; /* Fondo azul brillante cuando la pestaña está activa */
+  border-radius: 5px;
+}
+
+
+h3{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 25px;
+  color: #333;
+
+}
+/* Estilos para la sección "Ver" del perfil */
+#contenido-ver {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Estilos para el contenido de pestaña "Ver" */
+
+.profile-info {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+#contenido-ver label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+#contenido-ver p {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+
