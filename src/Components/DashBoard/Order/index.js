@@ -1,5 +1,13 @@
+import { useNavigate } from "react-router-dom"
 import "./style.css"
 const Order = () => {
+
+  const navigator= useNavigate()
+
+  function goToDetail(id){
+    navigator("/dashboard/orders/detail/"+id)
+  }
+
   return <>
     <div class="container-header">
       <h2 class="title">Pedidos - ventas</h2>
@@ -13,7 +21,7 @@ const Order = () => {
     </div>
 
     {/* <!-- Botón para ver detalles --> */}
-    <button class="detail-button">Ver Detalle</button>
+    <button class="detail-button" onClick={()=>{goToDetail(2)}}>Ver Detalle</button>
 
     {/* <!-- Tabla de resumen de pedidos --> */}
     <table class="table">

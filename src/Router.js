@@ -11,6 +11,7 @@ import AddProduct from './Components/DashBoard/Inventory/AddProduct';
 import ProductDetails from './Components/DashBoard/Inventory/ProductDetails';
 import EditProduct from './Components/DashBoard/Inventory/EditProduct';
 import Order from './Components/DashBoard/Order';
+import OrderDetail from './Components/DashBoard/Order/OrderDetail';
 
 const RoutesHandler = () => {
   return (
@@ -30,6 +31,8 @@ const RoutesHandler = () => {
         <Route path="/dashboard/inventory/editProduct/:id" element={<EditProduct />} />
 
         <Route path="/dashboard/orders" element={<Order />} />
+        <Route path="/dashboard/orders/detail/:id" element={<OrderDetail />} />
+        
 
         </Route>
         <Route path="/register" exact element={<Register />} />
