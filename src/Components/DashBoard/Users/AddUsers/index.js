@@ -1,4 +1,4 @@
-function AddUsers() {
+function AddUser() {
   return <>
     <div class="container-header">
       <h2 class="title">Agregar usuario</h2>
@@ -36,4 +36,4 @@ function AddUsers() {
   </>
 }
 
-export default AddUsers;
+export default AddUser;
