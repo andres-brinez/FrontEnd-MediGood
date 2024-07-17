@@ -15,7 +15,7 @@ function LayoutDashboard() {
       <NavDashBoard/>
 
       {/* <!-- Contenido principal --> */}
-      <main className="main-content">
+      <main className="main-content main-content-dashboard">
       <Outlet />
       </main>
     

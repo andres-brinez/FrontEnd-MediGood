@@ -14,7 +14,7 @@
 
 }
 
-.inventory-container{
+.container-header{
   border-bottom: solid 1px rgb(205, 201, 201) ;
   margin-bottom: 25px;
   padding-bottom: 10px;
@@ -24,7 +24,7 @@
 
 }
 
-.inventory-container .title {
+.main-content-dashboard .title {
   font-size: 30px;
   font-weight: 600;
   margin: 0; /* Elimina el margen predeterminado del h2 */
@@ -32,17 +32,17 @@
 }
 
 /* Estilos del buscador */
-.inventory-container .search-bar {
+.container-header .search-bar {
   display: flex;
   align-items: center;
   min-width: 290px;
   height: 34px;
 }
 
-.inventory-container .search-bar .search-button{
+.container-header .search-bar .search-button{
   height: 100%;
 }
-.inventory-container .search-bar input {
+.container-header .search-bar input {
   width: 80%;
   /* height: 100%; */
   padding: 8px 10px ;
@@ -51,7 +51,7 @@
   border-radius: 5
 }
 
-.inventory-container .search-bar button {
+.container-header .search-bar button {
   background-color: #00A3FF;
   color: #fff;
   border: none;
