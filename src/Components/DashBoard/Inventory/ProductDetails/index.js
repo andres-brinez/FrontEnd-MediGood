@@ -1,7 +1,7 @@
 import "./style.css"
 const ProductDetails = () => {
   return <>
-    <div class="inventory-container">
+    <div class="container-header">
       <h2 class="title">Detalle del Producto</h2>
     </div>
 

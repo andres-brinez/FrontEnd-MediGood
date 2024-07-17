@@ -32,7 +32,7 @@ const AddProduct = () => {
   }
 
   return <>
-    <div class="inventory-container">
+    <div class="container-header">
       <h2 class="title">Agregar Producto</h2>
     </div>
     {/* <!-- Formulario para agregar un nuevo producto --> */}

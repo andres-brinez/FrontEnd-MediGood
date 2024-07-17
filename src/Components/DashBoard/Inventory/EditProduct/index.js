@@ -33,7 +33,7 @@ const EditProduct = () => {
   }
   
   return <>
-    <div class="inventory-container">
+    <div class="container-header">
       <h2 class="title">Editar Producto</h2>
     </div>
 
