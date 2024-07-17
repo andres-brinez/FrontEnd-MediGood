@@ -4,10 +4,14 @@ function NavDashBoard() {
   return (
     <nav class="side-nav">
       <ul>
-        <li><a href="#"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+        <li>
+          <Link to="/dashboard/orders">
+            <i className="fas fa-shopping-cart"></i> Pedidos
+          </Link>
+        </li>
         <li>
           <Link to="/dashboard/inventory">
-            <i class="fas fa-box"></i> Inventario
+            <i className="fas fa-box"></i> Inventario
           </Link>
         </li>
 
