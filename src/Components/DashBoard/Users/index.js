@@ -10,6 +10,9 @@ function Users() {
   function goToEdit(id){
     navigation("/dashboard/users/edit/"+id)
   }
+  function goToDetail(id){
+    navigation("/dashboard/users/detail/"+id)
+  }
 
   return <>
     <div class="container-header">
@@ -25,7 +28,7 @@ function Users() {
     {/* <!-- Botones de Detalle, Editar y Ocultar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAdd}>Añadir</button>
-      <button class="detalle-button">Detalle</button>
+      <button class="detalle-button" onClick={()=>{goToDetail(1)}}>Detalle</button>
       <button class="edit-button" onClick={()=>{goToEdit(1)}}>Editar</button>
     </div>
 

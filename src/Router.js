@@ -18,6 +18,7 @@ import Profile from './Components/DashBoard/Profile';
 import Users from './Components/DashBoard/Users';
 import AddUser from './Components/DashBoard/Users/AddUsers';
 import EditUser from './Components/DashBoard/Users/EditUsers';
+import DetailUser from './Components/DashBoard/Users/DetailUser';
 
 const RoutesHandler = () => {
   return (
@@ -47,7 +48,7 @@ const RoutesHandler = () => {
         <Route path="/dashboard/users" element={<Users />} />
         <Route path="/dashboard/users/add" element={<AddUser />} />
         <Route path="/dashboard/users/edit/:id" element={<EditUser />} />
-
+        <Route path="/dashboard/users/detail/:id" element={<DetailUser />} />
       
         </Route>
         <Route path="/register" exact element={<Register />} />
