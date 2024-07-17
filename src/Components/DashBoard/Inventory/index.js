@@ -20,13 +20,13 @@ const Inventory = () => {
 
 
   return <>
-    <div class="inventory-container">
+    <div class="container-header">
       <h2 class="title">Inventario</h2>
       {/* <!-- Barra de búsqueda --> */}
       <div class="search-bar">
         <input type="text" placeholder="Buscar por número" />
         <button className="search-button">
-          <img  className="search-button-img" src="./img/dashboard/lupa.png" alt="" />
+          <img  className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
         </button>
       </div>
     </div>
