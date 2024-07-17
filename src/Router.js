@@ -16,7 +16,8 @@ import Buys from './Components/DashBoard/Buys';
 import BuysDetail from './Components/DashBoard/Buys/BuysDetail';
 import Profile from './Components/DashBoard/Profile';
 import Users from './Components/DashBoard/Users';
-import AddUsers from './Components/DashBoard/Users/AddUsers';
+import AddUser from './Components/DashBoard/Users/AddUsers';
+import EditUser from './Components/DashBoard/Users/EditUsers';
 
 const RoutesHandler = () => {
   return (
@@ -44,7 +45,8 @@ const RoutesHandler = () => {
         <Route path="/dashboard/profile" element={<Profile />} />
 
         <Route path="/dashboard/users" element={<Users />} />
-        <Route path="/dashboard/users/add" element={<AddUsers />} />
+        <Route path="/dashboard/users/add" element={<AddUser />} />
+        <Route path="/dashboard/users/edit/:id" element={<EditUser />} />
 
       
         </Route>

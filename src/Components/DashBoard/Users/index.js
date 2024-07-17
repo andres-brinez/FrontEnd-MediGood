@@ -7,6 +7,9 @@ function Users() {
   function goToAdd(){
     navigation("/dashboard/users/add")
   }
+  function goToEdit(id){
+    navigation("/dashboard/users/edit/"+id)
+  }
 
   return <>
     <div class="container-header">
@@ -23,7 +26,7 @@ function Users() {
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAdd}>Añadir</button>
       <button class="detalle-button">Detalle</button>
-      <button class="edit-button">Editar</button>
+      <button class="edit-button" onClick={()=>{goToEdit(1)}}>Editar</button>
     </div>
 
     {/* <!-- Tabla de Usuarios --> */}
