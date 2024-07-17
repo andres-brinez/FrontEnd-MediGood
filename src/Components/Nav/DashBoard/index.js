@@ -21,12 +21,16 @@ function NavDashBoard() {
         </li>
         <li>
           <Link to="/dashboard/profile">
-          <i class="fas fa-user"></i> Perfil
+            <i class="fas fa-user"></i> Perfil
+          </Link>
+        </li>
+        <li>
+          <Link to="/dashboard/users">
+            <i class="fas fa-users"></i> Usuarios         
           </Link>
         </li>
 
-        <li><a href="#"><i class="fas fa-users"></i> Usuarios</a></li>
-        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+        {/* <li><a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a></li> */}
       </ul>
     </nav>
   );
