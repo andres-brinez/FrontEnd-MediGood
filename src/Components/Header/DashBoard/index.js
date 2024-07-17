@@ -6,7 +6,7 @@ function HeaderDashboard() {
   <Link to={"/"}>
   <div className="left-section">
       <div className="dashboard-icon" onclick="toggleSideNav()">
-          <img src="img/dashboard/hospital.png" alt=""dashboard Icon/>
+          <img src="../../../img/dashboard/hospital.png" alt="dashboard Icon"/>
       </div>
       <div className="brand">MediGood</div>
   </div>
