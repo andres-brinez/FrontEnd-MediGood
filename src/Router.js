@@ -23,9 +23,9 @@ const RoutesHandler = () => {
         <Route path="/dashboard" exact element={<LayoutDashboard />} >
         <Route path="/dashboard" element={<Inventory />}/>
         <Route path="/dashboard/inventory" element={<Inventory />} />
-        <Route path="/dashboard/addProduct" element={<AddProduct />} />
-        <Route path="/dashboard/detailProduct/:id" element={<ProductDetails />} />
-        <Route path="/dashboard/editProduct/:id" element={<EditProduct />} />
+        <Route path="/dashboard/inventory/addProduct" element={<AddProduct />} />
+        <Route path="/dashboard/inventory/detailProduct/:id" element={<ProductDetails />} />
+        <Route path="/dashboard/inventory/editProduct/:id" element={<EditProduct />} />
 
         </Route>
         <Route path="/register" exact element={<Register />} />

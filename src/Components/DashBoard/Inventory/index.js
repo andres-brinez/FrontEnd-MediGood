@@ -5,16 +5,16 @@ const Inventory = () => {
   const navigate = useNavigate();
 
   function goToAddProduct(){
-    navigate("/dashboard/addProduct");
+    navigate("/dashboard/inventory/addProduct");
   }
 
   function goToEditProduct(id){
-    navigate("/dashboard/editProduct/"+id);
+    navigate("/dashboard/inventory/editProduct/"+id);
   }
 
   function goToDetailProduct(id){
     
-    navigate("/dashboard/detailProduct/"+id);
+    navigate("/dashboard/inventory/detailProduct/"+id);
   }
 
 
