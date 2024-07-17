@@ -1,4 +1,13 @@
+import { useNavigate,  } from "react-router-dom";
+
 function Users() {
+
+  const navigation = useNavigate();
+
+  function goToAdd(){
+    navigation("/dashboard/users/add")
+  }
+
   return <>
     <div class="container-header">
       <h2 class="title">Usuarios</h2>
@@ -12,7 +21,7 @@ function Users() {
 
     {/* <!-- Botones de Detalle, Editar y Ocultar --> */}
     <div class="inventory-buttons">
-      <button class="add-button">Añadir</button>
+      <button class="add-button" onClick={goToAdd}>Añadir</button>
       <button class="detalle-button">Detalle</button>
       <button class="edit-button">Editar</button>
     </div>

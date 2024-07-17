@@ -16,6 +16,7 @@ import Buys from './Components/DashBoard/Buys';
 import BuysDetail from './Components/DashBoard/Buys/BuysDetail';
 import Profile from './Components/DashBoard/Profile';
 import Users from './Components/DashBoard/Users';
+import AddUsers from './Components/DashBoard/Users/AddUsers';
 
 const RoutesHandler = () => {
   return (
@@ -43,6 +44,8 @@ const RoutesHandler = () => {
         <Route path="/dashboard/profile" element={<Profile />} />
 
         <Route path="/dashboard/users" element={<Users />} />
+        <Route path="/dashboard/users/add" element={<AddUsers />} />
+
       
         </Route>
         <Route path="/register" exact element={<Register />} />
