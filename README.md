@@ -1,3 +1,7 @@
+# Diseño en figma
+https://www.figma.com/design/5FH4uqj13ZdyXZYoxg8NWr/Medigood?node-id=0-1&t=pIVCSY3lvNJuDJ1Z-1 
+# Requisitos:
+https://www.google.com/url?q=https://drive.google.com/file/d/1ZXZDYtPdOPC_tDRRWre3ZQZaXHSamPAF/view?usp%3Dsharing%2520&sa=D&source=apps-viewer-frontend&ust=1721360617213367&usg=AOvVaw3UaW8ltXimLFCSO00HEL3P&hl=es
 
 # Getting Started with Create React App
 
