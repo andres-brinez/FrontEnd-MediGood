@@ -172,7 +172,8 @@ form {
   /* Cambia este color según tus necesidades */
 }
 
-#button-create-cuenta {
+
+.buttonAuthForm {
   padding: 14px 20px;
   background-color: #fff;
   border: none;
@@ -192,7 +193,7 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-#button-create-cuenta:hover {
+.buttonAuthForm:hover {
   background-color: #00A3FF;
   color: #fff;
   border-color: #fff;

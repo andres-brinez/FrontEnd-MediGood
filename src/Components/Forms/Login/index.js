@@ -83,7 +83,7 @@ function FormLogin() {
         value={password} updateValue={setPassword} />
 
       <a href="" disabled >¿Olvidó su contraseña?</a>
-      <button type="submit"> Iniciar sesión </button>
+      <button className="buttonAuthForm" type="submit"> Iniciar sesión </button>
 
     </form>
   )

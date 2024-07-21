@@ -81,7 +81,7 @@ function FormRegister() {
       <CheckBox className="input-field-checkbox" type="checkbox" label="He leído y acepto política de privacidad" id="acceptPrivacyPolicy" name="acceptPrivacyPolicy" />
       <CheckBox className="input-field-checkbox" type="checkbox" label="Me gustaría recibir descuentos exclusivos" id="receiveOffers" name="receiveOffers" />
       {/* <Button type="submit" text="Registrarse" /> */}
-      <button type="submit">Registrarse</button>
+      <button className="buttonAuthForm" type="submit">Registrarse</button>
     </form>
   )
 }
