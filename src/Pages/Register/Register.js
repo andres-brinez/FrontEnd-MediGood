@@ -3,9 +3,11 @@ import FormRegister from "../../Components/Forms/Register/Form";
 import Footer from "../../Components/Footer/Auth";
 import HeaderAuth from "../../Components/Header/Auth/Header";
 import "./style.css"
+import { useState } from "react";
 
 function Register(datod) {
 
+  
   return (
     <>
       <HeaderAuth text="Registro seguro" />
