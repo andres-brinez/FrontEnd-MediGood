@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import RoutesHandler from './Router';
+import RoutesHandler from './Routes/Router';
 // import { GlobalContextProvider } from './Context/GlobalContext';
 import GlobalContextProvider from './Context/GlobalContext';
 
