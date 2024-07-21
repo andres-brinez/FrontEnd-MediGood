@@ -27,3 +27,12 @@ export const getProductsTop=()=>{
   });
 
 }
+
+export const getProductById=(id)=>{
+  const url= urls.getProductById+id;
+  return httpService.get(url).then((response) => response.json())
+  .then((response) => {
+    return response;
+  });
+
+}

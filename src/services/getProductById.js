@@ -6,4 +6,4 @@ const getProductById= (id) =>{
   return productFind;
 }
 
-export default getProductById;
+// export default getProductById;

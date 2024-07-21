@@ -6,6 +6,7 @@ export const urls={
   getAllProductsAvailable:`${environment.apiUrl}/products/available`,
   getAllProducts:`${environment.apiUrl}/products/all`,
   getProductsTop:`${environment.apiUrl}/products/top`,
+  getProductById:`${environment.apiUrl}/products/`,
 
 
 }

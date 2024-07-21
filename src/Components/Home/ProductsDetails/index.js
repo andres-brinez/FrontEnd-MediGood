@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect,useRef } from 'react';
-import getProductById from '../../../services/getProductById';
 import "./style.css"
 
 import { useContext } from "react";
@@ -9,6 +8,7 @@ import { useShoppingCart } from "../../../hooks/useShoppingCart";
 
 import { GlobalContext } from '../../../Context/GlobalContext';
 import "./style.css"
+import { getProductById } from '../../../services/productService';
 
 const ProductsDetails = () => {
 
@@ -33,7 +33,13 @@ const ProductsDetails = () => {
   useEffect(() => {
     if (id != null) {
 
-      setProduct(getProductById(id));
+      getProductById(id).then((response) => {
+        setProduct(response);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
         
       // Hace scroll
       productsDetailRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -71,17 +77,18 @@ const ProductsDetails = () => {
       </div>
       <section className="product-info-container">
         {/* <!-- Marca del producto --> */}
+        {/* TODO: Agregar la marca desde la API */}
         <p className="product-brand">CAUDALIE</p>
         <h1 className="product-title">{product.name} </h1>
         {/* <!-- cantidad del producto --> */}
         {/* TODO: Se puede agregar la cantidad del producto en las medias */}
-        <p className="product-quantity"><span className="bold">Cantidad disponibles: </span>75 Unidades</p>
+        <p className="product-quantity"><span className="bold">Cantidad disponibles: </span>{product.quantity} Unidades</p>
+        {/* TODO: Agregar la categoria desde la API */}
         <p className="product-category"><span className="bold">Categoria:</span> Cremas</p>
-        <p className="product-description">Crema cicratizante y antibiotica que posee una gran cantidad de usos
-          terapéuticos debida a su doble composición.
+        <p className="product-description">{product.description}.
         </p>
         <p className="product-price">${product.price ? formatPrice(product.price) : '0'}</p>
-        <p className="product-availability available">Disponible</p>
+        <p className={product.inStock?"product-availability available" : "product-availability unavailable"}>{product.inStock? "Disponible" : "No disponible"}</p>
         {/* <!-- <p className="product-availability unavailable">No disponible</p> --> */}
         <div className="product-action">
           <div className="product-quantity-selector">
