@@ -1,13 +1,18 @@
 import InputPassword from "../Fields/Password";
 import Input from "../Fields/Input/input";
-import { useState } from "react";
-import Button from "../button";
+import { useContext, useState } from "react";
 import "./style.css"
 import { useNavigate } from "react-router-dom";
+import { authServiceLogin } from "../../../services/authService";
+import { jwtDecode } from "jwt-decode";
+import { GlobalContext } from "../../../Context/GlobalContext";
+
 function FormLogin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { emailUser,setEmailUser} = useContext(GlobalContext);
+
   
   const navigate=useNavigate();
 
@@ -26,14 +31,30 @@ function FormLogin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert('Formulario enviado');
-    navigate('/');
-
 
     let datosEnviar = {
       email,
       password
     }
+
+    authServiceLogin(datosEnviar).then((response)=>{
+      console.log(response)
+      const token = response;
+
+      if(token){
+        const decodedToken = jwtDecode(token);
+        const {email,role}= decodedToken
+        console.log(decodedToken)
+        alert("El usuario con email "+ email + " tiene el rol " + role);
+        navigate("/")
+        setEmailUser(email)
+      }
+      else{
+        alert("No se pudo iniciar sesión, credenciales incorrectas")
+      }
+
+
+    })
 
 
   };

@@ -4,6 +4,8 @@ import "./style.css"
 import CheckBox from "../Fields/CheckBox";
 import { useState, } from "react";
 import { useNavigate } from "react-router-dom";
+import { authServiceRegister } from "../../../services/authService";
+
 function FormRegister() {
 
   const [name, setName] = useState('');
@@ -26,13 +28,21 @@ function FormRegister() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert('Formulario enviado');
-    navigator('/login');
     let datosEnviar = {
       name,
       email,
       password
     }
+
+    authServiceRegister(datosEnviar).then((response)=>{
+      if(response){
+        alert("Usuario registrado con exito")
+        navigator('/login');
+
+      }else{
+        alert("Error al registrar usuario, el usuario con este correo ya existe")
+      }
+    })
 
   };
 
