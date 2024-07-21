@@ -8,12 +8,14 @@ export const GlobalContext=createContext();
 const GlobalContextProvider=({children})=>{
   const [showShoppingCart, setShowShoppingCart] = useState(false)
   const [quantityItemShoppingCart, setQuantityIntemShoppingCart] = useState(0)
+  const [emailUser,setEmailUser]=useState("")
 
 
     return(
         <GlobalContext.Provider value={{
             // Aquí va el valor que se va a compartir
             // 3) Se crea el contexto
+            emailUser,setEmailUser,
             showShoppingCart,setShowShoppingCart, 
             quantityItemShoppingCart,setQuantityIntemShoppingCart
         }}>
