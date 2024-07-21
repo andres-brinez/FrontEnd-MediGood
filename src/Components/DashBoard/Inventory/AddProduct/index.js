@@ -1,31 +1,52 @@
 import { useEffect, useRef, useState } from "react";
 import "./style.css"
+import { createCategory, getAllCategories } from "../../../../services/categories";
 const AddProduct = () => {
 
   const [getCategories, setCategories] = useState([])
 
   const popUpRef = useRef();
-  let popUp;
   useEffect(() => {
-    popUp = popUpRef.current
+    getAllCategories().then((response) => {
+      setCategories(response)
+
+    })
   }, []);
 
 
   function openPopup() {
-    popUp.className = "popup-open";
+    popUpRef.current.className = "popup-open";
   }
 
   function closePopup() {
-    popUp.className = "popup-close";
+    popUpRef.current.className = "popup-close";
   }
 
   // Lógica para agregar la nueva categoría
   function addCategory() {
     var newCategoryName = document.getElementById('newCategory').value;
     if (newCategoryName.trim() !== '') {
-      // Puedes realizar aquí la lógica para agregar la nueva categoría a tu sistema
-      alert('Nueva categoría agregada: ' + newCategoryName);
-      closePopup();
+
+      createCategory({ name: newCategoryName }).then((response) => {
+
+        if (response === 200) {
+          // Se actualizan las categorias
+          getAllCategories().then((response) => {
+            setCategories(response)
+          })
+
+          alert('Nueva categoría agregada: ' + newCategoryName);
+          closePopup();
+        }
+        else if (response === 400) {
+          alert('Error al crear la categoria.');
+        }
+        else if( response===403){
+          alert('No tienes permisos para crear categorias.');
+        }
+
+      })
+
     } else {
       alert('Por favor, ingresa un nombre válido para la categoría.');
     }
@@ -50,8 +71,10 @@ const AddProduct = () => {
 
       <label for="categoria">Categoría</label>
       <select id="categoria" name="categoria" required>
-        <option value="categoria1">Categoría 1</option>
-        <option value="categoria2">Categoría 2</option>
+        {getCategories.map((category) => {
+          return <option value={category.id}>{category.name}</option>
+        })
+        }
         {/* <!-- Agregar opciones adicionales según sea necesario --> */}
       </select>
 
@@ -77,7 +100,7 @@ const AddProduct = () => {
         <h3>Agregar Nueva Categoría</h3>
         <label for="newCategory">Nombre de la categoría</label>
         <input type="text" id="newCategory" name="newCategory" required />
-        <button  onClick={addCategory}id="addCategoryButton">Agregar</button>
+        <button onClick={addCategory} id="addCategoryButton">Agregar</button>
       </div>
     </div>
 
