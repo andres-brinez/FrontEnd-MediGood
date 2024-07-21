@@ -32,6 +32,7 @@ const LayoutLanding = () => {
       <img src="img/home/banner.png" alt="Banner/" />
     </div>
     <main className="containerMain">
+    {/* TODO: Obtener las categorias de productos desde el backend (api)*/}
     <Categories />
 
       {/*  Permite renderizar los componentes hijos de una ruta específica dentro de un componente de layout principal. */}
