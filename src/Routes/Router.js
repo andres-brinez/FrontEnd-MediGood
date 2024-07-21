@@ -1,24 +1,24 @@
 import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
-import Register from "./Pages/Register/Register"
-import Login from "./Pages/Login";
-import Page404 from './Pages/404';
-import LayoutLanding from './Layouts/Landing';
-import ProductsDetails from './Components/Home/ProductsDetails';
-import ProductsSearched from './Components/Home/ProductsSearched';
-import LayoutDashboard from './Layouts/Dashboard';
-import Inventory from './Components/DashBoard/Inventory';
-import AddProduct from './Components/DashBoard/Inventory/AddProduct';
-import ProductDetails from './Components/DashBoard/Inventory/ProductDetails';
-import EditProduct from './Components/DashBoard/Inventory/EditProduct';
-import Order from './Components/DashBoard/Order';
-import OrderDetail from './Components/DashBoard/Order/OrderDetail';
-import Buys from './Components/DashBoard/Buys';
-import BuysDetail from './Components/DashBoard/Buys/BuysDetail';
-import Profile from './Components/DashBoard/Profile';
-import Users from './Components/DashBoard/Users';
-import AddUser from './Components/DashBoard/Users/AddUsers';
-import EditUser from './Components/DashBoard/Users/EditUsers';
-import DetailUser from './Components/DashBoard/Users/DetailUser';
+import Register from "../Pages/Register/Register"
+import Login from "../Pages/Login";
+import Page404 from '../Pages/404';
+import LayoutLanding from '../Layouts/Landing';
+import ProductsDetails from '../Components/Home/ProductsDetails';
+import ProductsSearched from '../Components/Home/ProductsSearched';
+import LayoutDashboard from '../Layouts/Dashboard';
+import Inventory from '../Components/DashBoard/Inventory';
+import AddProduct from '../Components/DashBoard/Inventory/AddProduct';
+import ProductDetails from '../Components/DashBoard/Inventory/ProductDetails';
+import EditProduct from '../Components/DashBoard/Inventory/EditProduct';
+import Order from '../Components/DashBoard/Order';
+import OrderDetail from '../Components/DashBoard/Order/OrderDetail';
+import Buys from '../Components/DashBoard/Buys';
+import BuysDetail from '../Components/DashBoard/Buys/BuysDetail';
+import Profile from '../Components/DashBoard/Profile';
+import Users from '../Components/DashBoard/Users';
+import AddUser from '../Components/DashBoard/Users/AddUsers';
+import EditUser from '../Components/DashBoard/Users/EditUsers';
+import DetailUser from '../Components/DashBoard/Users/DetailUser';
 
 const RoutesHandler = () => {
   return (
