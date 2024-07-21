@@ -3,13 +3,28 @@ import productsJson from "../../services/Products.json";
 import SliderProducts from "../../Components/Home/SliderProducts";
 import Categories from "../../Components/Home/Categories";
 import FooterHome from "../../Components/Footer/Home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from 'react-router-dom';
 import "./style.css";
 import ShoppingCart from "../../Components/Home/ShoppingCart";
+import { getAllProducts, getAllProductsAvailable, getProductsTop } from "../../services/productService";
 
 const LayoutLanding = () => {
   const [searchValue, setSearchValue] = useState("")
+  const [products, setProducts] = useState([]);
+  const [productsTop, setProductsTop] = useState([]);
+
+  useEffect(()=>{
+    // TODO: Se puede cambiar por getAllProductsAvailable() para que solo traiga los productos disponibles
+    getAllProducts().then((response) => {
+      setProducts(response);
+    })
+
+    getProductsTop().then((response) => {
+      setProductsTop(response);
+    })
+  },[])
+
   return <>
     <ShoppingCart  />
     <HeaderHome searchValue={searchValue} setSearchValue={setSearchValue}  />
@@ -25,14 +40,14 @@ const LayoutLanding = () => {
       <section id="recommended">
         <h2>Recomendados para ti</h2>
         <div className="products-container">
-          <SliderProducts products={productsJson}></SliderProducts>
+          <SliderProducts products={products}></SliderProducts>
         </div>
 
       </section>
       <section id="novedad">
         <h2>Novedades</h2>
         <div className="products-container">
-          <SliderProducts products={productsJson}></SliderProducts>
+          <SliderProducts products={productsTop}></SliderProducts>
         </div>
       </section>
       <section id="brands">

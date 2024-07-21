@@ -5,6 +5,7 @@ export const urls={
   login:`${environment.apiUrl}/auth/login`,
   getAllProductsAvailable:`${environment.apiUrl}/products/available`,
   getAllProducts:`${environment.apiUrl}/products/all`,
+  getProductsTop:`${environment.apiUrl}/products/top`,
 
 
 }
