@@ -3,6 +3,7 @@ import "./style.css"
 import { GlobalContext } from "../../../Context/GlobalContext";
 import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import CartItem from "../CartItem";
+import { createPurchaseProducts, purchaseProducts } from "../../../services/Purchase";
 
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -10,7 +11,7 @@ const ShoppingCart = () => {
   // se obtiene el contexto global
   const { showShoppingCart, setShowShoppingCart, setQuantityIntemShoppingCart } = useContext(GlobalContext)
   const { getCartData, deleteInformationCart, deleteItemCartById } = useShoppingCart()
-
+  const { emailUser } = useContext(GlobalContext)
   useEffect(() => {
     // Obtener los datos del carrito y actualizar el estado
     const data = getCartData();
@@ -60,9 +61,12 @@ const ShoppingCart = () => {
 
   // Comprar los productos
   function buyItems() {
+    if (emailUser === "") {
+      alert("Debes iniciar sesión para poder comprar")
+      return;
+    }
     const confirmBuy = window.confirm("¿Estás seguro de que quieres comprar estos productos?");
     if (confirmBuy) {
-      alert("Compra realizada con éxito");
 
       let productsBuy = cartItems.map(item => {
         return {
@@ -72,16 +76,23 @@ const ShoppingCart = () => {
       });
 
       let buyInformation = {
-        products: productsBuy,
-        idUser: 123 
+        emailUser: emailUser,
+        products: productsBuy
       }
 
-      deleteInformationCart();
-      // Obtener los datos del carrito y actualizar el estado
-      const data = getCartData();
-      setCartItems(data);
+      createPurchaseProducts(buyInformation).then(response => {
 
-      console.log(buyInformation);
+        if (response) {
+          deleteInformationCart();
+          // Obtener los datos del carrito y actualizar el estado
+          const data = getCartData();
+          setCartItems(data);
+          console.log(buyInformation);
+        }
+      })
+
+
+
     }
   }
 
