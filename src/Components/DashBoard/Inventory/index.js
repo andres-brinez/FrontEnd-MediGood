@@ -1,20 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "../../../services/productService";
 const Inventory = () => {
+
+  const [products, setProducts] = useState([]);
 
   const navigate = useNavigate();
 
-  function goToAddProduct(){
+  useEffect(() => {
+    getAllProducts().then((response) => {
+      console.log(response);
+      setProducts(response);
+    })
+  }, [])
+
+  function goToAddProduct() {
     navigate("/dashboard/inventory/addProduct");
   }
 
-  function goToEditProduct(id){
-    navigate("/dashboard/inventory/editProduct/"+id);
+  function goToEditProduct(id) {
+    navigate("/dashboard/inventory/editProduct/" + id);
   }
 
-  function goToDetailProduct(id){
-    
-    navigate("/dashboard/inventory/detailProduct/"+id);
+  function goToDetailProduct(id) {
+
+    navigate("/dashboard/inventory/detailProduct/" + id);
   }
 
 
@@ -26,17 +37,17 @@ const Inventory = () => {
       <div class="search-bar">
         <input type="text" placeholder="Buscar por número" />
         <button className="search-button">
-          <img  className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
+          <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
         </button>
       </div>
     </div>
 
-    
+
     {/* <!-- Botones de Agregar y Eliminar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAddProduct}>Agregar</button>
-      <button class="detalle-button" onClick={()=>{goToDetailProduct(1)}}>Ver detalle</button>
-      <button class="edit-button" onClick={()=>{goToEditProduct(2)}}>Editar</button>
+      <button class="detalle-button" onClick={() => { goToDetailProduct(1) }}>Ver detalle</button>
+      <button class="edit-button" onClick={() => { goToEditProduct(2) }}>Editar</button>
 
     </div>
     {/* <!-- Tabla de resumen de pedidos --> */}
@@ -46,7 +57,7 @@ const Inventory = () => {
         <tr>
           <th></th>
           <th>Número</th>
-          <th>Producto</th>
+          <th>Nombre</th>
           <th>Cantidad Disponible</th>
           <th>Valor Unitario</th>
           <th>Fecha de Ingreso</th>
@@ -55,42 +66,37 @@ const Inventory = () => {
       </thead>
       {/* <!-- Contenido de la tabla --> */}
       <tbody>
-        <tr>
-          <td><input type="checkbox" id="producto001" /></td>
-          <td>001</td>
-          <td>Producto 1</td>
-          <td>100</td>
-          <td>$10.00</td>
-          <td>2024-01-27</td>
-          <td>Disponible</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="producto002" /></td>
-          <td>002</td>
-          <td>Producto 2</td>
-          <td>75</td>
-          <td>$15.00</td>
-          <td>2024-01-28</td>
-          <td>Disponible</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="producto001" /></td>
-          <td>001</td>
-          <td>Producto 1</td>
-          <td>100</td>
-          <td>$10.00</td>
-          <td>2024-01-27</td>
-          <td>Disponible</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="producto002" /></td>
-          <td>002</td>
-          <td>Producto 2</td>
-          <td>75</td>
-          <td>$15.00</td>
-          <td>2024-01-28</td>
-          <td>Oculto</td>
-        </tr>
+        {
+          products.map((product) => {
+            const formattedDate = new Date(product.dateAdded).toLocaleString('es-ES', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+            });
+
+            const formattedPrice = new Intl.NumberFormat('es-ES', {
+              style: 'currency',
+              currency: 'COP'
+            }).format(product.price);
+
+            return (
+              <tr key={product.id}>
+                <td><input type="checkbox" id={product.id} /></td>
+                <td>{product.id}</td>
+                <td>{product.name}</td>
+                <td>{product.quantity}</td>
+                <td>{formattedPrice}</td>
+                <td>{formattedDate}</td>
+                <td>{product.inStock ? "Disponible" : "No disponible"}</td>
+              </tr>
+            );
+          })
+
+        }
+
       </tbody>
     </table>
 
