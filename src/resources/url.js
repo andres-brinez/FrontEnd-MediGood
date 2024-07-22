@@ -15,6 +15,7 @@ export const urls={
   createCategory:`${environment.apiUrl}/categories/create`,
 
   getAllPurchase:`${environment.apiUrl}/purchase/all`,
+  getPurchaseByEmail:`${environment.apiUrl}/purchase/history/`,
 
 
 

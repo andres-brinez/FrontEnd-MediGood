@@ -6,14 +6,13 @@ export const createPurchaseProducts = (information) => {
   const url = urls.purcheseProducts;
   const body = information
 
-  return httpService.post(url, body).then((response) =>{
+  return httpService.post(url, body).then((response) => {
     // console.log(response)
-    if(response.status===200){
+    if (response.status === 200) {
       alert("Compra realizada con exito")
       return true
-    }else{
+    } else {
       //response.json()
-      console.log(response)
       alert("Error al realizar la compra")
       // alert(response.errorMessage)
       return false
@@ -28,11 +27,20 @@ export const getAllPurchaseProducts = () => {
 
   const url = urls.getAllPurchase;
 
-  return httpService.get(url).then((response) =>{
+  return httpService.get(url).then((response) => {
     // console.log(response)
-    if(response.status===200){
+    if (response.status === 200) {
       return response.json()
     }
 
   });
+}
+
+export const getPurchaseByEmail = (email) => {
+  const url = urls.getPurchaseByEmail + email;
+  return httpService.get(url).then((response) => {
+    if (response.status === 200) {
+      return response.json()
+    }
+  })
 }

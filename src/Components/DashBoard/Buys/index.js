@@ -1,11 +1,29 @@
+import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { GlobalContext } from "../../../Context/GlobalContext";
+import { getPurchaseByEmail } from "../../../services/Purchase";
 
 const Buys = () => {
-  const navigator= useNavigate()
+  const navigator = useNavigate()
 
-  function goToDetail(id){
-    navigator("/dashboard/buys/detail/"+id)
-  } 
+  const { emailUser } = useContext(GlobalContext);
+  const [products, setProduct] = useState([])
+
+  useEffect(() => {
+    if (emailUser === "") {
+      alert("Se debe iniciar sesión para acceder a esta sección")
+      // navigator("/login")
+      return;
+    }
+    getPurchaseByEmail(emailUser).then((response) => {
+      console.log(response)
+      setProduct(response)
+    })
+  })
+
+  function goToDetail(id) {
+    navigator("/dashboard/buys/detail/" + id)
+  }
   return <>
     <div class="container-header">
       <h2 class="title">Compras</h2>
@@ -13,75 +31,80 @@ const Buys = () => {
       <div class="search-bar">
         <input type="text" placeholder="Buscar por número" />
         <button class="search-button">
-        <img class="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
+          <img class="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
         </button>
       </div>
     </div>
 
-    {/* <!-- Botón para ver detalles --> */}
-    <button class="detail-button" onClick={()=>{goToDetail(1)}}>Ver Detalle</button>
-
     {/* <!-- Tabla de resumen de pedidos --> */}
-    <table class="table-products">
-      {/* <!-- Encabezados de la tabla --> */}
-      <thead>
-        <tr>
-          <th></th>
-          <th>Número</th>
-          <th>Cantidad de productos</th>
-          <th>Estado</th>
-          <th>Fecha</th>
-        </tr>
-      </thead>
-      {/* <!-- Contenido de la tabla --> */}
-      <tbody>
-        {/* <!-- Filas con datos de pedidos --> */}
-        <tr>
-          <td><input type="checkbox" id="pedido001" /></td>
-          <td>001</td>
-          <td>5</td>
-          <td>En entrega</td> {/* <!-- Ejemplo de datos de estado --> */}
-          <td>2024-01-27</td> {/* <!-- Ejemplo de datos de fecha --> */}
+    {(products && products.length > 0) ? (
+      <>
+        {/* <!-- Botón para ver detalles --> */}
+        <button class="detail-button" onClick={() => { goToDetail(1) }}>Ver Detalle</button>
 
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="pedido001" /></td>
-          <td>001</td>
-          <td>5</td>
-          <td>Entregado</td>
-          <td>2024-01-27</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="pedido001" /></td>
-          <td>001</td>
-          <td>5</td>
-          <td>En proceso</td>
-          <td>2024-01-27</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="pedido001" /></td>
-          <td>001</td>
-          <td>5</td>
-          <td>En proceso</td>
-          <td>2024-01-27</td>
-        </tr>
-      </tbody>
-    </table>
+        <table class="table-products">
+          {/* <!-- Encabezados de la tabla --> */}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Número</th>
+              <th>Cantidad de productos</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          {/* <!-- Contenido de la tabla --> */}
+          <tbody>
+            {
+              products.map((product, index) => {
+                const formattedDate = new Date(product.date).toLocaleString('es-ES', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit'
+                });
 
-    {/* TODO: Agregar la funcionalidad de páginación */}
-    {/* <!-- Paginación de la tabla --> */}
-    <div class="pagination">
-      <div class="pagination-options">
-        <button>Anterior</button>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>...</span>
-        <button>Siguiente</button>
-      </div>
-      <button class="show-all-button">Mostrar Todos</button>
-    </div>
+                const formattedPrice = new Intl.NumberFormat('es-ES', {
+                  style: 'currency',
+                  currency: 'COP'
+                }).format(product.total);
+
+                return (<tr key={index}>
+                  <td><input type="checkbox"></input></td>
+                  <td>{product.id}</td>
+                  <td>{product.quantity}</td>
+                  <td>{formattedPrice}</td>
+                  <td>Enviado</td>
+                  <td>{formattedDate}</td>
+                </tr>
+                )
+              })
+            }
+
+          </tbody>
+        </table>
+
+        {/* TODO: Agregar la funcionalidad de páginación */}
+        {/* <!-- Paginación de la tabla --> */}
+        <div class="pagination">
+          <div class="pagination-options">
+            <button>Anterior</button>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>...</span>
+            <button>Siguiente</button>
+          </div>
+          <button class="show-all-button">Mostrar Todos</button>
+        </div>
+      </>
+    ) : <tr>No se han hecho compras</tr>}
+
+
   </>
 }
 
