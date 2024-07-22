@@ -42,7 +42,6 @@ const Inventory = () => {
       </div>
     </div>
 
-
     {/* <!-- Botones de Agregar y Eliminar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAddProduct}>Agregar</button>
