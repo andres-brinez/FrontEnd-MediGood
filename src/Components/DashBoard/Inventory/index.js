@@ -7,12 +7,10 @@ const Inventory = () => {
   const [products, setProducts] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
 
-
   const navigate = useNavigate();
 
   useEffect(() => {
     getAllProducts().then((response) => {
-      console.log(response);
       setProducts(response);
     })
   }, [])
@@ -22,8 +20,12 @@ const Inventory = () => {
   }
 
   function goToEditProduct() {
-    if(selectedId)
-    navigate("/dashboard/inventory/editProduct/" + selectedId);
+    if(selectedId){
+      navigate("/dashboard/inventory/editProduct/" + selectedId);
+    }
+    else{
+      alert("Seleccione un producto para editarlo")
+    }
   }
 
   function goToDetailProduct() {
@@ -53,8 +55,8 @@ const Inventory = () => {
     {/* <!-- Botones de Agregar y Eliminar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAddProduct}>Agregar</button>
-      <button class="detalle-button" onClick={() => { goToDetailProduct(1) }}>Ver detalle</button>
-      <button class="edit-button" onClick={() => { goToEditProduct(2) }}>Editar</button>
+      <button class="detalle-button" onClick={() => { goToDetailProduct() }}>Ver detalle</button>
+      <button class="edit-button" onClick={() => { goToEditProduct() }}>Editar</button>
 
     </div>
     {/* <!-- Tabla de resumen de pedidos --> */}
