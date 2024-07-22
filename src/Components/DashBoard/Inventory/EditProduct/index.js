@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from "react";
+import { getAllCategories } from "../../../../services/categories";
 
 const EditProduct = () => {
 
   const [getCategories, setCategories] = useState([])
+  const [categoryProductSelect, setCategoryProductSelect] = useState("");
+
 
   // TODO: el popUp se puede poner en un componente aparte
   const popUpRef = useRef();
   let popUp;
   useEffect(() => {
     popUp = popUpRef.current
+    getAllCategories().then((response) => {
+      setCategories(response)
+    })
   }, []);
 
 
@@ -57,9 +63,11 @@ const EditProduct = () => {
 
 
       <label for="categoria">Categoría</label>
-      <select id="categoria" name="categoria" required>
-        <option value="categoria1">Categoría 1</option>
-        <option value="categoria2">Categoría 2</option>
+      <select value={categoryProductSelect} onChange={(event) => setCategoryProductSelect(event.target.value)} id="categoria" name="categoria" required>
+        {getCategories.map((category) => {
+          return <option value={category.id}>{category.name}</option>
+        })
+        }
         {/* <!-- Agregar opciones adicionales según sea necesario --> */}
       </select>
 
