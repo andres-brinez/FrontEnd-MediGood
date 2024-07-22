@@ -7,6 +7,8 @@ export const urls={
   getAllProducts:`${environment.apiUrl}/products/all`,
   getProductsTop:`${environment.apiUrl}/products/top`,
   getProductById:`${environment.apiUrl}/products/`,
+  addProduct:`${environment.apiUrl}/products/create`,
+
   purcheseProducts:`${environment.apiUrl}/purchase/save`,
   getAllCategories:`${environment.apiUrl}/categories`,
   createCategory:`${environment.apiUrl}/categories/create`,
