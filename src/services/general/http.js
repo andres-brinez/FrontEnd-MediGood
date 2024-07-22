@@ -26,6 +26,7 @@ const httpService = {
   // el body no se pasa a json porque es un formData
   postFormData: (url, formData) => fetch(url, { headers: getFormDataHeadersWithAuthToken() , method: 'POST', body: formData }),
   get: (url) => fetch(url, { headers: getHeadersWithAuthToken(), method: 'GET' }),
+  put: (url, body) => fetch(url, { headers: getHeadersWithAuthToken(), method: 'PUT', body: JSON.stringify(body) })
   // Puedes añadir más métodos según sea necesario, asegurándote de usar getHeadersWithAuthToken() para obtener los encabezados adecuados
 };
 
