@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getAllCategories } from "../../../../services/categories";
+import { createCategory,getAllCategories } from "../../../../services/categories";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById, updateProduct } from "../../../../services/productService";
 
@@ -21,9 +21,7 @@ const EditProduct = () => {
 
   // TODO: el popUp se puede poner en un componente aparte
   const popUpRef = useRef();
-  let popUp;
   useEffect(() => {
-    popUp = popUpRef.current
     getAllCategories().then((response) => {
       setCategories(response)
     })
@@ -45,20 +43,38 @@ const EditProduct = () => {
   }, []);
 
   function openPopup() {
-    popUp.className = "popup-open";
+    popUpRef.current.className = "popup-open";
   }
 
   function closePopup() {
-    popUp.className = "popup-close";
+    popUpRef.current.className = "popup-close";
   }
 
   // Lógica para agregar la nueva categoría
   function addCategory() {
     var newCategoryName = document.getElementById('newCategory').value;
     if (newCategoryName.trim() !== '') {
-      // Puedes realizar aquí la lógica para agregar la nueva categoría a tu sistema
-      alert('Nueva categoría agregada: ' + newCategoryName);
-      closePopup();
+
+      createCategory({ name: newCategoryName }).then((response) => {
+
+        if (response === 200) {
+          // Se actualizan las categorias
+          getAllCategories().then((response) => {
+            setCategories(response)
+          })
+
+          alert('Nueva categoría agregada: ' + newCategoryName);
+          closePopup();
+        }
+        else if (response === 400) {
+          alert('Error al crear la categoria.');
+        }
+        else if (response === 403) {
+          alert('No tienes permisos para crear categorias.');
+        }
+
+      })
+
     } else {
       alert('Por favor, ingresa un nombre válido para la categoría.');
     }
