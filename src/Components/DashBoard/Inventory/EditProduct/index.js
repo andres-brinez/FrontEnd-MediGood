@@ -1,10 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { getAllCategories } from "../../../../services/categories";
+import { useNavigate, useParams } from "react-router-dom";
+import { getProductById, updateProduct } from "../../../../services/productService";
 
 const EditProduct = () => {
 
   const [getCategories, setCategories] = useState([])
   const [categoryProductSelect, setCategoryProductSelect] = useState("");
+  const [product, setProduct] = useState({});
+
+  const [name,setName]=useState()
+  const [quantityProduct,setQuantityProduct]=useState()
+  const [descriptionProduct, setDescriptionProduct] = useState("");
+  const [priceProduct, setPriceProduct] = useState("");
+  const [inStockProduct, setInStockProduct] = useState(true);
+  const {id}= useParams();
+  const navigator = useNavigate();
+
 
 
   // TODO: el popUp se puede poner en un componente aparte
@@ -15,8 +27,22 @@ const EditProduct = () => {
     getAllCategories().then((response) => {
       setCategories(response)
     })
-  }, []);
+    if(id){
+      getProductById(id).then((response) => {
+        setProduct(response);
+        setName(response.name)
+        setQuantityProduct(response.quantity)
+        setDescriptionProduct(response.description)
+        setPriceProduct(response.price)
+        setInStockProduct(response.inStock)
+        // setCategoryProductSelect(product.category)
 
+      })
+    }
+    else{
+      alert("No hay ID del producto")
+    }
+  }, []);
 
   function openPopup() {
     popUp.className = "popup-open";
@@ -37,33 +63,52 @@ const EditProduct = () => {
       alert('Por favor, ingresa un nombre válido para la categoría.');
     }
   }
-  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let newProduct = {
+      id,
+      name,
+      quantity: quantityProduct,
+      description: descriptionProduct,
+      price: priceProduct,
+      inStock: inStockProduct,
+      // category: categoryProductSelect,
+    }
+    console.log(newProduct)
+    const isProductUpdate= updateProduct(newProduct)
+    console.log(isProductUpdate)
+    if(isProductUpdate){
+      navigator("/dashboard/inventory")
+    }
+
+  }
   return <>
     <div class="container-header">
       <h2 class="title">Editar Producto</h2>
     </div>
 
     {/* <!-- Formulario para editar un nuevo producto --> */}
-    <form class="edit-product-form dashboard">
+    <form onSubmit={handleSubmit} class="edit-product-form dashboard">
       <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required />
+      <input value={name} onChange={(e)=>setName(e.target.value)} type="text" id="nombre" name="nombre" required />
 
       <label for="cantidad">Cantidad</label>
-      <input type="number" id="cantidad" name="cantidad" required />
+      <input value={quantityProduct} onChange={(e)=>setQuantityProduct(e.target.value)} id="cantidad"  type="number"name="cantidad" required />
 
       <label for="descripcion">Descripción</label>
-      <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+      <textarea value={descriptionProduct} onChange={(e)=>setDescriptionProduct(e.target.value)} id="descripcion"  name="descripcion" rows="4" required></textarea>
 
       <label for="precio">Precio Unitario</label>
-      <input type="number" id="precio" name="precio" step="0.01" required />
-
+      <input value={priceProduct} onChange={(e)=>setPriceProduct(e.target.value)} type="number" id="precio" name="precio" step="0.01" required />
 
       <label for="marca">Marca</label>
-      <input type="text" id="marca" name="marca" required />
+      <input type="text" id="marca" name="marca" required  disabled />
 
-
+      {/*TODO: Falta traer la catoegira del producto porque no se encuentra en la api--> */}
       <label for="categoria">Categoría</label>
-      <select value={categoryProductSelect} onChange={(event) => setCategoryProductSelect(event.target.value)} id="categoria" name="categoria" required>
+      <select value={categoryProductSelect} onChange={(event) => setCategoryProductSelect(event.target.value)} id="categoria" name="categoria" required >
         {getCategories.map((category) => {
           return <option value={category.id}>{category.name}</option>
         })
@@ -75,12 +120,12 @@ const EditProduct = () => {
       <p onClick={openPopup} class="add-category-link" id="openAddCategoryPopup">Agregar Nueva Categoría</p>
 
       <label for="estado">Estado</label>
-      <select id="estado" name="estado" required>
-        <option value="disponible">Disponible</option>
-        <option value="oculto">Oculto</option>
+      <select value={inStockProduct} onChange={(event)=> setInStockProduct(event.target.value)} id="estado" name="estado" required>
+        <option value="true">Disponible</option>
+        <option value="false">Oculto</option>
       </select>
       <label for="imagen">Imagen del Producto</label>
-      <input type="file" id="imagen" name="imagen" accept="image*/" />
+      <input type="file" id="imagen" name="imagen" accept="image*/" disabled />
 
       <button type="submit">Guardar Cambios</button>
     </form>
