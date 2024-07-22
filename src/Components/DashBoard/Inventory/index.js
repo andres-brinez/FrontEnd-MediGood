@@ -5,6 +5,8 @@ import { getAllProducts } from "../../../services/productService";
 const Inventory = () => {
 
   const [products, setProducts] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
+
 
   const navigate = useNavigate();
 
@@ -19,13 +21,19 @@ const Inventory = () => {
     navigate("/dashboard/inventory/addProduct");
   }
 
-  function goToEditProduct(id) {
-    navigate("/dashboard/inventory/editProduct/" + id);
+  function goToEditProduct() {
+    if(selectedId)
+    navigate("/dashboard/inventory/editProduct/" + selectedId);
   }
 
-  function goToDetailProduct(id) {
+  function goToDetailProduct() {
+    if(selectedId){
+      navigate("/dashboard/inventory/detailProduct/" + selectedId);
+    }
+    else{
+      alert("Seleccione un producto para ver el detalle")
+    }
 
-    navigate("/dashboard/inventory/detailProduct/" + id);
   }
 
 
@@ -83,7 +91,12 @@ const Inventory = () => {
 
             return (
               <tr key={product.id}>
-                <td><input type="checkbox" id={product.id} /></td>
+                <td><input 
+                      type="checkbox"
+                      id={product.id}
+                      checked={product.id === selectedId}
+                      onChange={() => setSelectedId(product.id)}
+                    /></td>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>{product.quantity}</td>

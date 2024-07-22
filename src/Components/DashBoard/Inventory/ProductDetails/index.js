@@ -1,5 +1,39 @@
+import { useEffect, useState } from "react";
 import "./style.css"
+import { useParams } from "react-router-dom";
+import { getProductById } from "../../../../services/productService";
 const ProductDetails = () => {
+
+  const [product, setProduct] = useState({});
+  // TODO: se debe hacer que desde la api se retorne la categoria y la marca
+  const {name,quantity,description,price ,inStock ,dateAdded,imageUrl }=product
+  const {id} = useParams();
+
+  const formattedDate = new Date(product.dateAdded).toLocaleString('es-ES', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+
+  const formattedPrice = new Intl.NumberFormat('es-ES', {
+    style: 'currency',
+    currency: 'COP'
+  }).format(product.price);
+
+  useEffect(() => {
+    if(id){
+      getProductById(id).then((response) => {
+        setProduct(response);
+      })
+    }
+    else{
+      alert("No hay ID del producto")
+    }
+  }, [])
+
   return <>
     <div class="container-header">
       <h2 class="title">Detalle del Producto</h2>
@@ -8,17 +42,17 @@ const ProductDetails = () => {
     {/* <!-- Detalles del producto --> */}
     <div class="product-details">
       <div class="product-image">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Ritalin-SR-20mg-full.jpg" alt="Imagen del Producto" />
+        <img src={imageUrl} alt="Imagen del Producto" />
       </div>
       <div class="product-info">
         <label for="nombre">Nombre</label>
-        <p id="nombre">Nombre del Producto</p>
+        <p id="nombre">{name}</p>
 
         <label for="cantidad">Cantidad Disponible</label>
-        <p id="cantidad">Cantidad</p>
+        <p id="cantidad">{quantity}</p>
 
         <label for="descripcion">Descripción</label>
-        <p id="descripcion">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero doloremque, suscipit omnis repudiandae iusto veniam quaerat dicta repellendus nisi alias reprehenderit, perferendis architecto distinctio laboriosam deserunt corporis consectetur at libero.
+        <p id="descripcion">{description}
         </p>
 
         <label for="categoria">Categoría</label>
@@ -27,16 +61,14 @@ const ProductDetails = () => {
         <label for="marca">Marca</label>
         <p id="marca">Nombre de la Marca</p>
 
-
-
         <label for="precio">Precio Unitario</label>
-        <p id="precio">Precio del Producto</p>
+        <p id="precio">{formattedPrice}</p>
 
         <label for="estado">Estado:</label>
-        <p id="estado">Estado del Producto</p>
+        <p id="estado">{inStock?"Disponible":"No disponible"}</p>
 
         <label for="fecha-ingreso">Fecha de Ingreso</label>
-        <p id="fecha-ingreso">Fecha de Ingreso del Producto</p>
+        <p id="fecha-ingreso">{formattedDate}</p>
       </div>
     </div>
   </>
