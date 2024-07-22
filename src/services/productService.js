@@ -16,6 +16,23 @@ export const addProduct = (formData) => {
       }
     })
 }
+
+export const updateProduct =(information)=>{
+  const url=urls.updateProduct
+  const body=information
+  return httpService.put(url,body)
+  .then((response)=>{
+    if (response.status === 200 || response.status === 201) {
+      alert("Producto editado con éxito");
+      return true;
+    } else {
+      alert("No se pudo editar el producto");
+      return false
+    }
+  }
+)
+
+}
 export const getAllProducts=()=>{
   const url= urls.getAllProducts;
   return httpService.get(url).then((response) => response.json())
