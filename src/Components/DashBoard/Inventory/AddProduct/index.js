@@ -1,15 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import "./style.css"
 import { createCategory, getAllCategories } from "../../../../services/categories";
+import { addProduct } from "../../../../services/productService";
+import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
 
+  const navigator= useNavigate();
+
   const [getCategories, setCategories] = useState([])
+  const [nameProduct, setNameProduct] = useState("");
+  const [priceProduct, setPriceProduct] = useState("");
+  const [descriptionProduct, setDescriptionProduct] = useState("");
+  const [categoryProduct, setCategoryProduct] = useState("");
+  const [imageProduct, setImageProduct] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [inStock, setInStock] = useState(true);
+
 
   const popUpRef = useRef();
   useEffect(() => {
     getAllCategories().then((response) => {
       setCategories(response)
-
     })
   }, []);
 
@@ -41,7 +52,7 @@ const AddProduct = () => {
         else if (response === 400) {
           alert('Error al crear la categoria.');
         }
-        else if( response===403){
+        else if (response === 403) {
           alert('No tienes permisos para crear categorias.');
         }
 
@@ -52,25 +63,48 @@ const AddProduct = () => {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    // Crear un objeto FormData
+    const formData = new FormData();
+
+    // Agregar los datos al FormData
+    formData.append('id', Math.floor(Math.random() * 100000000).toString());
+    formData.append('name', nameProduct);
+    formData.append('price', priceProduct);
+    formData.append('description', descriptionProduct);
+    formData.append('imageFile', imageProduct);
+    formData.append('categoryId', categoryProduct);
+    formData.append('inStock', inStock);
+    formData.append('quantity', quantity);
+        
+  const saveProduct=addProduct(formData)
+  if(saveProduct){
+    navigator("/dashboard")
+  }
+
+  }
+
   return <>
     <div class="container-header">
       <h2 class="title">Agregar Producto</h2>
     </div>
     {/* <!-- Formulario para agregar un nuevo producto --> */}
-    <form class="add-product-form dashboard ">
+    <form onSubmit={handleSubmit} class="add-product-form dashboard ">
 
       <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required />
+      <input value={nameProduct} onChange={(event) => setNameProduct(event.target.value)} type="text" id="nombre" name="nombre" required />
 
       <label for="cantidad">Cantidad</label>
-      <input type="number" id="cantidad" name="cantidad" required />
+      <input value={quantity} onChange={(event) => setQuantity(event.target.value)} type="number" id="cantidad" name="cantidad" required />
 
       {/* TODO: Nueva funcionalidad: Permitir agregar la marxa */}
       {/* <label for="marca">Marca</label>
       <input type="text" id="marca" name="marca" required /> */}
 
       <label for="categoria">Categoría</label>
-      <select id="categoria" name="categoria" required>
+      <select value={categoryProduct} onChange={(event) => setCategoryProduct(event.target.value)} id="categoria" name="categoria" required>
         {getCategories.map((category) => {
           return <option value={category.id}>{category.name}</option>
         })
@@ -82,13 +116,20 @@ const AddProduct = () => {
       <p onClick={openPopup} class="add-category-link" id="openAddCategoryPopup">Agregar Nueva Categoría</p>
 
       <label for="descripcion">Descripción</label>
-      <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+      <textarea value={descriptionProduct} onChange={(event) => setDescriptionProduct(event.target.value)} id="descripcion" name="descripcion" rows="4" required></textarea>
 
+
+      <label for="inStock">In Stock</label>
+      <select value={inStock} onChange={(event) => setInStock(event.target.value)} id="inStock" name="inStock" required>
+        <option value={true}>Disponible</option>
+        <option value={false}>No Disponible</option>
+
+      </select>
       <label for="precio">Precio Unitario</label>
-      <input type="number" id="precio" name="precio" step="0.01" required />
+      <input value={priceProduct} onChange={(event) => setPriceProduct(event.target.value)} type="number" id="precio" name="precio" step="0.01" required />
 
       <label for="imagen">Imagen del Producto</label>
-      <input type="file" id="imagen" name="imagen" accept="image/*" />
+      <input type="file" id="imagen" name="imagen" accept="image/*" onChange={(event) => setImageProduct(event.target.files[0])} required />
 
       <button type="submit" >Agregar Producto</button>
     </form>
