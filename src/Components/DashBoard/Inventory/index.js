@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../../../services/productService";
@@ -6,6 +6,7 @@ const Inventory = () => {
 
   const [products, setProducts] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
+
 
   const navigate = useNavigate();
 
