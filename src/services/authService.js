@@ -12,12 +12,17 @@ export const authServiceLogin = (credentials) => {
   return httpService.post(url, body)
     .then((response) => response.json())
     .then((response) => {
-
-      const storage = new StorageService();
-      storage.set('TOKEN', response.token);
-      return response.token;
-
-    });
+      if (!response) {
+        alert("Respuesta vacia desde el login");
+        return false;
+      }
+      else {
+        const storageService = new StorageService();
+        storageService.set('TOKEN', response.token);
+        return response.token;
+      }
+    })
+    
 }
 
 export const authServiceRegister = (credentials) => {
