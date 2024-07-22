@@ -1,11 +1,22 @@
 import { useNavigate } from "react-router-dom"
 import "./style.css"
+import { useEffect, useState } from "react";
+import { getAllPurchaseProducts } from "../../../services/Purchase";
 const Order = () => {
 
-  const navigator= useNavigate()
+  const navigator = useNavigate()
 
-  function goToDetail(id){
-    navigator("/dashboard/orders/detail/"+id)
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllPurchaseProducts().then((response) => {
+      setProducts(response)
+      console.log(products)
+    })
+  }, [])
+
+  function goToDetail(id) {
+    navigator("/dashboard/orders/detail/" + id)
   }
 
   return <>
@@ -21,7 +32,7 @@ const Order = () => {
     </div>
 
     {/* <!-- Botón para ver detalles --> */}
-    <button class="detail-button" onClick={()=>{goToDetail(2)}}>Ver Detalle</button>
+    <button class="detail-button" onClick={() => { goToDetail(2) }} disabled>Ver Detalle</button>
 
     {/* <!-- Tabla de resumen de pedidos --> */}
     <table class="table">
@@ -30,52 +41,41 @@ const Order = () => {
           <th></th>
           <th>ID</th>
           <th>Fecha</th>
+          <th>Cantidad productos</th>
           <th>Cliente</th>
           <th>Estado</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><input type="checkbox" name="" id="" /></td>
-          <td>1</td>
-          <td>12/10/2024</td>
-          <td>Andres Briñez</td>
-          <td>Enviado</td>
-          <td>$ 100.000</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="" id="" /></td>
-          <td>2</td>
-          <td>12/10/2024</td>
-          <td>Andres Briñez</td>
-          <td>En proceso</td>
-          <td>$ 100.000</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="" id="" /></td>
-          <td>3</td>
-          <td>12/10/2024</td>
-          <td>Andres Briñez</td>
-          <td>Entregado</td>
-          <td>$ 100.000</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="" id="" /></td>
-          <td>4</td>
-          <td>12/10/2024</td>
-          <td>Andres Briñez</td>
-          <td>Enviado</td>
-          <td>$ 100.000</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="" id="" /></td>
-          <td>5</td>
-          <td>12/10/2024</td>
-          <td>Andres Briñez</td>
-          <td>Enviado</td>
-          <td>$ 100.000</td>
-        </tr>
+
+        {products.map((product) => {
+
+          const formattedDate = new Date(product.date).toLocaleString('es-ES', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          });
+
+          const formattedPrice = new Intl.NumberFormat('es-ES', {
+            style: 'currency',
+            currency: 'COP'
+          }).format(product.total);
+
+          return <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td>{product.id}</td>
+            <td>{formattedDate}</td>
+            <td>{product.quantity}</td>
+            <td>Nombre del cliente </td>
+            <td>Enviado</td>
+            <td>${formattedPrice}</td>
+          </tr>
+        })}
+
       </tbody>
     </table>
     <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />

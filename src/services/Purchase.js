@@ -23,3 +23,16 @@ export const createPurchaseProducts = (information) => {
 
   )
 }
+
+export const getAllPurchaseProducts = () => {
+
+  const url = urls.getAllPurchase;
+
+  return httpService.get(url).then((response) =>{
+    // console.log(response)
+    if(response.status===200){
+      return response.json()
+    }
+
+  });
+}
