@@ -28,4 +28,17 @@ export const editUser= (information)=>{
   })
 }
 
+export function getAllUsers(){
+
+  const url= urls.getAllUsers
+  return httpService.get(url).then((response)=>{
+    if(response.status===200){
+      return response.json();
+    }else{
+      return false;
+    }
+  })
+
+}
+
 

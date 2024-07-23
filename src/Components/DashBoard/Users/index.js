@@ -1,17 +1,29 @@
-import { useNavigate,  } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, } from "react-router-dom";
+import { getAllUsers } from "../../../services/users";
 
 function Users() {
 
   const navigation = useNavigate();
+  const [users, setUsers] = useState([]);
+  
 
-  function goToAdd(){
+  useEffect(() => {
+    getAllUsers().then((response) => {
+      if (response) {
+        setUsers(response)
+      }
+    })
+  }, [])
+
+  function goToAdd() {
     navigation("/dashboard/users/add")
   }
-  function goToEdit(id){
-    navigation("/dashboard/users/edit/"+id)
+  function goToEdit(id) {
+    navigation("/dashboard/users/edit/" + id)
   }
-  function goToDetail(id){
-    navigation("/dashboard/users/detail/"+id)
+  function goToDetail(id) {
+    navigation("/dashboard/users/detail/" + id)
   }
 
   return <>
@@ -28,8 +40,8 @@ function Users() {
     {/* <!-- Botones de Detalle, Editar y Ocultar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAdd}>Añadir</button>
-      <button class="detalle-button" onClick={()=>{goToDetail(1)}}>Detalle</button>
-      <button class="edit-button" onClick={()=>{goToEdit(1)}}>Editar</button>
+      <button class="detalle-button" onClick={() => { goToDetail(1) }}>Detalle</button>
+      <button class="edit-button" onClick={() => { goToEdit(1) }}>Editar</button>
     </div>
 
     {/* <!-- Tabla de Usuarios --> */}
@@ -38,7 +50,7 @@ function Users() {
       <thead>
         <tr>
           <th></th>
-          <th>ID</th>
+          <th>Email</th>
           <th>Nombre</th>
           <th>Rol</th>
           <th>Estado</th>
@@ -47,31 +59,23 @@ function Users() {
       {/* <!-- Contenido de la tabla --> */}
       <tbody>
         {/* <!-- Filas con datos de usuarios --> */}
-        <tr>
-          <td><input type="checkbox" id="user001" /></td>
-          <td>001</td>
-          <td>Usuario 1</td>
-          <td>Administrador</td>
-          <td>Activo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="user002" /></td>
-          <td>002</td>
-          <td>Usuario 2</td>
-          <td>Usuario</td>
-          <td>Inactivo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" id="user003" /></td>
-          <td>003</td>
-          <td>Usuario 3</td>
-          <td>Usuario</td>
-          <td>Activo</td>
-        </tr>
+        {users.map((user) => {
+          return (
+            <tr>
+              <td><input type="checkbox" id={user.email} /></td>
+              <td>{user.email}</td>
+              <td>{user.name}</td>
+              <td>{user.rol==="USER"?"Usuario":"Administrador"}</td>
+              <td>{user.enabled?"Activo":"Inactivo"}</td>
+            </tr>
+          )
+        })}
+
+     
       </tbody>
     </table>
 
-{/* TODO: Crear la páginación de la tabla */}
+    {/* TODO: Crear la páginación de la tabla */}
     {/* <!-- Paginación de la tabla --> */}
     <div class="pagination">
       <div class="pagination-options">
