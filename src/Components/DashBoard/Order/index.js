@@ -8,6 +8,8 @@ const Order = () => {
 
   const [products, setProducts] = useState([]);
 
+  const [productSelect, setProductSelect] = useState(null)
+
   useEffect(() => {
     getAllPurchaseProducts().then((response) => {
       setProducts(response)
@@ -15,8 +17,12 @@ const Order = () => {
     })
   }, [])
 
-  function goToDetail(id) {
-    navigator("/dashboard/orders/detail/" + id)
+  function goToDetail() {
+    if(!productSelect){
+      alert("Debe seleccionar un producto")
+      return;
+    }
+    navigator("/dashboard/orders/detail/" + productSelect)
   }
 
   return <>
@@ -32,7 +38,7 @@ const Order = () => {
     </div>
 
     {/* <!-- Botón para ver detalles --> */}
-    <button class="detail-button" onClick={() => { goToDetail(2) }} disabled>Ver Detalle</button>
+    <button class="detail-button" onClick={() => { goToDetail() }} >Ver Detalle</button>
 
     {/* <!-- Tabla de resumen de pedidos --> */}
     <table class="table">
@@ -66,12 +72,16 @@ const Order = () => {
           }).format(product.total);
 
           return <tr>
-            <td><input type="checkbox" name="" id="" /></td>
+            <td><input type="checkbox"
+              name=""
+              id={product.id}
+              checked={product.id === productSelect}
+              onChange={() => setProductSelect(product.id)} /></td>
             <td>{product.id}</td>
             <td>{formattedDate}</td>
             <td>{product.quantity}</td>
             <td>Nombre del cliente </td>
-            <td>Enviado</td>
+            <td>Enviando</td>
             <td>${formattedPrice}</td>
           </tr>
         })}
