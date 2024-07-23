@@ -42,3 +42,18 @@ export function getAllUsers(){
 }
 
 
+export function createUser(body){
+
+  const url = urls.createUser;
+  return httpService.post(url,body).then((response)=>{
+    if(response.status===200){
+      return response.json();
+    }else{
+      return false;
+    }
+  })
+  
+
+}
+
+
