@@ -6,7 +6,7 @@ function Users() {
 
   const navigation = useNavigate();
   const [users, setUsers] = useState([]);
-  const [userSelect, setUserSelect] = useState()
+  const [userSelect, setUserSelect] = useState(null)
 
 
   useEffect(() => {
@@ -20,11 +20,21 @@ function Users() {
   function goToAdd() {
     navigation("/dashboard/users/add")
   }
-  function goToEdit(id) {
-    navigation("/dashboard/users/edit/" + id)
+  function goToEdit() {
+    if(userSelect!==null){
+    navigation("/dashboard/users/edit/" + userSelect)
+    }
+    else{
+      alert("Debe seleccionar un usuario")
+    }
   }
-  function goToDetail(id) {
-    navigation("/dashboard/users/detail/" + id)
+  function goToDetail() {
+    if(userSelect!==null){
+    navigation("/dashboard/users/detail/" + userSelect)
+    }
+    else{
+      alert("Debe seleccionar un usuario")
+    }
   }
 
   return <>
@@ -41,8 +51,8 @@ function Users() {
     {/* <!-- Botones de Detalle, Editar y Ocultar --> */}
     <div class="inventory-buttons">
       <button class="add-button" onClick={goToAdd}>Añadir</button>
-      <button class="detalle-button" onClick={() => { goToDetail(1) }}>Detalle</button>
-      <button class="edit-button" onClick={() => { goToEdit(1) }}>Editar</button>
+      <button class="detalle-button" onClick={() => { goToDetail() }}>Detalle</button>
+      <button class="edit-button" onClick={() => { goToEdit() }}>Editar</button>
     </div>
 
     {/* <!-- Tabla de Usuarios --> */}
