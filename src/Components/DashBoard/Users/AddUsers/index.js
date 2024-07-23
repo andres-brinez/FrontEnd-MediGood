@@ -1,39 +1,72 @@
+import { useState } from "react";
+import { createUser } from "../../../../services/users";
+import { useNavigate } from "react-router-dom";
+
 function AddUser() {
-  return <>
-    <div class="container-header">
-      <h2 class="title">Agregar usuario</h2>
-    </div>
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [rol, setRol] = useState("");
 
-    <form className="dashboard">
-      <h3>Ingresa los siguientes datos</h3>
+  const navigator = useNavigate();
 
-      <label for="email">Correo Electrónico</label>
-      <input type="email" id="email" name="email" required />
+  function handleSubmit(event) {
+    event.preventDefault();
 
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required />
+    const userInformation = {
+      email,
+      name,
+      password,
+      rol
+    }
 
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono" required />
+    createUser(userInformation).then((response)=>{
+      if(!response){
+        alert("El usuario ya existe")
+      }
+      else{
+        alert("Usuario creado correctamente")
+        navigator("/dashboard/users")
 
-      <label for="direccion">Dirección</label>
-      <input type="text" id="direccion" name="direccion" required />
+      }
+    })
 
-      <label for="estado">Estado</label>
+  }
+
+    return <>
+      <div class="container-header">
+        <h2 class="title">Agregar usuario</h2>
+      </div>
+
+      <form onSubmit={handleSubmit} className="dashboard">
+        <h3>Ingresa los siguientes datos</h3>
+
+        <label for="email">Correo Electrónico</label>
+        <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" id="email" name="email" required />
+
+        <label for="nombre">Nombre</label>
+        <input value={name} onChange={(event) => setName(event.target.value)} type="text" id="nombre" name="nombre" required />
+
+        <label for="password">Contraseña</label>
+        <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" id="password" name="password" required />
+
+        <label for="rol">Rol</label>
+        <select value={rol} onChange={(event) => setRol(event.target.value)} id="rol" name="rol" required>
+          <option value="USER">Usuario</option>
+          <option value="ADMIN">Administrador</option>
+        </select>
+
+
+        {/* <label for="estado">Estado</label>
       <select id="estado" name="estado" required>
         <option value="activo">Activo</option>
         <option value="inactivo">Inactivo</option>
-      </select>
+      </select> */}
 
-      <label for="rol">Rol</label>
-      <select id="rol" name="rol" required>
-        <option value="usuario">Usuario</option>
-        <option value="administrador">Administrador</option>
-      </select>
 
-      <button type="submit">Guardar Cambios</button>
-    </form>
-  </>
-}
+        <button type="submit">Guardar Cambios</button>
+      </form>
+    </>
+  }
 
-export default AddUser;
+  export default AddUser;
