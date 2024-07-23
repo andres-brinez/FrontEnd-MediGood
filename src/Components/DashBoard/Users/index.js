@@ -6,7 +6,8 @@ function Users() {
 
   const navigation = useNavigate();
   const [users, setUsers] = useState([]);
-  
+  const [userSelect, setUserSelect] = useState()
+
 
   useEffect(() => {
     getAllUsers().then((response) => {
@@ -62,16 +63,20 @@ function Users() {
         {users.map((user) => {
           return (
             <tr>
-              <td><input type="checkbox" id={user.email} /></td>
+              <td><input type="checkbox"
+                id={user.email}
+                checked={user.email === userSelect}
+                onChange={() => { setUserSelect(user.email) }} />
+              </td>
               <td>{user.email}</td>
               <td>{user.name}</td>
-              <td>{user.rol==="USER"?"Usuario":"Administrador"}</td>
-              <td>{user.enabled?"Activo":"Inactivo"}</td>
+              <td>{user.rol === "USER" ? "Usuario" : "Administrador"}</td>
+              <td>{user.enabled ? "Activo" : "Inactivo"}</td>
             </tr>
           )
         })}
 
-     
+
       </tbody>
     </table>
 
