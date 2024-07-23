@@ -1,6 +1,45 @@
 import "./style.css"
 
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getPurchaseById } from "../../../../services/Purchase";
+
+
 const OrderDetail = () => {
+
+    const { id } = useParams();
+
+    const [idOrder, setIdOrder] = useState('');
+    const [date, setDate] = useState();
+    const [products, setProducts] = useState([]);
+    const [total, setTotal] = useState('');
+    const [quantity, setQuantity] = useState('');
+
+    useEffect(() => {
+        getPurchaseById(id).then((response) => {
+
+            const formattedDate = new Date(response.date).toLocaleString('es-ES', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+
+            const formattedPrice = new Intl.NumberFormat('es-ES', {
+                style: 'currency',
+                currency: 'COP'
+            }).format(response.total);
+
+            setIdOrder(response.id)
+            setDate(formattedDate)
+            setProducts(response.products)
+            setTotal(formattedPrice)
+            setQuantity(response.quantity)
+        })
+    }, [])
+
     return <>
         {/* <!-- Encabezado --> */}
 
@@ -35,12 +74,14 @@ const OrderDetail = () => {
 
             {/* <!-- Detalles de la Orden --> */}
             <div class="detail-box">
-                <h3>Información</h3>
+                <h3>Información pedido</h3>
                 <div class="boxInfo">
-                    <p><strong>Número:</strong> 001</p>
-                    <p><strong>Fecha venta</strong> 2024-01-27 10:30 AM</p>
-                    <p><strong>Fecha de Entrega:</strong> 2024-01-28 02:45 PM</p>
-                    <p><strong>Cantidad de Productos:</strong> 5</p>
+                    <p><strong>Número pedido:</strong> {idOrder}</p>
+                    <p><strong>Fecha venta</strong>{date} </p>
+                    <p><strong>Fecha de Entrega:</strong> --</p>
+                    <p><strong>Cantidad de Productos:</strong> {quantity}</p>
+                    <p><strong>Estado:</strong> Enviamdo </p>
+                    <p><strong>Total:</strong> {total} </p>
                     <p><strong>Estado</strong>
                         <select>
                             <option value="en_proceso">En Proceso</option>
@@ -59,8 +100,8 @@ const OrderDetail = () => {
             {/* <!-- Encabezados de la tabla --> */}
             <thead>
                 <tr>
-                    <th>Número</th>
-                    <th>Producto</th>
+                    <th>Id</th>
+                    <th>Nombre</th>
                     <th>Cantidad</th>
                     <th>Valor unitario</th>
                     <th>Valor total</th>
@@ -68,27 +109,17 @@ const OrderDetail = () => {
             </thead>
             {/* <!-- Contenido de la tabla --> */}
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Producto A</td>
-                    <td>3</td>
-                    <td>$100.00</td>
-                    <td>$300.00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Producto B</td>
-                    <td>2</td>
-                    <td>$200.00</td>
-                    <td>$400.00</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Producto C</td>
-                    <td>1</td>
-                    <td>$300.00</td>
-                    <td>$300.00</td>
-                </tr>
+                {products.map((product) => {
+                    return (
+                        <tr>
+                            <td>{product.product.id}</td>
+                            <td>{product.product.name}</td>
+                            <td>{product.quantity}</td>
+                            <td>${product.price}</td>
+                            <td>${product.total}</td>
+                        </tr>
+                    )
+                })}
             </tbody>
             <tfoot>
                 <tr>
@@ -96,8 +127,8 @@ const OrderDetail = () => {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>$1000.00</td>
-                </tr>
+                    <td>${total} </td>
+                    </tr>
             </tfoot>
         </table>
 

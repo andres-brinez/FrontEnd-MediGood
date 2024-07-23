@@ -88,7 +88,6 @@ const Order = () => {
 
       </tbody>
     </table>
-    <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
 
     {/* TODO: Agregar la funcionalidad de páginiación */}
     {/* <!-- Paginación de la tabla --> */}
