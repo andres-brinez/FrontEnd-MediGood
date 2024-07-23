@@ -18,6 +18,8 @@ export const urls={
   getPurchaseByEmail:`${environment.apiUrl}/purchase/history/`,
 
   getInformationProfile:`${environment.apiUrl}/users/email/`,
+  editUser:`${environment.apiUrl}/users/update`,
+
 
 
 

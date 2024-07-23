@@ -11,6 +11,21 @@ export const getUserByEmail= (email)=>{
       return false;
     }
   })
-
-
 }
+
+
+export const editUser= (information)=>{
+
+  const url= urls.editUser;
+  const body= information
+
+  return httpService.post(url,body).then((response)=>{
+    if(response.status===200){
+      return response.json();
+    }else{
+      return false;
+    }
+  })
+}
+
+
