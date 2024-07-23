@@ -1,6 +1,14 @@
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./style.css"
+import { GlobalContext } from "../../../Context/GlobalContext";
+import { getUserByEmail } from "../../../services/users";
+import { useNavigate } from "react-router-dom";
 function Profile() {
+
+  const { emailUser } = useContext(GlobalContext);
+  const [user, setUser]= useState([])
+
+  const navigator = useNavigate();
 
   let tabVer;
   let tabEditar;
@@ -43,6 +51,16 @@ function Profile() {
     openTabVer()
     openTab("contenido-ver");
 
+    if (emailUser === "") {
+      alert("Se debe iniciar sesión para acceder a esta sección")
+       navigator("/login")
+      return;
+    }
+    getUserByEmail(emailUser).then((response) => {
+      console.log(response)
+      setUser(response)
+    })
+
   }, [])
 
 
@@ -62,19 +80,19 @@ function Profile() {
       <div class="profile-info">
 
         <label for="nombre">Nombre</label>
-        <p id="nombre">Nombre del Usuario</p>
+        <p id="nombre">{user.name}</p>
 
         <label for="correo">Correo Electrónico</label>
-        <p id="correo">correo@example.com</p>
+        <p id="correo">{user.email}</p>
 
         <label for="celular">Celular</label>
-        <p id="celular">123-456-7890</p>
+        <p id="celular">{user.phoneNumber===0?"--":user.phoneNumbe}</p>
 
         <label for="direccion">Dirección</label>
-        <p id="direccion">Calle 123, Ciudad</p>
+        <p id="direccion">--</p>
 
         <label for="identificacion">Número de Identificación</label>
-        <p id="identificacion">123456789</p>
+        <p id="identificacion">{user.dni===0?"--":user.dni}</p>
 
       </div>
     </div>
