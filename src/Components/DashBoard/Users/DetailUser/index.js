@@ -7,7 +7,6 @@ function DetailUser() {
 
   const  {id} = useParams();
 
-  // email,name,phoneNumber,address,role,status
   const [email,setEmail]= useState("")
   const [name,setName]= useState("")
   const [phoneNumber,setPhoneNumber]= useState("")
@@ -17,7 +16,6 @@ function DetailUser() {
 
   useEffect(()=>{
     getUserByEmail(id).then((response)=>{
-      console.log(response)
       setEmail(response.email)
       setName(response.name)
       setPhoneNumber(response.phoneNumber)
