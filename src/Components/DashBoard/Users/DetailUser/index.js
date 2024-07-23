@@ -1,5 +1,33 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getUserByEmail } from "../../../../services/users";
+
 // TODO: Mejorar los estilos que por el momentos son tomados del profile con la clase profile-info
 function DetailUser() {
+
+  const  {id} = useParams();
+
+  // email,name,phoneNumber,address,role,status
+  const [email,setEmail]= useState("")
+  const [name,setName]= useState("")
+  const [phoneNumber,setPhoneNumber]= useState("")
+  const [address,setAddress]= useState("")
+  const [role,setRole]= useState("")
+  const [status,setStatus]= useState("")
+
+  useEffect(()=>{
+    getUserByEmail(id).then((response)=>{
+      console.log(response)
+      setEmail(response.email)
+      setName(response.name)
+      setPhoneNumber(response.phoneNumber)
+      setAddress(response.address)
+      setRole(response.role)
+      setStatus(response.enabled)
+
+    })
+  },[])
+
   return <>
     <div class="container-header">
       <h2 class="title">Detalle de usuario</h2>
@@ -8,26 +36,23 @@ function DetailUser() {
     <div class="profile-info" id="contenido-ver">
       <h3>Información</h3>
 
-      <label for="id">Id</label>
-      <p id="id">123456</p>
-
-      <label for="user-email">Correo Electrónico</label>
-      <p id="user-email">correo@ejemplo.com</p>
+      <label for="id">Email</label>
+      <p id="id">{email}</p>
 
       <label for="user-name">Nombre</label>
-      <p id="user-name">Nombre del Usuario</p>
+      <p id="user-name">{name}</p>
 
       <label for="user-phone">Teléfono</label>
-      <p id="user-phone">+1234567890</p>
+      <p id="user-phone">{phoneNumber}</p>
 
       <label for="user-address">Dirección</label>
-      <p id="user-address">Dirección del Usuario</p>
+      <p id="user-address">{address}</p>
 
       <label for="user-status">Estado</label>
-      <p id="user-status">Activo</p>
+      <p id="user-status">{status?"Activo":"Inactivo"}</p>
 
       <label for="user-role">Rol</label>
-      <p id="user-role">Usuario</p>
+      <p id="user-role">{role==="Admin"?"Administrador":"Usuario"}</p>
     </div>
   </>
 }
