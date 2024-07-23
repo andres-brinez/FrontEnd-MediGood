@@ -45,7 +45,7 @@ function FormLogin() {
         const decodedToken = jwtDecode(token);
         const {email,role}= decodedToken
         console.log(decodedToken)
-        alert("El usuario con email "+ email + " tiene el rol " + role);
+        alert("Usuario autenticado");
         navigate("/")
         setEmailUser(email)
       }
