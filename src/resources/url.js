@@ -16,6 +16,7 @@ export const urls={
 
   getAllPurchase:`${environment.apiUrl}/purchase/all`,
   getPurchaseByEmail:`${environment.apiUrl}/purchase/history/`,
+  getPurchaseById:`${environment.apiUrl}/purchase/get/`,
 
   getInformationProfile:`${environment.apiUrl}/users/email/`,
   editUser:`${environment.apiUrl}/users/update`,
