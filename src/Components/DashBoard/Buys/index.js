@@ -12,14 +12,14 @@ const Buys = () => {
   useEffect(() => {
     if (emailUser === "") {
       alert("Se debe iniciar sesión para acceder a esta sección")
-      // navigator("/login")
+       navigator("/login")
       return;
     }
     getPurchaseByEmail(emailUser).then((response) => {
       console.log(response)
       setProduct(response)
     })
-  })
+  },[])
 
   function goToDetail(id) {
     navigator("/dashboard/buys/detail/" + id)
