@@ -1,14 +1,19 @@
 import { environment } from "../environment"
+import { getProductById, getProductByName } from "../services/productService"
 
 export const urls={
   registerUser:`${environment.apiUrl}/auth/register`,
   login:`${environment.apiUrl}/auth/login`,
+  
   getAllProductsAvailable:`${environment.apiUrl}/products/available`,
   getAllProducts:`${environment.apiUrl}/products/all`,
   getProductsTop:`${environment.apiUrl}/products/top`,
   getProductById:`${environment.apiUrl}/products/`,
+  getProductByName:`${environment.apiUrl}/products/name/`,
   addProduct:`${environment.apiUrl}/products/create`,
   updateProduct:`${environment.apiUrl}/products/update`,
+
+
 
   purcheseProducts:`${environment.apiUrl}/purchase/save`,
   getAllCategories:`${environment.apiUrl}/categories`,

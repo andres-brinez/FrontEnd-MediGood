@@ -5,6 +5,7 @@ import searchProductByName from "../../../services/searchProduct";
 
 
 import "./style.css"
+import { getProductByName } from "../../../services/productService";
 function ProductsSearched() {
 
   const productsSearchedRef = useRef(null);
@@ -19,10 +20,17 @@ function ProductsSearched() {
   }, []);
 
   useEffect(() => {
+    setProducts([]);
 
     if (searchTerm != null) {
-      setProducts(searchProductByName(searchTerm));
-      console.log(products);
+
+      getProductByName(searchTerm).then((response) => {
+        setProducts(response);
+      })
+       console.log(products);
+       console.log(products.length===0);
+
+
 
       const productsSearchedSection = document.getElementById('products-searched');
 
@@ -38,10 +46,8 @@ function ProductsSearched() {
 
     <section id="products-searched" ref={productsSearchedRef}>
       <div className="search-results-section">
-        {products.length === 0 ?
-          <p className="no-results">No hay resultados que coincidan con:</p> :
           <p className="search-term-intro">Productos que coinciden con:</p>
-        }
+      
         <h2 className="search-term">{searchTerm.toString()}</h2>
         <hr className="divider" />
       </div>
@@ -60,11 +66,13 @@ function ProductsSearched() {
         </div>
       </div> */}
       <div className="product-searched-list">
-        {
+        
+        {Array.isArray(products) && products.length > 0 ? (
           products.map((product) => (
             <ProductPreview key={product.id} id={product.id} urlImg={product.imageUrl} name={product.name} price={product.price} />
-          ))
-        }
+          ))) : (
+          <p>No hay productos que coincidan con este nombre</p>
+        )}
 
       </div>
       {/* TODO: Se puede agregar la paginacion */}

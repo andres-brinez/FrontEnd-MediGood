@@ -68,3 +68,15 @@ export const getProductById=(id)=>{
   });
 
 }
+
+// ProductByName
+export const getProductByName=(nameProduct)=>{
+  const url= urls.getProductByName+nameProduct;
+  return httpService.get(url).then((response) => response.json())
+  .then((response) => {
+    if(response.status===400){
+      return;
+    }
+    return response;
+  });
+}
