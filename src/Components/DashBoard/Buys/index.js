@@ -8,21 +8,26 @@ const Buys = () => {
 
   const { emailUser } = useContext(GlobalContext);
   const [products, setProduct] = useState([])
+  const [productSelect, setProductSelect] = useState(null)
 
   useEffect(() => {
     if (emailUser === "") {
       alert("Se debe iniciar sesión para acceder a esta sección")
-       navigator("/login")
+      navigator("/login")
       return;
     }
     getPurchaseByEmail(emailUser).then((response) => {
       console.log(response)
       setProduct(response)
     })
-  },[])
+  }, [])
 
-  function goToDetail(id) {
-    navigator("/dashboard/buys/detail/" + id)
+  function goToDetail() {
+    if(!productSelect){
+      alert("Debe seleccionar un producto")
+      return;
+    }
+    navigator("/dashboard/buys/detail/" + productSelect)
   }
   return <>
     <div class="container-header">
@@ -40,7 +45,7 @@ const Buys = () => {
     {(products && products.length > 0) ? (
       <>
         {/* <!-- Botón para ver detalles --> */}
-        <button class="detail-button" onClick={() => { goToDetail(1) }}>Ver Detalle</button>
+        <button class="detail-button" onClick={() => { goToDetail() }}>Ver Detalle</button>
 
         <table class="table-products">
           {/* <!-- Encabezados de la tabla --> */}
@@ -73,7 +78,12 @@ const Buys = () => {
                 }).format(product.total);
 
                 return (<tr key={index}>
-                  <td><input type="checkbox"></input></td>
+                  <td><input
+                    type="checkbox"
+                    checked={product.id === productSelect}
+                    onChange={()=>setProductSelect(product.id)}
+                  >
+                  </input></td>
                   <td>{product.id}</td>
                   <td>{product.quantity}</td>
                   <td>{formattedPrice}</td>
