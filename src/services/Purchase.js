@@ -44,3 +44,12 @@ export const getPurchaseByEmail = (email) => {
     }
   })
 }
+
+export const getPurchaseById = (id) => {
+  const url = urls.getPurchaseById + id;
+  return httpService.get(url).then((response) => {
+    if (response.status === 200) {
+      return response.json()
+    }
+  })
+}
