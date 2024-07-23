@@ -20,6 +20,7 @@ export const urls={
   getInformationProfile:`${environment.apiUrl}/users/email/`,
   editUser:`${environment.apiUrl}/users/update`,
   getAllUsers:`${environment.apiUrl}/users/all`,
+  createUser: `${environment.apiUrl}/users/create`,
 
 
 
