@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect,useRef } from 'react';
 import "./style.css"
 
@@ -11,6 +11,8 @@ import "./style.css"
 import { getProductById } from '../../../services/productService';
 
 const ProductsDetails = () => {
+
+  const navigator = useNavigate();
 
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -34,8 +36,15 @@ const ProductsDetails = () => {
     if (id != null) {
 
       getProductById(id).then((response) => {
+
+        if (response.errorMessage != undefined) {
+          alert(response.errorMessage);
+          navigator("/");
+        }
+
         setProduct(response);
-        console.log(response);
+
+        
       })
       .catch((error) => {
         console.log(error);
