@@ -1,4 +1,4 @@
 export const environment = {
   isProduction: false,
-  apiUrl: 'http://localhost:8080/api/v1'
+  apiUrl: 'https://api-medigood-production.up.railway.app/api/v1'
 };
