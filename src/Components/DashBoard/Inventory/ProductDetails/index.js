@@ -6,7 +6,8 @@ const ProductDetails = () => {
 
   const [product, setProduct] = useState({});
   // TODO: se debe hacer que desde la api se retorne la categoria y la marca
-  const { name, quantity, description, price, inStock, dateAdded, imageUrl } = product
+  // const { name, quantity, description, price, inStock, dateAdded, imageUrl } = product
+  const { name, quantity, description,inStock,imageUrl } = product
   const { id } = useParams();
 
   const formattedDate = new Date(product.dateAdded).toLocaleString('es-ES', {
@@ -32,7 +33,7 @@ const ProductDetails = () => {
     else {
       alert("No hay ID del producto")
     }
-  }, [])
+  }, [id])
 
   return <>
     <div className="container-header">

@@ -36,7 +36,7 @@ function BuysDetail() {
       setTotal(formattedPrice)
       setQuantity(response.quantity)
     })
-  }, [])
+  }, [id])
 
   return <>
     <div className="container-header">
