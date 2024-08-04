@@ -16,12 +16,19 @@ const SliderProducts = ({ products }) => {
     nextArrow: <NextArrow />,
   };
 
-  return <Slider
-    {...settings}>
-    {products.map((product) => (
-      <ProductPreview key={product.id} id={product.id} urlImg={product.imageUrl} name={product.name} price={product.price} />
-    ))}
-  </Slider>
+  return (
+    <>
+      {products && products.length > 0 ? (
+        <Slider {...settings}>
+          {products.map((product) => (
+            <ProductPreview key={product.id} id={product.id} urlImg={product.imageUrl} name={product.name} price={product.price} />
+          ))}
+        </Slider>
+      ) : (
+        <div>No hay productos disponibles</div>
+      )}
+    </>
+  );
 }
 
 export default SliderProducts;
