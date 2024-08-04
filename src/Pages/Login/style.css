@@ -28,7 +28,7 @@
 
 .back-to-shop a {
   text-decoration: none;
-  color: var(--neutrals-neutral-06, #8B8B8B);
+  color: var( #8B8B8B);
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -147,7 +147,7 @@ form {
   right: 10px;
   top: 40%;
   transform: translateY(-50%);
-  color: var(--neutrals-neutral-06, #8B8B8B);
+  color: var(#8B8B8B);
   font-size: 15px;
 }
 
@@ -168,7 +168,7 @@ form {
   flex-grow: 1;
   height: 1px;
   background-color: #C5C5C5;
-  ;
+  
   /* Cambia este color según tus necesidades */
 }
 
