@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { createCategory,getAllCategories } from "../../../../services/categories";
+import { createCategory, getAllCategories } from "../../../../services/categories";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById, updateProduct } from "../../../../services/productService";
 
@@ -9,12 +9,12 @@ const EditProduct = () => {
   const [categoryProductSelect, setCategoryProductSelect] = useState("");
   const [product, setProduct] = useState({});
 
-  const [name,setName]=useState()
-  const [quantityProduct,setQuantityProduct]=useState()
+  const [name, setName] = useState()
+  const [quantityProduct, setQuantityProduct] = useState()
   const [descriptionProduct, setDescriptionProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
   const [inStockProduct, setInStockProduct] = useState(true);
-  const {id}= useParams();
+  const { id } = useParams();
   const navigator = useNavigate();
 
 
@@ -25,7 +25,7 @@ const EditProduct = () => {
     getAllCategories().then((response) => {
       setCategories(response)
     })
-    if(id){
+    if (id) {
       getProductById(id).then((response) => {
         setProduct(response);
         setName(response.name)
@@ -37,7 +37,7 @@ const EditProduct = () => {
 
       })
     }
-    else{
+    else {
       alert("No hay ID del producto")
     }
   }, []);
@@ -93,34 +93,34 @@ const EditProduct = () => {
       // category: categoryProductSelect,
     }
     console.log(newProduct)
-    const isProductUpdate= updateProduct(newProduct)
+    const isProductUpdate = updateProduct(newProduct)
     console.log(isProductUpdate)
-    if(isProductUpdate){
+    if (isProductUpdate) {
       navigator("/dashboard/inventory")
     }
 
   }
   return <>
-    <div class="container-header">
-      <h2 class="title">Editar Producto</h2>
+    <div className="container-header">
+      <h2 className="title">Editar Producto</h2>
     </div>
 
     {/* <!-- Formulario para editar un nuevo producto --> */}
-    <form onSubmit={handleSubmit} class="edit-product-form dashboard">
+    <form onSubmit={handleSubmit} className="edit-product-form dashboard">
       <label for="nombre">Nombre</label>
-      <input value={name} onChange={(e)=>setName(e.target.value)} type="text" id="nombre" name="nombre" required />
+      <input value={name} onChange={(e) => setName(e.target.value)} type="text" id="nombre" name="nombre" required />
 
       <label for="cantidad">Cantidad</label>
-      <input value={quantityProduct} onChange={(e)=>setQuantityProduct(e.target.value)} id="cantidad"  type="number"name="cantidad" required />
+      <input value={quantityProduct} onChange={(e) => setQuantityProduct(e.target.value)} id="cantidad" type="number" name="cantidad" required />
 
       <label for="descripcion">Descripción</label>
-      <textarea value={descriptionProduct} onChange={(e)=>setDescriptionProduct(e.target.value)} id="descripcion"  name="descripcion" rows="4" required></textarea>
+      <textarea value={descriptionProduct} onChange={(e) => setDescriptionProduct(e.target.value)} id="descripcion" name="descripcion" rows="4" required></textarea>
 
       <label for="precio">Precio Unitario</label>
-      <input value={priceProduct} onChange={(e)=>setPriceProduct(e.target.value)} type="number" id="precio" name="precio" step="0.01" required />
+      <input value={priceProduct} onChange={(e) => setPriceProduct(e.target.value)} type="number" id="precio" name="precio" step="0.01" required />
 
       <label for="marca">Marca</label>
-      <input type="text" id="marca" name="marca" required  disabled />
+      <input type="text" id="marca" name="marca" required disabled />
 
       {/*TODO: Falta traer la catoegira del producto porque no se encuentra en la api--> */}
       <label for="categoria">Categoría</label>
@@ -133,10 +133,10 @@ const EditProduct = () => {
       </select>
 
       {/* <!-- Enlace o botón para abrir la ventana emergente de agregar categoría --> */}
-      <p onClick={openPopup} class="add-category-link" id="openAddCategoryPopup">Agregar Nueva Categoría</p>
+      <p onClick={openPopup} className="add-category-link" id="openAddCategoryPopup">Agregar Nueva Categoría</p>
 
       <label for="estado">Estado</label>
-      <select value={inStockProduct} onChange={(event)=> setInStockProduct(event.target.value)} id="estado" name="estado" required>
+      <select value={inStockProduct} onChange={(event) => setInStockProduct(event.target.value)} id="estado" name="estado" required>
         <option value="true">Disponible</option>
         <option value="false">Oculto</option>
       </select>
@@ -147,12 +147,12 @@ const EditProduct = () => {
     </form>
 
     <div id="addCategoryPopup" className="popup-close" ref={popUpRef}>
-      <div class="popup-content">
-        <span id="closeAddCategoryPopup" class="close-popup" onClick={closePopup}>&times;</span>
+      <div className="popup-content">
+        <span id="closeAddCategoryPopup" className="close-popup" onClick={closePopup}>&times;</span>
         <h3>Agregar Nueva Categoría</h3>
         <label for="newCategory">Nombre de la categoría</label>
         <input type="text" id="newCategory" name="newCategory" required />
-        <button  onClick={addCategory}id="addCategoryButton">Agregar</button>
+        <button onClick={addCategory} id="addCategoryButton">Agregar</button>
       </div>
     </div>
 

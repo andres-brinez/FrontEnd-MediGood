@@ -21,42 +21,42 @@ function Users() {
     navigation("/dashboard/users/add")
   }
   function goToEdit() {
-    if(userSelect!==null){
-    navigation("/dashboard/users/edit/" + userSelect)
+    if (userSelect !== null) {
+      navigation("/dashboard/users/edit/" + userSelect)
     }
-    else{
+    else {
       alert("Debe seleccionar un usuario")
     }
   }
   function goToDetail() {
-    if(userSelect!==null){
-    navigation("/dashboard/users/detail/" + userSelect)
+    if (userSelect !== null) {
+      navigation("/dashboard/users/detail/" + userSelect)
     }
-    else{
+    else {
       alert("Debe seleccionar un usuario")
     }
   }
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Usuarios</h2>
+    <div className="container-header">
+      <h2 className="title">Usuarios</h2>
       {/* <!-- Barra de búsqueda --> */}
-      <div class="search-bar">
+      <div className="search-bar">
         <input type="text" placeholder="Buscar por ID " />
-        <button class="search-button">
-          <img class="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />                    </button>
+        <button className="search-button">
+          <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />                    </button>
       </div>
     </div>
 
     {/* <!-- Botones de Detalle, Editar y Ocultar --> */}
-    <div class="inventory-buttons">
-      <button class="add-button" onClick={goToAdd}>Añadir</button>
-      <button class="detalle-button" onClick={() => { goToDetail() }}>Detalle</button>
-      <button class="edit-button" onClick={() => { goToEdit() }}>Editar</button>
+    <div className="inventory-buttons">
+      <button className="add-button" onClick={goToAdd}>Añadir</button>
+      <button className="detalle-button" onClick={() => { goToDetail() }}>Detalle</button>
+      <button className="edit-button" onClick={() => { goToEdit() }}>Editar</button>
     </div>
 
     {/* <!-- Tabla de Usuarios --> */}
-    <table class="table-users">
+    <table className="table-users">
       {/* <!-- Encabezados de la tabla --> */}
       <thead>
         <tr>
@@ -92,8 +92,8 @@ function Users() {
 
     {/* TODO: Crear la páginación de la tabla */}
     {/* <!-- Paginación de la tabla --> */}
-    <div class="pagination">
-      <div class="pagination-options">
+    <div className="pagination">
+      <div className="pagination-options">
         <button>Anterior</button>
         <span>1</span>
         <span>2</span>
@@ -102,7 +102,7 @@ function Users() {
         <span>...</span>
         <button>Siguiente</button>
       </div>
-      <button class="show-all-button">Mostrar Todos</button>
+      <button className="show-all-button">Mostrar Todos</button>
     </div>  </>
 
 }

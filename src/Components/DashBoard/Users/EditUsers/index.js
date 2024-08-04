@@ -11,7 +11,7 @@ function EditUser() {
   const [role, setRole] = useState("")
   const [enabled, setEnabled] = useState("")
 
-  const navigator =useNavigate();
+  const navigator = useNavigate();
 
 
   useEffect(() => {
@@ -29,11 +29,11 @@ function EditUser() {
   function handleSubmit(event) {
     event.preventDefault();
     const data = {
-      email:id,
+      email: id,
       name,
       phoneNumber,
       address,
-      rol:role,
+      rol: role,
       enabled
     }
 
@@ -49,34 +49,34 @@ function EditUser() {
     })
   }
   return <>
-    <div class="container-header">
-      <h2 class="title">Editar usuario</h2>
+    <div className="container-header">
+      <h2 className="title">Editar usuario</h2>
     </div>
 
     <form onSubmit={handleSubmit} className="dashboard">
       <h3>Ingresa los siguientes datos</h3>
 
       <label for="email">Correo Electrónico</label>
-      <input value={id}  type="email" id="email" name="email"  readOnly  />
+      <input value={id} type="email" id="email" name="email" readOnly />
 
       <label for="nombre">Nombre</label>
-      <input value={name} onChange={(e)=>setName(e.target.value)} type="text" id="nombre" name="nombre" required />
+      <input value={name} onChange={(e) => setName(e.target.value)} type="text" id="nombre" name="nombre" required />
 
       <label for="telefono">Teléfono</label>
-      <input value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)} type="number" id="telefono" name="telefono"  />
+      <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} type="number" id="telefono" name="telefono" />
 
       <label for="direccion">Dirección</label>
-      <input value={address} onChange={(e)=>setAddress(e.target.value)} type="text" id="direccion" name="direccion"  />
+      <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" id="direccion" name="direccion" />
 
       {/* TODO: El estado por el momento no se puede modificar desde el api */}
       <label for="estado">Estado</label>
-      <select value={enabled} onChange={(e)=>setEnabled(e.target.value)} id="estado" name="estado" >
+      <select value={enabled} onChange={(e) => setEnabled(e.target.value)} id="estado" name="estado" >
         <option value={true}>Activo</option>
         <option value={false}>Inactivo</option>
       </select>
 
       <label for="rol">Rol</label>
-      <select value={role} onChange={(e)=>setRole(e.target.value)} id="rol" name="rol" required>
+      <select value={role} onChange={(e) => setRole(e.target.value)} id="rol" name="rol" required>
         <option value="USER">Usuario</option>
         <option value="ADMIN">Administrador</option>
       </select>

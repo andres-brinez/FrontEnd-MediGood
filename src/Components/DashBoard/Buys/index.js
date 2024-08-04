@@ -23,20 +23,20 @@ const Buys = () => {
   }, [])
 
   function goToDetail() {
-    if(!productSelect){
+    if (!productSelect) {
       alert("Debe seleccionar un producto")
       return;
     }
     navigator("/dashboard/buys/detail/" + productSelect)
   }
   return <>
-    <div class="container-header">
-      <h2 class="title">Compras</h2>
+    <div className="container-header">
+      <h2 className="title">Compras</h2>
       {/* <!-- Barra de búsqueda --> */}
-      <div class="search-bar">
+      <div className="search-bar">
         <input type="text" placeholder="Buscar por número" />
-        <button class="search-button">
-          <img class="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
+        <button className="search-button">
+          <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
         </button>
       </div>
     </div>
@@ -45,9 +45,9 @@ const Buys = () => {
     {(products && products.length > 0) ? (
       <>
         {/* <!-- Botón para ver detalles --> */}
-        <button class="detail-button" onClick={() => { goToDetail() }}>Ver Detalle</button>
+        <button className="detail-button" onClick={() => { goToDetail() }}>Ver Detalle</button>
 
-        <table class="table-products">
+        <table className="table-products">
           {/* <!-- Encabezados de la tabla --> */}
           <thead>
             <tr>
@@ -81,7 +81,7 @@ const Buys = () => {
                   <td><input
                     type="checkbox"
                     checked={product.id === productSelect}
-                    onChange={()=>setProductSelect(product.id)}
+                    onChange={() => setProductSelect(product.id)}
                   >
                   </input></td>
                   <td>{product.id}</td>
@@ -99,8 +99,8 @@ const Buys = () => {
 
         {/* TODO: Agregar la funcionalidad de páginación */}
         {/* <!-- Paginación de la tabla --> */}
-        <div class="pagination">
-          <div class="pagination-options">
+        <div className="pagination">
+          <div className="pagination-options">
             <button>Anterior</button>
             <span>1</span>
             <span>2</span>
@@ -109,7 +109,7 @@ const Buys = () => {
             <span>...</span>
             <button>Siguiente</button>
           </div>
-          <button class="show-all-button">Mostrar Todos</button>
+          <button className="show-all-button">Mostrar Todos</button>
         </div>
       </>
     ) : <tr>No se han hecho compras</tr>}

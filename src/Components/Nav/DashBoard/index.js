@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./style.css"
 function NavDashBoard() {
   return (
-    <nav class="side-nav">
+    <nav className="side-nav">
       <ul>
         <li>
           <Link to="/dashboard/orders">
@@ -16,21 +16,21 @@ function NavDashBoard() {
         </li>
         <li>
           <Link to="/dashboard/buys">
-            <i class="fas fa-shopping-bag"></i> Compras
+            <i className="fas fa-shopping-bag"></i> Compras
           </Link>
         </li>
         <li>
           <Link to="/dashboard/profile">
-            <i class="fas fa-user"></i> Perfil
+            <i className="fas fa-user"></i> Perfil
           </Link>
         </li>
         <li>
           <Link to="/dashboard/users">
-            <i class="fas fa-users"></i> Usuarios         
+            <i className="fas fa-users"></i> Usuarios
           </Link>
         </li>
 
-        {/* <li><a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a></li> */}
+        {/* <li><a href="#"><i className="fas fa-sign-out-alt"></i> Salir</a></li> */}
       </ul>
     </nav>
   );

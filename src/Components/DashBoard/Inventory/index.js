@@ -21,19 +21,19 @@ const Inventory = () => {
   }
 
   function goToEditProduct() {
-    if(selectedId){
+    if (selectedId) {
       navigate("/dashboard/inventory/editProduct/" + selectedId);
     }
-    else{
+    else {
       alert("Seleccione un producto para editarlo")
     }
   }
 
   function goToDetailProduct() {
-    if(selectedId){
+    if (selectedId) {
       navigate("/dashboard/inventory/detailProduct/" + selectedId);
     }
-    else{
+    else {
       alert("Seleccione un producto para ver el detalle")
     }
 
@@ -42,10 +42,10 @@ const Inventory = () => {
 
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Inventario</h2>
+    <div className="container-header">
+      <h2 className="title">Inventario</h2>
       {/* <!-- Barra de búsqueda --> */}
-      <div class="search-bar">
+      <div className="search-bar">
         <input type="text" placeholder="Buscar por número" />
         <button className="search-button">
           <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
@@ -54,14 +54,14 @@ const Inventory = () => {
     </div>
 
     {/* <!-- Botones de Agregar y Eliminar --> */}
-    <div class="inventory-buttons">
-      <button class="add-button" onClick={goToAddProduct}>Agregar</button>
-      <button class="detalle-button" onClick={() => { goToDetailProduct() }}>Ver detalle</button>
-      <button class="edit-button" onClick={() => { goToEditProduct() }}>Editar</button>
+    <div className="inventory-buttons">
+      <button className="add-button" onClick={goToAddProduct}>Agregar</button>
+      <button className="detalle-button" onClick={() => { goToDetailProduct() }}>Ver detalle</button>
+      <button className="edit-button" onClick={() => { goToEditProduct() }}>Editar</button>
 
     </div>
     {/* <!-- Tabla de resumen de pedidos --> */}
-    <table class="table-products">
+    <table className="table-products">
       {/* <!-- Encabezados de la tabla --> */}
       <thead>
         <tr>
@@ -94,12 +94,12 @@ const Inventory = () => {
 
             return (
               <tr key={product.id}>
-                <td><input 
-                      type="checkbox"
-                      id={product.id}
-                      checked={product.id === selectedId}
-                      onChange={() => setSelectedId(product.id)}
-                    /></td>
+                <td><input
+                  type="checkbox"
+                  id={product.id}
+                  checked={product.id === selectedId}
+                  onChange={() => setSelectedId(product.id)}
+                /></td>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>{product.quantity}</td>
@@ -116,8 +116,8 @@ const Inventory = () => {
     </table>
 
     {/* TODO: Agregar al Paginación de la tabla  */}
-    {/* <div class="pagination">
-      <div class="pagination-options">
+    {/* <div className="pagination">
+      <div className="pagination-options">
         <button>Anterior</button>
         <span>1</span>
         <span>2</span>
@@ -126,7 +126,7 @@ const Inventory = () => {
         <span>...</span>
         <button>Siguiente</button>
       </div>
-      <button class="show-all-button">Mostrar Todos</button>
+      <button className="show-all-button">Mostrar Todos</button>
     </div> */}
   </>
 

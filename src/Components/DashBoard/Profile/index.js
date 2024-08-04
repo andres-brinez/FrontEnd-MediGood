@@ -115,19 +115,19 @@ function Profile() {
 
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Perfil</h2>
-      <div class="profile-options">
-        <p class="tab-ver active-tab" onClick={openTabVer}>Ver</p>
-        <p class="tab-editar" onClick={openTabEditar}>Editar</p>
+    <div className="container-header">
+      <h2 className="title">Perfil</h2>
+      <div className="profile-options">
+        <p className="tab-ver active-tab" onClick={openTabVer}>Ver</p>
+        <p className="tab-editar" onClick={openTabEditar}>Editar</p>
       </div>
 
     </div>
 
     {/* <!-- Contenido de la pestaña "Ver" --> */}
-    <div id="contenido-ver" class="tab-content">
+    <div id="contenido-ver" className="tab-content">
       <h3>Información</h3>
-      <div class="profile-info">
+      <div className="profile-info">
 
         <label for="nombre">Nombre</label>
         <p id="nombre">{user.name}</p>
@@ -149,8 +149,8 @@ function Profile() {
 
 
     {/* <!-- Contenido de la pestaña "Editar" --> */}
-    <div id="contenido-editar" class="tab-content" >
-      <form onSubmit={handleSubmit} id="editar-form" class="edit-form dashboard">
+    <div id="contenido-editar" className="tab-content" >
+      <form onSubmit={handleSubmit} id="editar-form" className="edit-form dashboard">
         <h3>Editar Perfil</h3>
         {/* <!-- Campos de información personal --> */}
         <label for="nombre-edit">Nombre</label>

@@ -5,7 +5,7 @@ import { addProduct } from "../../../../services/productService";
 import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
 
-  const navigator= useNavigate();
+  const navigator = useNavigate();
 
   const [getCategories, setCategories] = useState([])
   const [nameProduct, setNameProduct] = useState("");
@@ -78,20 +78,20 @@ const AddProduct = () => {
     formData.append('categoryId', categoryProduct);
     formData.append('inStock', inStock);
     formData.append('quantity', quantity);
-        
-  const saveProduct=addProduct(formData)
-  if(saveProduct){
-    navigator("/dashboard")
-  }
+
+    const saveProduct = addProduct(formData)
+    if (saveProduct) {
+      navigator("/dashboard")
+    }
 
   }
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Agregar Producto</h2>
+    <div className="container-header">
+      <h2 className="title">Agregar Producto</h2>
     </div>
     {/* <!-- Formulario para agregar un nuevo producto --> */}
-    <form onSubmit={handleSubmit} class="add-product-form dashboard ">
+    <form onSubmit={handleSubmit} className="add-product-form dashboard ">
 
       <label for="nombre">Nombre</label>
       <input value={nameProduct} onChange={(event) => setNameProduct(event.target.value)} type="text" id="nombre" name="nombre" required />
@@ -113,7 +113,7 @@ const AddProduct = () => {
       </select>
 
       {/* <!-- Abrir la ventana emergente de agregar categoría --> */}
-      <p onClick={openPopup} class="add-category-link" id="openAddCategoryPopup">Agregar Nueva Categoría</p>
+      <p onClick={openPopup} className="add-category-link" id="openAddCategoryPopup">Agregar Nueva Categoría</p>
 
       <label for="descripcion">Descripción</label>
       <textarea value={descriptionProduct} onChange={(event) => setDescriptionProduct(event.target.value)} id="descripcion" name="descripcion" rows="4" required></textarea>
@@ -136,8 +136,8 @@ const AddProduct = () => {
 
     {/* <!-- Ventana emergente para agregar categoría --> */}
     <div id="addCategoryPopup" className="popup-close" ref={popUpRef}>
-      <div class="popup-content">
-        <span id="closeAddCategoryPopup" class="close-popup" onClick={closePopup}>&times;</span>
+      <div className="popup-content">
+        <span id="closeAddCategoryPopup" className="close-popup" onClick={closePopup}>&times;</span>
         <h3>Agregar Nueva Categoría</h3>
         <label for="newCategory">Nombre de la categoría</label>
         <input type="text" id="newCategory" name="newCategory" required />

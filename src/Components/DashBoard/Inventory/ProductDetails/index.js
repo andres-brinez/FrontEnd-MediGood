@@ -6,8 +6,8 @@ const ProductDetails = () => {
 
   const [product, setProduct] = useState({});
   // TODO: se debe hacer que desde la api se retorne la categoria y la marca
-  const {name,quantity,description,price ,inStock ,dateAdded,imageUrl }=product
-  const {id} = useParams();
+  const { name, quantity, description, price, inStock, dateAdded, imageUrl } = product
+  const { id } = useParams();
 
   const formattedDate = new Date(product.dateAdded).toLocaleString('es-ES', {
     day: '2-digit',
@@ -24,27 +24,27 @@ const ProductDetails = () => {
   }).format(product.price);
 
   useEffect(() => {
-    if(id){
+    if (id) {
       getProductById(id).then((response) => {
         setProduct(response);
       })
     }
-    else{
+    else {
       alert("No hay ID del producto")
     }
   }, [])
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Detalle del Producto</h2>
+    <div className="container-header">
+      <h2 className="title">Detalle del Producto</h2>
     </div>
 
     {/* <!-- Detalles del producto --> */}
-    <div class="product-details">
-      <div class="product-image">
+    <div className="product-details">
+      <div className="product-image">
         <img src={imageUrl} alt="Imagen del Producto" />
       </div>
-      <div class="product-info">
+      <div className="product-info">
         <label for="nombre">Nombre</label>
         <p id="nombre">{name}</p>
 
@@ -65,7 +65,7 @@ const ProductDetails = () => {
         <p id="precio">{formattedPrice}</p>
 
         <label for="estado">Estado:</label>
-        <p id="estado">{inStock?"Disponible":"No disponible"}</p>
+        <p id="estado">{inStock ? "Disponible" : "No disponible"}</p>
 
         <label for="fecha-ingreso">Fecha de Ingreso</label>
         <p id="fecha-ingreso">{formattedDate}</p>

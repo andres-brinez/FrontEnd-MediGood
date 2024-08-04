@@ -43,15 +43,15 @@ const OrderDetail = () => {
     return <>
         {/* <!-- Encabezado --> */}
 
-        <div class="container-header">
-            <h2 class="title">Detalle Pedido</h2>
+        <div className="container-header">
+            <h2 className="title">Detalle Pedido</h2>
         </div>
 
-        <div class="details-container">
+        <div className="details-container">
             {/* <!-- Detalles de Entrega --> */}
-            <div class="detail-box">
+            <div className="detail-box">
                 <h3>Entrega</h3>
-                <div class="boxInfo">
+                <div className="boxInfo">
                     <p><strong>Dirección:</strong> Calle 123, Barrio XYZ, Ciudad ABC</p>
                     {/* <!-- genera el p para ciudad,barrio.numero --> */}
                     <p><strong>Ciudad:</strong> Ciudad ABC</p>
@@ -61,9 +61,9 @@ const OrderDetail = () => {
             </div>
 
             {/* <!-- Detalles del Cliente --> */}
-            <div class="detail-box">
+            <div className="detail-box">
                 <h3>Cliente</h3>
-                <div class="boxInfo">
+                <div className="boxInfo">
                     <p><strong>ID:</strong> 12345</p>
                     <p><strong>Nombre:</strong> Nombre del Cliente</p>
                     <p><strong>Email:</strong> cliente@email.com</p>
@@ -73,9 +73,9 @@ const OrderDetail = () => {
             </div>
 
             {/* <!-- Detalles de la Orden --> */}
-            <div class="detail-box">
+            <div className="detail-box">
                 <h3>Información pedido</h3>
-                <div class="boxInfo">
+                <div className="boxInfo">
                     <p><strong>Número pedido:</strong> {idOrder}</p>
                     <p><strong>Fecha venta</strong>{date} </p>
                     <p><strong>Fecha de Entrega:</strong> --</p>
@@ -94,7 +94,7 @@ const OrderDetail = () => {
         </div>
 
         {/* <!-- Tabla de resumen de pedidos --> */}
-        <table class="table-products">
+        <table className="table-products">
             <caption>Productos</caption>
 
             {/* <!-- Encabezados de la tabla --> */}
@@ -128,13 +128,13 @@ const OrderDetail = () => {
                     <td></td>
                     <td></td>
                     <td>${total} </td>
-                    </tr>
+                </tr>
             </tfoot>
         </table>
 
         {/* <!-- Paginación de la tabla --> */}
-        <div class="pagination">
-            <div class="pagination-options">
+        <div className="pagination">
+            <div className="pagination-options">
                 <button>Anterior</button>
                 <span>1</span>
                 <span>2</span>
@@ -143,7 +143,7 @@ const OrderDetail = () => {
                 <span>...</span>
                 <button>Siguiente</button>
             </div>
-            <button class="show-all-button">Mostrar Todos</button>
+            <button className="show-all-button">Mostrar Todos</button>
         </div>
 
 

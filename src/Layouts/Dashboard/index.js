@@ -7,7 +7,7 @@ import "./formDashboard.css"
 
 function LayoutDashboard() {
 
-  const navigation= useNavigate();
+  const navigation = useNavigate();
 
   function logout() {
     navigation("/")
@@ -16,31 +16,31 @@ function LayoutDashboard() {
   function hideLogoutConfirmation() {
     var confirmationModal = document.getElementById("logoutConfirmation");
     confirmationModal.style.display = "none";
-}
+  }
 
 
   return <>
     <HeaderDashboard />
     {/* <!-- Contenido del Dashboard --> */}
-    <div class="dashboard-container">
+    <div className="dashboard-container">
 
       {/* <!-- Barra de navegación lateral --> */}
       <NavDashBoard />
       {/* <!-- Cuadro de confirmación de logout--> */}
-    
+
       {/* <!-- Contenido principal --> */}
       <main className="main-content main-content-dashboard">
-      <Outlet />
+        <Outlet />
       </main>
-    
+
     </div>
     <div className="confirmation-modal" id="logoutConfirmation">
-        <div class="modal-content">
-            <span class="close" onClick={hideLogoutConfirmation}>&times;</span>
-            <p>¿Estás seguro de que quieres cerrar sesión?</p>
-            <button class="ok" onClick={logout}>Aceptar</button>
-            <button class="cancel" onClick={hideLogoutConfirmation}>Cancelar</button>
-        </div>
+      <div className="modal-content">
+        <span className="close" onClick={hideLogoutConfirmation}>&times;</span>
+        <p>¿Estás seguro de que quieres cerrar sesión?</p>
+        <button className="ok" onClick={logout}>Aceptar</button>
+        <button className="cancel" onClick={hideLogoutConfirmation}>Cancelar</button>
+      </div>
     </div>
 
     <footer className="footerDashBoard">

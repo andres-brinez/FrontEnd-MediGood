@@ -39,15 +39,15 @@ function BuysDetail() {
   }, [])
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Detalle Compra</h2>
+    <div className="container-header">
+      <h2 className="title">Detalle Compra</h2>
     </div>
     {/* TODO: El detail container pudiera ser un componente que se use tambien en el orderDetails */}
-    <div class="details-container">
+    <div className="details-container">
       {/* <!-- Detalles de Entrega --> */}
-      <div class="detail-box">
+      <div className="detail-box">
         <h3>Entrega</h3>
-        <div class="boxInfo">
+        <div className="boxInfo">
           <p><strong>Dirección:</strong> Calle 123, Barrio XYZ, Ciudad ABC</p>
           {/* <!-- genera el p para ciudad,barrio.numero --> */}
           <p><strong>Ciudad:</strong> Ciudad ABC</p>
@@ -57,9 +57,9 @@ function BuysDetail() {
       </div>
 
       {/* <!-- Detalles del Cliente --> */}
-      <div class="detail-box">
+      <div className="detail-box">
         <h3>Cliente</h3>
-        <div class="boxInfo">
+        <div className="boxInfo">
           <p><strong>ID:</strong> 12345</p>
           <p><strong>Nombre:</strong> Nombre del Cliente</p>
           <p><strong>Email:</strong> cliente@email.com</p>
@@ -69,9 +69,9 @@ function BuysDetail() {
       </div>
 
       {/* <!-- Detalles de la Orden --> */}
-      <div class="detail-box">
+      <div className="detail-box">
         <h3>Detalles de la orden</h3>
-        <div class="boxInfo">
+        <div className="boxInfo">
           <p><strong>Número orden:</strong> {idBuy}</p>
           <p><strong>Fecha venta</strong>{date} </p>
           <p><strong>Fecha de Entrega:</strong> --</p>
@@ -84,7 +84,7 @@ function BuysDetail() {
     </div>
 
     {/* <!-- Tabla de resumen de pedidos --> */}
-    <table class="table-products">
+    <table className="table-products">
       <caption>Productos</caption>
 
       {/* <!-- Encabezados de la tabla --> */}
@@ -99,17 +99,17 @@ function BuysDetail() {
       </thead>
       {/* <!-- Contenido de la tabla --> */}
       <tbody>
-        {products.map((product)=>{
-        return(
-          <tr>
-            <td>{product.product.id}</td>
-            <td>{product.product.name}</td>
-            <td>{product.quantity}</td>
-            <td>${product.price}</td>
-            <td>${product.total}</td>
-          </tr>
-        )
-      })}
+        {products.map((product) => {
+          return (
+            <tr>
+              <td>{product.product.id}</td>
+              <td>{product.product.name}</td>
+              <td>{product.quantity}</td>
+              <td>${product.price}</td>
+              <td>${product.total}</td>
+            </tr>
+          )
+        })}
 
       </tbody>
       <tfoot>

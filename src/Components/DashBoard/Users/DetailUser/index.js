@@ -5,17 +5,17 @@ import { getUserByEmail } from "../../../../services/users";
 // TODO: Mejorar los estilos que por el momentos son tomados del profile con la clase profile-info
 function DetailUser() {
 
-  const  {id} = useParams();
+  const { id } = useParams();
 
-  const [email,setEmail]= useState("")
-  const [name,setName]= useState("")
-  const [phoneNumber,setPhoneNumber]= useState("")
-  const [address,setAddress]= useState("")
-  const [role,setRole]= useState("")
-  const [status,setStatus]= useState("")
+  const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [address, setAddress] = useState("")
+  const [role, setRole] = useState("")
+  const [status, setStatus] = useState("")
 
-  useEffect(()=>{
-    getUserByEmail(id).then((response)=>{
+  useEffect(() => {
+    getUserByEmail(id).then((response) => {
       setEmail(response.email)
       setName(response.name)
       setPhoneNumber(response.phoneNumber)
@@ -24,14 +24,14 @@ function DetailUser() {
       setStatus(response.enabled)
 
     })
-  },[])
+  }, [])
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Detalle de usuario</h2>
+    <div className="container-header">
+      <h2 className="title">Detalle de usuario</h2>
     </div>
     {/*             <!-- Información del usuario --> */}
-    <div class="profile-info" id="contenido-ver">
+    <div className="profile-info" id="contenido-ver">
       <h3>Información</h3>
 
       <label for="id">Email</label>
@@ -47,10 +47,10 @@ function DetailUser() {
       <p id="user-address">{address}</p>
 
       <label for="user-status">Estado</label>
-      <p id="user-status">{status?"Activo":"Inactivo"}</p>
+      <p id="user-status">{status ? "Activo" : "Inactivo"}</p>
 
       <label for="user-role">Rol</label>
-      <p id="user-role">{role==="Admin"?"Administrador":"Usuario"}</p>
+      <p id="user-role">{role === "Admin" ? "Administrador" : "Usuario"}</p>
     </div>
   </>
 }

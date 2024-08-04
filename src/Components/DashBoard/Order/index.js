@@ -18,7 +18,7 @@ const Order = () => {
   }, [])
 
   function goToDetail() {
-    if(!productSelect){
+    if (!productSelect) {
       alert("Debe seleccionar un producto")
       return;
     }
@@ -26,22 +26,22 @@ const Order = () => {
   }
 
   return <>
-    <div class="container-header">
-      <h2 class="title">Pedidos - ventas</h2>
+    <div className="container-header">
+      <h2 className="title">Pedidos - ventas</h2>
       {/* <!-- Barra de búsqueda --> */}
-      <div class="search-bar">
+      <div className="search-bar">
         <input type="text" placeholder="Buscar por número" />
-        <button class="search-button">
-          <img class="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
+        <button className="search-button">
+          <img className="search-button-img" src="../img/dashboard/lupa.png" alt="Imagen de lupa" />
         </button>
       </div>
     </div>
 
     {/* <!-- Botón para ver detalles --> */}
-    <button class="detail-button" onClick={() => { goToDetail() }} >Ver Detalle</button>
+    <button className="detail-button" onClick={() => { goToDetail() }} >Ver Detalle</button>
 
     {/* <!-- Tabla de resumen de pedidos --> */}
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th></th>
@@ -91,8 +91,8 @@ const Order = () => {
 
     {/* TODO: Agregar la funcionalidad de páginiación */}
     {/* <!-- Paginación de la tabla --> */}
-    <div class="pagination">
-      <div class="pagination-options">
+    <div className="pagination">
+      <div className="pagination-options">
         <button>Anterior</button>
         <span>1</span>
         <span>2</span>
@@ -101,7 +101,7 @@ const Order = () => {
         <span>...</span>
         <button>Siguiente</button>
       </div>
-      <button class="show-all-button">Mostrar Todos</button>
+      <button className="show-all-button">Mostrar Todos</button>
     </div>
 
   </>
