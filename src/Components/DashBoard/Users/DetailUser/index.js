@@ -24,7 +24,7 @@ function DetailUser() {
       setStatus(response.enabled)
 
     })
-  }, [])
+  }, [id])
 
   return <>
     <div className="container-header">

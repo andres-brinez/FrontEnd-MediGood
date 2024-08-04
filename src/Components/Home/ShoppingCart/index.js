@@ -3,7 +3,7 @@ import "./style.css"
 import { GlobalContext } from "../../../Context/GlobalContext";
 import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import CartItem from "../CartItem";
-import { createPurchaseProducts, purchaseProducts } from "../../../services/Purchase";
+import { createPurchaseProducts } from "../../../services/Purchase";
 
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -16,7 +16,7 @@ const ShoppingCart = () => {
     // Obtener los datos del carrito y actualizar el estado
     const data = getCartData();
     setCartItems(data);
-  }, [showShoppingCart]);
+  }, [showShoppingCart,getCartData]);
 
   function formatPrice(price) {
     if (price === undefined || price === null) {

@@ -37,7 +37,7 @@ const ProductsDetails = () => {
 
       getProductById(id).then((response) => {
 
-        if (response.errorMessage != undefined) {
+        if (response.errorMessage !== undefined) {
           alert(response.errorMessage);
           navigator("/");
         }
@@ -54,7 +54,7 @@ const ProductsDetails = () => {
       productsDetailRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
-  }, [id]);
+  }, [id,navigator]);
 
   function formatPrice(price) {
     if (price === undefined || price === null) {

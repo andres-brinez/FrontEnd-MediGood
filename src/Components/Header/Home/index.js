@@ -14,8 +14,8 @@ function HeaderHome() {
 
 
   useEffect(() => {
-    setQuantityIntemShoppingCart(getCartData().length);
-  }, []);
+  setQuantityIntemShoppingCart(getCartData().length);
+}, [setQuantityIntemShoppingCart, getCartData]);
 
   const [searchValue, setSearchValue] = useState("")
 

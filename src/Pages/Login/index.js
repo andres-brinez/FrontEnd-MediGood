@@ -26,12 +26,11 @@ const Login = () => {
                 <h3>Iniciar sesión</h3>
                 <div className="social-login">
                     <button id="button-facebook"className="login-button" type="button">
-                        <a href=""> <img src="img/socialMedia/facebook.svg" alt="Facebook" />
-                            Facebook</a>
+                        
+                            <NavLink to="#"><img src="img/socialMedia/facebook.svg" alt="Facebook" />Facebook</NavLink>
                     </button>
                     <button id="button-google" className="login-button" type="button">
-                        <a href=""><img src="img/socialMedia/google.svg" alt="Google" />
-                            Google</a>
+                            <NavLink to="#"><img src="img/socialMedia/google.svg" alt="Google" />Google</NavLink>
                     </button>
                 </div>
                 <div className="separator">

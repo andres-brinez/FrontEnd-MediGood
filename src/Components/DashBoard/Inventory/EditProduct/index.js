@@ -7,7 +7,7 @@ const EditProduct = () => {
 
   const [getCategories, setCategories] = useState([])
   const [categoryProductSelect, setCategoryProductSelect] = useState("");
-  const [product, setProduct] = useState({});
+  const [, setProduct] = useState({});
 
   const [name, setName] = useState()
   const [quantityProduct, setQuantityProduct] = useState()
@@ -40,7 +40,7 @@ const EditProduct = () => {
     else {
       alert("No hay ID del producto")
     }
-  }, []);
+  }, [id]);
 
   function openPopup() {
     popUpRef.current.className = "popup-open";

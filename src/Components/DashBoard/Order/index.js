@@ -15,7 +15,7 @@ const Order = () => {
       setProducts(response)
       console.log(products)
     })
-  }, [])
+  }, [products])
 
   function goToDetail() {
     if (!productSelect) {

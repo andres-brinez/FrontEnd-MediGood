@@ -1,5 +1,4 @@
 import { environment } from "../environment"
-import { getProductById, getProductByName } from "../services/productService"
 
 export const urls={
   registerUser:`${environment.apiUrl}/auth/register`,

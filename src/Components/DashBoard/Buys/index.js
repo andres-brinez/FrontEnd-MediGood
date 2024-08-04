@@ -20,7 +20,7 @@ const Buys = () => {
       console.log(response)
       setProduct(response)
     })
-  }, [])
+  }, [emailUser,navigator])
 
   function goToDetail() {
     if (!productSelect) {

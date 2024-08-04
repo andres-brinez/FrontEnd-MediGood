@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./style.css"
 
 const FooterHome = () => {
@@ -20,26 +21,29 @@ const FooterHome = () => {
           <a href="contacto.html">Contacta con nosotros</a>
           <a href="quienes-somos.html">Quiénes somos</a>
           <div className="redes-sociales">
-            <a href="#"><img src="img/home/redes/facebook-1.svg" alt="Facebook" /></a>
-            <a href="#"><img src="img/home/redes/twitter-1.svg" alt="Twitter" /></a>
-            <a href="#"><img src="img/home/redes/instagram-1.svg" alt="Instagram" /></a>
-            <a href="#"><img src="img/home/redes/logotipo-de-youtube-1.svg" alt="YouTube" /></a>
+            <Link to="#"><img src="img/home/redes/facebook-1.svg" alt="Facebook" /></Link>
+            <Link to="#"><img src="img/home/redes/twitter-1.svg" alt="Twitter" /></Link>
+            <Link to="#"><img src="img/home/redes/instagram-1.svg" alt="Instagram" /></Link>
+            <Link to="#"><img src="img/home/redes/logotipo-de-youtube-1.svg" alt="YouTube" /></Link>
+
           </div>
         </div>
         <div className="footer-subsection">
           <h3>Compra</h3>
-          <a href="#">Super-descuentos / Cupones</a>
-          <a href="#">En Oferta</a>
-          <a href="#">Envíos</a>
-          <a href="#">Devoluciones</a>
+
+          <Link to="#">Super-descuentos / Cupones</Link>
+          <Link to="#">En Oferta</Link>
+          <Link to="#">Envíos</Link>
+          <Link to="#">Devoluciones</Link>
+
         </div>
       </div>
       <div className="footer-bottom">
         <p>2023-2024 Medigood S.L.By Andres Briñez</p>
         <div className="footer-links">
-          <a href="#">Aviso Legal</a>
-          <a href="#">Política de Cookies</a>
-          <a href="#">Política de Privacidad</a>
+          <Link to="#">Aviso Legal</Link>
+          <Link to="#">Política de Cookies</Link>
+          <Link to="#">Política de Privacidad</Link>
         </div>
       </div>
 

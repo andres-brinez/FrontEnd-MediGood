@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from 'react-router-dom';
 import "./style.css"
 import ShoppingCart from "../../Components/Home/ShoppingCart";
-import { getAllProducts, getAllProductsAvailable, getProductsTop } from "../../services/productService";
+import { getAllProducts, getProductsTop } from "../../services/productService";
 
 const LayoutLanding = () => {
   const [searchValue, setSearchValue] = useState("")

@@ -2,7 +2,7 @@ import InputPassword from "../Fields/Password";
 import Input from "../Fields/Input/input";
 import { useContext, useState } from "react";
 import "./style.css"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authServiceLogin } from "../../../services/authService";
 import { jwtDecode } from "jwt-decode";
 import { GlobalContext } from "../../../Context/GlobalContext";
@@ -11,7 +11,7 @@ function FormLogin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { emailUser,setEmailUser} = useContext(GlobalContext);
+  const {setEmailUser} = useContext(GlobalContext);
 
   
   const navigate=useNavigate();
@@ -43,7 +43,7 @@ function FormLogin() {
 
       if(token){
         const decodedToken = jwtDecode(token);
-        const {email,role}= decodedToken
+        const {email,}= decodedToken
         console.log(decodedToken)
         alert("Usuario autenticado");
         navigate("/")
@@ -82,7 +82,7 @@ function FormLogin() {
         required
         value={password} updateValue={setPassword} />
 
-      <a href="" disabled >¿Olvidó su contraseña?</a>
+      <Link to="#" disabled>¿Olvidó su contraseña?</Link>
       <button className="buttonAuthForm" type="submit"> Iniciar sesión </button>
 
     </form>

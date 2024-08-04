@@ -1,8 +1,6 @@
 import ProductPreview from "../ProductPreview";
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import searchProductByName from "../../../services/searchProduct";
-
 
 import "./style.css"
 import { getProductByName } from "../../../services/productService";
@@ -41,7 +39,7 @@ function ProductsSearched() {
 
     }
 
-  }, [searchTerm])
+  }, [searchTerm,products])
   return <>
 
     <section id="products-searched" ref={productsSearchedRef}>

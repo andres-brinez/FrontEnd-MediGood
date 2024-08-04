@@ -24,7 +24,7 @@ function EditUser() {
       setEnabled(response.enabled)
 
     })
-  }, [])
+  }, [id])
 
   function handleSubmit(event) {
     event.preventDefault();
