@@ -38,7 +38,7 @@ const OrderDetail = () => {
             setTotal(formattedPrice)
             setQuantity(response.quantity)
         })
-    }, [])
+    }, [id])
 
     return <>
         {/* <!-- Encabezado --> */}
