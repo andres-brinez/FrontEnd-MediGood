@@ -1,11 +1,10 @@
 import HeaderHome from "../../Components/Header/Home";
-import productsJson from "../../services/Products.json";
 import SliderProducts from "../../Components/Home/SliderProducts";
 import Categories from "../../Components/Home/Categories";
 import FooterHome from "../../Components/Footer/Home";
 import { useEffect, useState } from "react";
 import { Outlet } from 'react-router-dom';
-import "./style.css";
+import "./style.css"
 import ShoppingCart from "../../Components/Home/ShoppingCart";
 import { getAllProducts, getAllProductsAvailable, getProductsTop } from "../../services/productService";
 
