@@ -77,7 +77,7 @@ const Inventory = () => {
       {/* <!-- Contenido de la tabla --> */}
       <tbody>
         {/* TODO: Hacer validaciones por si no hay productos disponibles */}
-        {
+        {products && products.length > 0 ? (
           products.map((product) => {
             const formattedDate = new Date(product.dateAdded).toLocaleString('es-ES', {
               day: '2-digit',
@@ -111,8 +111,10 @@ const Inventory = () => {
             );
           })
 
-        }
-
+      ) : (
+        <div>No hay productos disponibles</div>
+      )}
+        
       </tbody>
     </table>
 

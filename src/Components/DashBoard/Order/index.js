@@ -53,9 +53,8 @@ const Order = () => {
           <th>Total</th>
         </tr>
       </thead>
-      <tbody>
-
-        {products.map((product) => {
+      {products && products.length > 0 ? (
+        products.map((product) => {
 
           const formattedDate = new Date(product.date).toLocaleString('es-ES', {
             day: '2-digit',
@@ -71,22 +70,28 @@ const Order = () => {
             currency: 'COP'
           }).format(product.total);
 
-          return <tr>
-            <td><input type="checkbox"
-              name=""
-              id={product.id}
-              checked={product.id === productSelect}
-              onChange={() => setProductSelect(product.id)} /></td>
-            <td>{product.id}</td>
-            <td>{formattedDate}</td>
-            <td>{product.quantity}</td>
-            <td>Nombre del cliente </td>
-            <td>Enviando</td>
-            <td>${formattedPrice}</td>
-          </tr>
-        })}
+          return <tbody>
+            <tr>
+              <td><input type="checkbox"
+                name=""
+                id={product.id}
+                checked={product.id === productSelect}
+                onChange={() => setProductSelect(product.id)} /></td>
+              <td>{product.id}</td>
+              <td>{formattedDate}</td>
+              <td>{product.quantity}</td>
+              <td>Nombre del cliente </td>
+              <td>Enviando</td>
+              <td>${formattedPrice}</td>
+            </tr>
+          </tbody>
 
-      </tbody>
+        })
+      ) : (
+        <div>No hay ordenes </div>
+      )}
+
+
     </table>
 
     {/* TODO: Agregar la funcionalidad de páginiación */}
