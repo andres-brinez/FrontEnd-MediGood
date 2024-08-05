@@ -16,7 +16,8 @@ const ShoppingCart = () => {
     // Obtener los datos del carrito y actualizar el estado
     const data = getCartData();
     setCartItems(data);
-  }, [showShoppingCart,getCartData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showShoppingCart]);
 
   function formatPrice(price) {
     if (price === undefined || price === null) {
