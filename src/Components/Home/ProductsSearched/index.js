@@ -28,8 +28,6 @@ function ProductsSearched() {
        console.log(products);
        console.log(products.length===0);
 
-
-
       const productsSearchedSection = document.getElementById('products-searched');
 
       // Se hace un scroll automatico si el componente ya se renderizó, esto es util para cuando se vuelve a hacer una busqueda
@@ -39,7 +37,8 @@ function ProductsSearched() {
 
     }
 
-  }, [searchTerm,products])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm])
   return <>
 
     <section id="products-searched" ref={productsSearchedRef}>
